@@ -35,7 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AE4193332512423600CB0DC8 /* MundoDeRafa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MundoDeRafa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE4193332512423600CB0DC8 /* Mundo de Rafa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mundo de Rafa.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE4193362512423600CB0DC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE4193382512423600CB0DC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AE41933A2512423600CB0DC8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 		AE4193342512423600CB0DC8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AE4193332512423600CB0DC8 /* MundoDeRafa.app */,
+				AE4193332512423600CB0DC8 /* Mundo de Rafa.app */,
 				AE4193492512423A00CB0DC8 /* MundoDeRafaTests.xctest */,
 				AE4193542512423A00CB0DC8 /* MundoDeRafaUITests.xctest */,
 			);
@@ -99,13 +99,11 @@
 		AE4193352512423600CB0DC8 /* MundoDeRafa */ = {
 			isa = PBXGroup;
 			children = (
-				AE4193362512423600CB0DC8 /* AppDelegate.swift */,
-				AE4193382512423600CB0DC8 /* SceneDelegate.swift */,
-				AE41933A2512423600CB0DC8 /* ViewController.swift */,
-				AE41933C2512423600CB0DC8 /* Main.storyboard */,
+				AE41936725124C0D00CB0DC8 /* Model */,
+				AE41936825124C1500CB0DC8 /* View */,
+				AE41936925124C1B00CB0DC8 /* Controller */,
+				AE41936B25124C3300CB0DC8 /* Config */,
 				AE41933F2512423A00CB0DC8 /* Assets.xcassets */,
-				AE4193412512423A00CB0DC8 /* LaunchScreen.storyboard */,
-				AE4193442512423A00CB0DC8 /* Info.plist */,
 			);
 			path = MundoDeRafa;
 			sourceTree = "<group>";
@@ -128,6 +126,40 @@
 			path = MundoDeRafaUITests;
 			sourceTree = "<group>";
 		};
+		AE41936725124C0D00CB0DC8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AE41936825124C1500CB0DC8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AE41933C2512423600CB0DC8 /* Main.storyboard */,
+				AE4193412512423A00CB0DC8 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AE41936925124C1B00CB0DC8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AE41933A2512423600CB0DC8 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AE41936B25124C3300CB0DC8 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				AE4193362512423600CB0DC8 /* AppDelegate.swift */,
+				AE4193382512423600CB0DC8 /* SceneDelegate.swift */,
+				AE4193442512423A00CB0DC8 /* Info.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +170,7 @@
 				AE41932F2512423600CB0DC8 /* Sources */,
 				AE4193302512423600CB0DC8 /* Frameworks */,
 				AE4193312512423600CB0DC8 /* Resources */,
+				AE4193662512445800CB0DC8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -145,7 +178,7 @@
 			);
 			name = MundoDeRafa;
 			productName = MundoDeRafa;
-			productReference = AE4193332512423600CB0DC8 /* MundoDeRafa.app */;
+			productReference = AE4193332512423600CB0DC8 /* Mundo de Rafa.app */;
 			productType = "com.apple.product-type.application";
 		};
 		AE4193482512423A00CB0DC8 /* MundoDeRafaTests */ = {
@@ -253,6 +286,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AE4193662512445800CB0DC8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AE41932F2512423600CB0DC8 /* Sources */ = {
@@ -436,13 +489,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AVQMR29BJU;
-				INFOPLIST_FILE = MundoDeRafa/Info.plist;
+				INFOPLIST_FILE = MundoDeRafa/Config/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.freela.MundoDeRafa;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Mundo de Rafa";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -454,13 +507,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AVQMR29BJU;
-				INFOPLIST_FILE = MundoDeRafa/Info.plist;
+				INFOPLIST_FILE = MundoDeRafa/Config/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.freela.MundoDeRafa;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Mundo de Rafa";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
