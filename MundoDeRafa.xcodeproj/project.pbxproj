@@ -15,6 +15,7 @@
 		AE4193432512423A00CB0DC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE4193412512423A00CB0DC8 /* LaunchScreen.storyboard */; };
 		AE41934E2512423A00CB0DC8 /* MundoDeRafaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE41934D2512423A00CB0DC8 /* MundoDeRafaTests.swift */; };
 		AE4193592512423A00CB0DC8 /* MundoDeRafaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4193582512423A00CB0DC8 /* MundoDeRafaUITests.swift */; };
+		AE730E6F25139FD90038F783 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE730E6E25139FD90038F783 /* AppColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		AE4193542512423A00CB0DC8 /* MundoDeRafaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MundoDeRafaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE4193582512423A00CB0DC8 /* MundoDeRafaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MundoDeRafaUITests.swift; sourceTree = "<group>"; };
 		AE41935A2512423A00CB0DC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE730E6E25139FD90038F783 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		AE4193352512423600CB0DC8 /* MundoDeRafa */ = {
 			isa = PBXGroup;
 			children = (
+				AE730E6D25139E8D0038F783 /* Extensions */,
 				AE41936725124C0D00CB0DC8 /* Model */,
 				AE41936825124C1500CB0DC8 /* View */,
 				AE41936925124C1B00CB0DC8 /* Controller */,
@@ -158,6 +161,14 @@
 				AE4193442512423A00CB0DC8 /* Info.plist */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		AE730E6D25139E8D0038F783 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AE730E6E25139FD90038F783 /* AppColors.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE41933B2512423600CB0DC8 /* ViewController.swift in Sources */,
+				AE730E6F25139FD90038F783 /* AppColors.swift in Sources */,
 				AE4193372512423600CB0DC8 /* AppDelegate.swift in Sources */,
 				AE4193392512423600CB0DC8 /* SceneDelegate.swift in Sources */,
 			);
