@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE38E2A62514F02D0076B1A0 /* Audio in Resources */ = {isa = PBXBuildFile; fileRef = AE38E2A52514F02D0076B1A0 /* Audio */; };
 		AE4193372512423600CB0DC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4193362512423600CB0DC8 /* AppDelegate.swift */; };
 		AE4193392512423600CB0DC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4193382512423600CB0DC8 /* SceneDelegate.swift */; };
 		AE4193402512423A00CB0DC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE41933F2512423A00CB0DC8 /* Assets.xcassets */; };
@@ -15,9 +16,14 @@
 		AE4193592512423A00CB0DC8 /* MundoDeRafaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4193582512423A00CB0DC8 /* MundoDeRafaUITests.swift */; };
 		AE730E6F25139FD90038F783 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE730E6E25139FD90038F783 /* AppColors.swift */; };
 		AE730E712513A90B0038F783 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE730E702513A90B0038F783 /* OnboardingViewController.swift */; };
+<<<<<<< HEAD
 		AE730E732513AD950038F783 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = AE730E722513AD950038F783 /* Resources */; };
 		EF8DB9432514DC0300B719BC /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8DB9422514DC0300B719BC /* StoryCell.swift */; };
 		EF8DB9482514DC3300B719BC /* StoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8DB9472514DC3300B719BC /* StoryController.swift */; };
+=======
+		AE982D912514DB9000021DA2 /* HomeDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE982D902514DB9000021DA2 /* HomeDefaultView.swift */; };
+		AE982D992514DFB200021DA2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE982D982514DFB200021DA2 /* OnboardingView.swift */; };
+>>>>>>> aad1295bfc8f95292268122d754ee6fe63a934a9
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE38E2A52514F02D0076B1A0 /* Audio */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Audio; sourceTree = "<group>"; };
 		AE4193332512423600CB0DC8 /* Mundo de Rafa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mundo de Rafa.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE4193362512423600CB0DC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE4193382512423600CB0DC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,9 +59,14 @@
 		AE41935A2512423A00CB0DC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE730E6E25139FD90038F783 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		AE730E702513A90B0038F783 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		AE730E722513AD950038F783 /* Resources */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Resources; path = MundoDeRafa/Resources; sourceTree = SOURCE_ROOT; };
 		EF8DB9422514DC0300B719BC /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
 		EF8DB9472514DC3300B719BC /* StoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryController.swift; sourceTree = "<group>"; };
+=======
+		AE982D902514DB9000021DA2 /* HomeDefaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDefaultView.swift; sourceTree = "<group>"; };
+		AE982D982514DFB200021DA2 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+>>>>>>> aad1295bfc8f95292268122d754ee6fe63a934a9
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE38E2A42514F0210076B1A0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AE38E2A52514F02D0076B1A0 /* Audio */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		AE41932A2512423600CB0DC8 = {
 			isa = PBXGroup;
 			children = (
@@ -110,7 +130,7 @@
 				AE41936825124C1500CB0DC8 /* View */,
 				AE41936925124C1B00CB0DC8 /* Controller */,
 				AE41936B25124C3300CB0DC8 /* Config */,
-				AE730E722513AD950038F783 /* Resources */,
+				AE38E2A42514F0210076B1A0 /* Resources */,
 				AE41933F2512423A00CB0DC8 /* Assets.xcassets */,
 			);
 			path = MundoDeRafa;
@@ -137,6 +157,8 @@
 		AE41936825124C1500CB0DC8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AE982D902514DB9000021DA2 /* HomeDefaultView.swift */,
+				AE982D982514DFB200021DA2 /* OnboardingView.swift */,
 				AE4193412512423A00CB0DC8 /* LaunchScreen.storyboard */,
 				EF8DB9422514DC0300B719BC /* StoryCell.swift */,
 			);
@@ -282,9 +304,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE38E2A62514F02D0076B1A0 /* Audio in Resources */,
 				AE4193432512423A00CB0DC8 /* LaunchScreen.storyboard in Resources */,
 				AE4193402512423A00CB0DC8 /* Assets.xcassets in Resources */,
-				AE730E732513AD950038F783 /* Resources in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +355,8 @@
 				EF8DB9482514DC3300B719BC /* StoryController.swift in Sources */,
 				AE730E712513A90B0038F783 /* OnboardingViewController.swift in Sources */,
 				AE4193372512423600CB0DC8 /* AppDelegate.swift in Sources */,
+				AE982D992514DFB200021DA2 /* OnboardingView.swift in Sources */,
+				AE982D912514DB9000021DA2 /* HomeDefaultView.swift in Sources */,
 				AE4193392512423600CB0DC8 /* SceneDelegate.swift in Sources */,
 				EF8DB9432514DC0300B719BC /* StoryCell.swift in Sources */,
 			);
@@ -509,7 +533,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.freela.MundoDeRafa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mundoDeRafa.MundoDeRafa;
 				PRODUCT_NAME = "Mundo de Rafa";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -528,7 +552,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.freela.MundoDeRafa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mundoDeRafa.MundoDeRafa;
 				PRODUCT_NAME = "Mundo de Rafa";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
