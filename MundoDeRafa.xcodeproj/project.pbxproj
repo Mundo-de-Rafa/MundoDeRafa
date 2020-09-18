@@ -102,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				AE730E6D25139E8D0038F783 /* Extensions */,
-				AE41936725124C0D00CB0DC8 /* Model */,
+				AE982D8F2514DA6D00021DA2 /* Model */,
 				AE41936825124C1500CB0DC8 /* View */,
 				AE41936925124C1B00CB0DC8 /* Controller */,
 				AE41936B25124C3300CB0DC8 /* Config */,
@@ -128,13 +128,6 @@
 				AE41935A2512423A00CB0DC8 /* Info.plist */,
 			);
 			path = MundoDeRafaUITests;
-			sourceTree = "<group>";
-		};
-		AE41936725124C0D00CB0DC8 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		AE41936825124C1500CB0DC8 /* View */ = {
@@ -169,6 +162,13 @@
 				AE730E6E25139FD90038F783 /* AppColors.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AE982D8F2514DA6D00021DA2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
