@@ -13,7 +13,7 @@ class OnboardingView: HomeDefaultView {
     lazy var centerLabel: UILabel = {
         let label = UILabel()
         label.text = "Olá! Meu nome é Rafa. Venha comigo conhecer minha rotina!"
-        label.font = UIFont(name: "BalsamiqSans-Regular", size: 28)
+        label.font = .balsamicR
         label.textColor = .backgroundWhite
         label.numberOfLines = 2
         label.textAlignment = .center
