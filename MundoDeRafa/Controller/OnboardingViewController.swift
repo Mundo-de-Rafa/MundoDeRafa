@@ -16,8 +16,12 @@ class OnboardingViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        view = OnboardingView(frame: UIScreen.main.bounds)
         // Do any additional setup after loading the view.
+    }
+    
+    override func loadView() {
+        let onboardingView = OnboardingView()
+        view = onboardingView
     }
     
 }

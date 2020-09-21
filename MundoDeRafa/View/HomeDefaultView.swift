@@ -15,27 +15,61 @@ enum CenterImageSizes: CGFloat {
 
 class HomeDefaultView: UIView {
 
+    var viewController: OnboardingViewController?
+    
+    let stackView: UIStackView = {
+        let stack = UIStackView()
+        stack.alignment = .center
+        stack.axis = .vertical
+        stack.distribution = .fill
+        stack.spacing = 16
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+    
     let backgroundView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "Background")
+        imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     let centerImage: UIImageView = {
        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
+    }()
+    
+    let actionButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .backgroundWhite
+        button.titleLabel?.font = UIFont.balsamiqB?.withSize(UIScreen.main.bounds.height * 0.036)
+        button.setTitleColor(.primaryGreen, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupBackgroundView()
+        setupStackView()
+        setupStackSubviews()
+        setupActionButton()
         setupCenterImage()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setCenterImage(with image: UIImage?) {
+        centerImage.image = image
+    }
+    
+    func setButtonText(with text: String) {
+        actionButton.setTitle(text, for: .normal)
     }
     
     func setupBackgroundView() {
@@ -48,13 +82,29 @@ class HomeDefaultView: UIView {
         ])
     }
     
-    func setupCenterImage() {
-        self.addSubview(centerImage)
+    func setupStackView() {
+        self.addSubview(stackView)
         NSLayoutConstraint.activate([
-            centerImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 146),
-            centerImage.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            centerImage.heightAnchor.constraint(equalToConstant: CenterImageSizes.height.rawValue),
-            centerImage.widthAnchor.constraint(equalToConstant: CenterImageSizes.width.rawValue)
+            stackView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.8),
+            stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            stackView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.5)
         ])
+    }
+    
+    func setupStackSubviews() {
+        stackView.addArrangedSubview(centerImage)
+        stackView.addArrangedSubview(actionButton)
+    }
+    
+    func setupActionButton() {
+        NSLayoutConstraint.activate([
+            actionButton.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: 0.12),
+            actionButton.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 0.5)
+        ])
+    }
+    
+    func setupCenterImage() {
+        centerImage.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
     }
 }
