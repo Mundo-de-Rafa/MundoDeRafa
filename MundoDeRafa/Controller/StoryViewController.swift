@@ -9,22 +9,27 @@
 import UIKit
 
 class StoryViewController: UIViewController {
-
+    let backgroundView: UIImageView = {
+        let backView = UIImageView()
+        backView.image = UIImage(named: "Background")
+        backView.translatesAutoresizingMaskIntoConstraints = false
+        return backView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setUpBackgroundView()
     }
     
+    func setUpBackgroundView() {
+        view.addSubview(backgroundView)
+        NSLayoutConstraint.activate([
+            backgroundView.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroundView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            backgroundView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
-
+    
 }
