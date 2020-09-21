@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 extension UIColor {
 
     ///Used primarily for stories Texts and interface buttons
