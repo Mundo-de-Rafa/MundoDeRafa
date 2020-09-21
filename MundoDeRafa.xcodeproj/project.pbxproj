@@ -16,14 +16,14 @@
 		AE4193592512423A00CB0DC8 /* MundoDeRafaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4193582512423A00CB0DC8 /* MundoDeRafaUITests.swift */; };
 		AE730E6F25139FD90038F783 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE730E6E25139FD90038F783 /* AppColors.swift */; };
 		AE730E712513A90B0038F783 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE730E702513A90B0038F783 /* OnboardingViewController.swift */; };
-
-		AE730E732513AD950038F783 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = AE730E722513AD950038F783 /* Resources */; };
-		EF8DB9432514DC0300B719BC /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8DB9422514DC0300B719BC /* StoryCell.swift */; };
-		EF8DB9482514DC3300B719BC /* StoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8DB9472514DC3300B719BC /* StoryController.swift */; };
-
 		AE982D912514DB9000021DA2 /* HomeDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE982D902514DB9000021DA2 /* HomeDefaultView.swift */; };
 		AE982D992514DFB200021DA2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE982D982514DFB200021DA2 /* OnboardingView.swift */; };
-
+		AEF7B4FD2514FAD400740C95 /* StoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7B4FC2514FAD400740C95 /* StoriesViewController.swift */; };
+		AEF7B5082514FF6C00740C95 /* BalsamiqSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF7B5062514FF1000740C95 /* BalsamiqSans-Bold.ttf */; };
+		AEF7B5092514FF6C00740C95 /* BalsamiqSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF7B5052514FF1000740C95 /* BalsamiqSans-Regular.ttf */; };
+		AEF7B50A2514FF6C00740C95 /* KGNeatlyPrinted.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF7B5072514FF2B00740C95 /* KGNeatlyPrinted.ttf */; };
+		AEF7B50F2515027B00740C95 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7B50E2515027B00740C95 /* AppFonts.swift */; };
+		EF8DB9432514DC0300B719BC /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8DB9422514DC0300B719BC /* StoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,14 +59,14 @@
 		AE41935A2512423A00CB0DC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE730E6E25139FD90038F783 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		AE730E702513A90B0038F783 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-
-		AE730E722513AD950038F783 /* Resources */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Resources; path = MundoDeRafa/Resources; sourceTree = SOURCE_ROOT; };
-		EF8DB9422514DC0300B719BC /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
-		EF8DB9472514DC3300B719BC /* StoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryController.swift; sourceTree = "<group>"; };
-
 		AE982D902514DB9000021DA2 /* HomeDefaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDefaultView.swift; sourceTree = "<group>"; };
 		AE982D982514DFB200021DA2 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-
+		AEF7B4FC2514FAD400740C95 /* StoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesViewController.swift; sourceTree = "<group>"; };
+		AEF7B5052514FF1000740C95 /* BalsamiqSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalsamiqSans-Regular.ttf"; sourceTree = "<group>"; };
+		AEF7B5062514FF1000740C95 /* BalsamiqSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalsamiqSans-Bold.ttf"; sourceTree = "<group>"; };
+		AEF7B5072514FF2B00740C95 /* KGNeatlyPrinted.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KGNeatlyPrinted.ttf; sourceTree = "<group>"; };
+		AEF7B50E2515027B00740C95 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
+		EF8DB9422514DC0300B719BC /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +97,7 @@
 		AE38E2A42514F0210076B1A0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AEF7B5042514FEEC00740C95 /* Fonts */,
 				AE38E2A52514F02D0076B1A0 /* Audio */,
 			);
 			path = Resources;
@@ -169,7 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				AE730E702513A90B0038F783 /* OnboardingViewController.swift */,
-				EF8DB9472514DC3300B719BC /* StoryController.swift */,
+				AEF7B4FC2514FAD400740C95 /* StoriesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -188,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				AE730E6E25139FD90038F783 /* AppColors.swift */,
+				AEF7B50E2515027B00740C95 /* AppFonts.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -197,6 +199,16 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		AEF7B5042514FEEC00740C95 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AEF7B5062514FF1000740C95 /* BalsamiqSans-Bold.ttf */,
+				AEF7B5052514FF1000740C95 /* BalsamiqSans-Regular.ttf */,
+				AEF7B5072514FF2B00740C95 /* KGNeatlyPrinted.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,8 +316,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEF7B50A2514FF6C00740C95 /* KGNeatlyPrinted.ttf in Resources */,
+				AEF7B5092514FF6C00740C95 /* BalsamiqSans-Regular.ttf in Resources */,
 				AE38E2A62514F02D0076B1A0 /* Audio in Resources */,
 				AE4193432512423A00CB0DC8 /* LaunchScreen.storyboard in Resources */,
+				AEF7B5082514FF6C00740C95 /* BalsamiqSans-Bold.ttf in Resources */,
 				AE4193402512423A00CB0DC8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,9 +366,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEF7B4FD2514FAD400740C95 /* StoriesViewController.swift in Sources */,
 				AE730E6F25139FD90038F783 /* AppColors.swift in Sources */,
-				EF8DB9482514DC3300B719BC /* StoryController.swift in Sources */,
 				AE730E712513A90B0038F783 /* OnboardingViewController.swift in Sources */,
+				AEF7B50F2515027B00740C95 /* AppFonts.swift in Sources */,
 				AE4193372512423600CB0DC8 /* AppDelegate.swift in Sources */,
 				AE982D992514DFB200021DA2 /* OnboardingView.swift in Sources */,
 				AE982D912514DB9000021DA2 /* HomeDefaultView.swift in Sources */,

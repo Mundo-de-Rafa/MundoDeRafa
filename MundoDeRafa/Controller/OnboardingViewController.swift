@@ -9,12 +9,15 @@
 import UIKit
 
 class OnboardingViewController: UIViewController {
-    
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         view = OnboardingView(frame: UIScreen.main.bounds)
         // Do any additional setup after loading the view.
     }
     
-
 }

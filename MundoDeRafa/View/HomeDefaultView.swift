@@ -8,11 +8,22 @@
 
 import UIKit
 
+enum CenterImageSizes: CGFloat {
+    case height = 320
+    case width = 420
+}
+
 class HomeDefaultView: UIView {
 
-    private let backgroundView: UIImageView = {
+    let backgroundView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "Background")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    let centerImage: UIImageView = {
+       let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -20,6 +31,7 @@ class HomeDefaultView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupBackgroundView()
+        setupCenterImage()
     }
     
     required init?(coder: NSCoder) {
@@ -27,11 +39,22 @@ class HomeDefaultView: UIView {
     }
     
     func setupBackgroundView() {
-//        NSLayoutConstraint.activate([
-//            backgroundView.topAnchor.constraint(equalTo: self.topAnchor),
-//            backgroundView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-//            backgroundView.leftAnchor.constraint(equalTo: self.leftAnchor),
-//            backgroundView.rightAnchor.constraint(equalTo: self.rightAnchor)
-//        ])
+        self.addSubview(backgroundView)
+        NSLayoutConstraint.activate([
+            backgroundView.topAnchor.constraint(equalTo: self.topAnchor),
+            backgroundView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            backgroundView.leftAnchor.constraint(equalTo: self.leftAnchor),
+            backgroundView.rightAnchor.constraint(equalTo: self.rightAnchor)
+        ])
+    }
+    
+    func setupCenterImage() {
+        self.addSubview(centerImage)
+        NSLayoutConstraint.activate([
+            centerImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 146),
+            centerImage.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            centerImage.heightAnchor.constraint(equalToConstant: CenterImageSizes.height.rawValue),
+            centerImage.widthAnchor.constraint(equalToConstant: CenterImageSizes.width.rawValue)
+        ])
     }
 }
