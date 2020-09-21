@@ -15,14 +15,14 @@ enum CenterImageSizes: CGFloat {
 
 class HomeDefaultView: UIView {
 
-    var viewController: OnboardingViewController?
+    var viewController: HomeDefaultViewController?
     
     let stackView: UIStackView = {
         let stack = UIStackView()
         stack.alignment = .center
         stack.axis = .vertical
         stack.distribution = .fill
-        stack.spacing = 16
+        stack.spacing = 24
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -44,6 +44,7 @@ class HomeDefaultView: UIView {
     
     let actionButton: UIButton = {
         let button = UIButton()
+        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         button.backgroundColor = .backgroundWhite
         button.titleLabel?.font = UIFont.balsamiqB?.withSize(UIScreen.main.bounds.height * 0.036)
         button.setTitleColor(.primaryGreen, for: .normal)
@@ -70,6 +71,10 @@ class HomeDefaultView: UIView {
     
     func setButtonText(with text: String) {
         actionButton.setTitle(text, for: .normal)
+    }
+    
+    @objc func didTapButton() {
+        viewController?.didTapButton()
     }
     
     func setupBackgroundView() {

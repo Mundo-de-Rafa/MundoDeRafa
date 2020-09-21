@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OnboardingViewController: UIViewController {
+class OnboardingViewController: UIViewController, HomeDefaultViewController {
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -16,12 +16,17 @@ class OnboardingViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     override func loadView() {
         let onboardingView = OnboardingView()
+        onboardingView.viewController = self
         view = onboardingView
+    }
+    
+    func didTapButton() {
+        self.navigationController?.pushViewController(MainMenuViewController(), animated: true)
     }
     
 }
