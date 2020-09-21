@@ -20,6 +20,10 @@ class StoryCell: UICollectionViewCell {
     var cardLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.backgroundWhite
+        label.font = UIFont.balsamiqB
+        label.textAlignment = .center
+        label.numberOfLines = 2
+        label.font = label.font.withSize(30)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
