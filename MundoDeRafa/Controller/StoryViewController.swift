@@ -9,11 +9,24 @@
 import UIKit
 
 class StoryViewController: UIViewController, UICollectionViewDelegate {
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+            return .lightContent
+        }
+
     let backgroundView: UIImageView = {
         let backView = UIImageView()
         backView.image = UIImage(named: "Background")
         backView.translatesAutoresizingMaskIntoConstraints = false
         return backView
+    }()
+    
+    let backButton: UIButton = {
+        var button = UIButton()
+        button.setImage(UIImage(named: "back_button"), for: .normal)
+        button.addTarget(self, action: #selector(backButtonAction), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
     
     lazy var collectionView: UICollectionView = {
@@ -30,7 +43,13 @@ class StoryViewController: UIViewController, UICollectionViewDelegate {
         super.viewDidLoad()
         setUpBackgroundView()
         setUpCollectionView()
+        setUpButton()
     }
+    
+    @objc func backButtonAction() {
+//            let destination = 
+//            present(destination, animated: true, completion: nil)
+        }
     
     func setUpBackgroundView() {
         view.addSubview(backgroundView)
@@ -39,6 +58,16 @@ class StoryViewController: UIViewController, UICollectionViewDelegate {
             backgroundView.leftAnchor.constraint(equalTo: view.leftAnchor),
             backgroundView.rightAnchor.constraint(equalTo: view.rightAnchor),
             backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+    
+    func setUpButton() {
+        view.addSubview(backButton)
+        NSLayoutConstraint.activate([
+            backButton.widthAnchor.constraint(equalToConstant: 64),
+            backButton.heightAnchor.constraint(equalToConstant: 64),
+            backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 32),
+            backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 62)
         ])
     }
     
@@ -81,7 +110,8 @@ extension StoryViewController : UICollectionViewDataSource {
                                            bottom: 0,
                                            right: 72)
         layout.scrollDirection = .horizontal
-        layout.minimumInteritemSpacing = 42
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 42
         layout.itemSize = CGSize(width:cellWidthConstant , height: cellHeightConstant)
         
         return layout
