@@ -9,6 +9,9 @@
 import UIKit
 
 class NextStoryView: UIView {
+    private var regularConstraints: [NSLayoutConstraint] = []
+
+    
     lazy var congratulationsImage : UIImageView = {
         let imageV = UIImageView()
         imageV.image = UIImage(named: "congratulationsLabel")
@@ -53,22 +56,60 @@ class NextStoryView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
-        setupComponents()
+        setupCongratulationsImage()
+        //setupComponents()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupComponents() {
+    func setupCongratulationsImage() {
         self.addSubview(congratulationsImage)
-        NSLayoutConstraint.activate([
+        
+        // constrants for ipad
+        regularConstraints.append(contentsOf: [
             congratulationsImage.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             congratulationsImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 58),
             congratulationsImage.heightAnchor.constraint(equalToConstant: 163),
             congratulationsImage.widthAnchor.constraint(equalToConstant: 365)
         ])
         
+        NSLayoutConstraint.activate([
+            congratulationsImage.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            congratulationsImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 58),
+            congratulationsImage.heightAnchor.constraint(equalToConstant: 163),
+            congratulationsImage.widthAnchor.constraint(equalToConstant: 365)
+        ])
+    }
+    
+//    func layoutTrait(traitCollection:UITraitCollection) {
+////        if (!sharedConstraints[0].isActive) {
+////           // activating shared constraints
+////           NSLayoutConstraint.activate(sharedConstraints)
+////        }
+//        if traitCollection.horizontalSizeClass == .compact && traitCollection.verticalSizeClass == .regular {
+//            if regularConstraints.count > 0 && regularConstraints[0].isActive {
+//                NSLayoutConstraint.deactivate(regularConstraints)
+//            }
+//            // ativando as constantes para dispositivos compactos.
+//            //NSLayoutConstraint.activate(compactConstraints)
+//        }
+//        // ativando as constantes para dispositivos regulares
+//        else {
+////            if compactConstraints.count > 0 && compactConstraints[0].isActive {
+////                NSLayoutConstraint.deactivate(compactConstraints)
+////            }
+//            // activating regular constraints
+//            NSLayoutConstraint.activate(regularConstraints)
+//        }
+//    }
+    
+    func layoutTrait(traitCollection:UITraitCollection) {
+        // ipad 
+    }
+    
+    private func setupComponents() {
         self.addSubview(buttonRepet)
         NSLayoutConstraint.activate([
             buttonRepet.centerXAnchor.constraint(equalTo: self.centerXAnchor),
