@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77E33E9C2518E5E700BC41F9 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E33E9B2518E5E700BC41F9 /* RoundButton.swift */; };
+		77E33EA22518E67400BC41F9 /* NextStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E33EA12518E67400BC41F9 /* NextStoryView.swift */; };
+		77E33EAB2518E7DA00BC41F9 /* PresenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E33EAA2518E7DA00BC41F9 /* PresenterViewController.swift */; };
+		77E33EB32518E80500BC41F9 /* NextStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E33EB22518E80500BC41F9 /* NextStoryViewController.swift */; };
 		AE38E2A62514F02D0076B1A0 /* Audio in Resources */ = {isa = PBXBuildFile; fileRef = AE38E2A52514F02D0076B1A0 /* Audio */; };
 		AE4193372512423600CB0DC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4193362512423600CB0DC8 /* AppDelegate.swift */; };
 		AE4193392512423600CB0DC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4193382512423600CB0DC8 /* SceneDelegate.swift */; };
@@ -21,7 +25,8 @@
 		AE730E712513A90B0038F783 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE730E702513A90B0038F783 /* OnboardingViewController.swift */; };
 		AE982D912514DB9000021DA2 /* HomeDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE982D902514DB9000021DA2 /* HomeDefaultView.swift */; };
 		AE982D992514DFB200021DA2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE982D982514DFB200021DA2 /* OnboardingView.swift */; };
-		AEF7B4FD2514FAD400740C95 /* StoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7B4FC2514FAD400740C95 /* StoriesViewController.swift */; };
+
+		EF1912CA2517F947005A74D5 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1912C92517F947005A74D5 /* StoryViewController.swift */; };
 		AEF7B5082514FF6C00740C95 /* BalsamiqSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF7B5062514FF1000740C95 /* BalsamiqSans-Bold.ttf */; };
 		AEF7B5092514FF6C00740C95 /* BalsamiqSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF7B5052514FF1000740C95 /* BalsamiqSans-Regular.ttf */; };
 		AEF7B50A2514FF6C00740C95 /* KGNeatlyPrinted.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF7B5072514FF2B00740C95 /* KGNeatlyPrinted.ttf */; };
@@ -47,6 +52,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		77E33E9B2518E5E700BC41F9 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		77E33EA12518E67400BC41F9 /* NextStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStoryView.swift; sourceTree = "<group>"; };
+		77E33EAA2518E7DA00BC41F9 /* PresenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterViewController.swift; sourceTree = "<group>"; };
+		77E33EB22518E80500BC41F9 /* NextStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStoryViewController.swift; sourceTree = "<group>"; };
 		AE38E2A52514F02D0076B1A0 /* Audio */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Audio; sourceTree = "<group>"; };
 		AE4193332512423600CB0DC8 /* Mundo de Rafa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mundo de Rafa.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE4193362512423600CB0DC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,7 +76,7 @@
 		AE730E702513A90B0038F783 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		AE982D902514DB9000021DA2 /* HomeDefaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDefaultView.swift; sourceTree = "<group>"; };
 		AE982D982514DFB200021DA2 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		AEF7B4FC2514FAD400740C95 /* StoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesViewController.swift; sourceTree = "<group>"; };
+		EF1912C92517F947005A74D5 /* StoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
 		AEF7B5052514FF1000740C95 /* BalsamiqSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalsamiqSans-Regular.ttf"; sourceTree = "<group>"; };
 		AEF7B5062514FF1000740C95 /* BalsamiqSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalsamiqSans-Bold.ttf"; sourceTree = "<group>"; };
 		AEF7B5072514FF2B00740C95 /* KGNeatlyPrinted.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KGNeatlyPrinted.ttf; sourceTree = "<group>"; };
@@ -100,6 +109,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		77E33EA02518E65C00BC41F9 /* NextStoryView */ = {
+			isa = PBXGroup;
+			children = (
+				77E33EA12518E67400BC41F9 /* NextStoryView.swift */,
+			);
+			path = NextStoryView;
+			sourceTree = "<group>";
+		};
+		77E33EA92518E70800BC41F9 /* NextStory */ = {
+			isa = PBXGroup;
+			children = (
+				77E33EAA2518E7DA00BC41F9 /* PresenterViewController.swift */,
+				77E33EB22518E80500BC41F9 /* NextStoryViewController.swift */,
+			);
+			path = NextStory;
+			sourceTree = "<group>";
+		};
 		AE38E2A42514F0210076B1A0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +191,7 @@
 		AE41936825124C1500CB0DC8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				77E33EA02518E65C00BC41F9 /* NextStoryView */,
 				AE982D902514DB9000021DA2 /* HomeDefaultView.swift */,
 				AE982D982514DFB200021DA2 /* OnboardingView.swift */,
 				AE41E09B2518E914008F52F5 /* MainMenuView.swift */,
@@ -177,9 +204,11 @@
 		AE41936925124C1B00CB0DC8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				77E33EA92518E70800BC41F9 /* NextStory */,
 				AE730E702513A90B0038F783 /* OnboardingViewController.swift */,
 				AE41E0902518E37F008F52F5 /* MainMenuViewController.swift */,
 				AEF7B4FC2514FAD400740C95 /* StoriesViewController.swift */,
+				EF1912C92517F947005A74D5 /* StoryViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -207,6 +236,7 @@
 			children = (
 				AE730E6E25139FD90038F783 /* AppColors.swift */,
 				AEF7B50E2515027B00740C95 /* AppFonts.swift */,
+				77E33E9B2518E5E700BC41F9 /* RoundButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -386,12 +416,23 @@
 				AEF7B4FD2514FAD400740C95 /* StoriesViewController.swift in Sources */,
 				AE730E6F25139FD90038F783 /* AppColors.swift in Sources */,
 				AE730E712513A90B0038F783 /* OnboardingViewController.swift in Sources */,
+
+
+				EF1912CA2517F947005A74D5 /* StoryViewController.swift in Sources */,
+
+
+				77E33EB32518E80500BC41F9 /* NextStoryViewController.swift in Sources */,
+				77E33EAB2518E7DA00BC41F9 /* PresenterViewController.swift in Sources */,
+				77E33EA22518E67400BC41F9 /* NextStoryView.swift in Sources */,
+
 				AEF7B50F2515027B00740C95 /* AppFonts.swift in Sources */,
+
 				AE4193372512423600CB0DC8 /* AppDelegate.swift in Sources */,
 				AE982D992514DFB200021DA2 /* OnboardingView.swift in Sources */,
 				AE41E09C2518E914008F52F5 /* MainMenuView.swift in Sources */,
 				AE41E0912518E37F008F52F5 /* MainMenuViewController.swift in Sources */,
 				AE41E0972518E6A6008F52F5 /* HomeDefaultViewController.swift in Sources */,
+				77E33E9C2518E5E700BC41F9 /* RoundButton.swift in Sources */,
 				AE982D912514DB9000021DA2 /* HomeDefaultView.swift in Sources */,
 				AE4193392512423600CB0DC8 /* SceneDelegate.swift in Sources */,
 				EF8DB9432514DC0300B719BC /* StoryCell.swift in Sources */,
