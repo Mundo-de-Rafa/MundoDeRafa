@@ -14,13 +14,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let didFirstLaunch = UserDefaults.standard.bool(forKey: "didFirstLaunch")
         window = UIWindow(frame: UIScreen.main.bounds)
         let navigationController = UINavigationController()
-        let rootViewController = OnboardingViewController()
+        let rootViewController = didFirstLaunch ? MainMenuViewController() : OnboardingViewController() 
         navigationController.viewControllers = [rootViewController]
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+        
+        UserDefaults.standard.setValue(true, forKey: "didFirstLaunch")
         return true
     }
 

@@ -20,16 +20,20 @@ class MainMenuView: HomeDefaultView {
     
     let soundButton: UIButton = {
         let button = UIButton()
+        let isSoundOn = UserDefaults.standard.bool(forKey: "isSoundOn")
         button.imageView?.contentMode = .scaleAspectFit
-        button.setImage(UIImage(named: "sound_on_back_white"), for: .normal)
+        button.setImage(isSoundOn ? UIImage(named: "sound_on_back_white"):
+                                    UIImage(named: "sound_off_back_white"), for: .normal)
         button.addTarget(self, action: #selector(soundButtonTapped), for: .touchUpInside)
         return button
     }()
     
     let musicButton: UIButton = {
         let button = UIButton()
+        let isMusicOn = UserDefaults.standard.bool(forKey: "isMusicOn")
         button.imageView?.contentMode = .scaleAspectFit
-        button.setImage(UIImage(named: "music_on_back_white"), for: .normal)
+        button.setImage(isMusicOn ? UIImage(named: "music_on_back_white"):
+                                    UIImage(named: "music_off_back_white"), for: .normal)
         button.addTarget(self, action: #selector(musicButtonTapped), for: .touchUpInside)
         return button
     }()

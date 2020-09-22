@@ -19,6 +19,7 @@ class MainMenuViewController: UIViewController, HomeDefaultViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
     }
 
     override func loadView() {
