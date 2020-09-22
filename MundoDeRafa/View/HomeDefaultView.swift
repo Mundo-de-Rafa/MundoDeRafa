@@ -42,8 +42,8 @@ class HomeDefaultView: UIView {
         return imageView
     }()
     
-    let actionButton: UIButton = {
-        let button = UIButton()
+    let actionButton: RoundButton = {
+        let button = RoundButton()
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         button.backgroundColor = .backgroundWhite
         button.titleLabel?.font = UIFont.balsamiqB?.withSize(UIScreen.main.bounds.height * 0.036)

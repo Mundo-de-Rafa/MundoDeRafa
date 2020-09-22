@@ -22,7 +22,7 @@ class MainMenuView: HomeDefaultView {
         let button = UIButton()
         button.imageView?.contentMode = .scaleAspectFit
         button.setImage(UIImage(named: "sound_on_back_white"), for: .normal)
-        button.setImage(UIImage(named: "sound_off_back_white"), for: .disabled)
+        button.addTarget(self, action: #selector(soundButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -30,6 +30,7 @@ class MainMenuView: HomeDefaultView {
         let button = UIButton()
         button.imageView?.contentMode = .scaleAspectFit
         button.setImage(UIImage(named: "music_on_back_white"), for: .normal)
+        button.addTarget(self, action: #selector(musicButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -54,5 +55,17 @@ class MainMenuView: HomeDefaultView {
             audioButtonsStack.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.1),
             audioButtonsStack.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.16)
         ])
+    }
+    
+    @objc func soundButtonTapped() {
+        if let menuViewController = viewController as? MainMenuViewController {
+            menuViewController.switchSound()
+        }
+    }
+    
+    @objc func musicButtonTapped() {
+        if let menuViewController = viewController as? MainMenuViewController {
+            menuViewController.switchMusic()
+        }
     }
 }

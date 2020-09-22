@@ -16,6 +16,7 @@ class StoryViewController: UIViewController, UICollectionViewDelegate {
 
     let backgroundView: UIImageView = {
         let backView = UIImageView()
+        backView.contentMode = .scaleAspectFill
         backView.image = UIImage(named: "Background")
         backView.translatesAutoresizingMaskIntoConstraints = false
         return backView
@@ -47,7 +48,8 @@ class StoryViewController: UIViewController, UICollectionViewDelegate {
     }
     
     @objc func backButtonAction() {
-//            let destination = 
+        self.navigationController?.popViewController(animated: true)
+//            let destination =
 //            present(destination, animated: true, completion: nil)
         }
     
