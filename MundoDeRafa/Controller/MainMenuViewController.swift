@@ -10,8 +10,8 @@ import UIKit
 
 class MainMenuViewController: UIViewController, HomeDefaultViewController {
 
-    var isMusicOn: Bool = true
-    var isSoundOn: Bool = true
+    var isMusicOn: Bool = UserDefaults.standard.bool(forKey: "isMusicOn")
+    var isSoundOn: Bool = UserDefaults.standard.bool(forKey: "isSoundOn")
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
@@ -37,7 +37,7 @@ class MainMenuViewController: UIViewController, HomeDefaultViewController {
         guard let view = view as? MainMenuView else { return }
         view.soundButton.setImage(isSoundOn ? UIImage(named: "sound_on_back_white"):
                                               UIImage(named: "sound_off_back_white"), for: .normal)
-        print("Switch sound on to\(isSoundOn)")
+        print("Switch sound on to \(isSoundOn)")
         UserDefaults.standard.setValue(isSoundOn, forKey: "isSoundOn")
     }
     
