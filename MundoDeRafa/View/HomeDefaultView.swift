@@ -75,6 +75,7 @@ class HomeDefaultView: UIView {
     
     @objc func didTapButton() {
         viewController?.didTapButton()
+        actionButton.playSoundIfNeeded(of: .click)
     }
     
     func setupBackgroundView() {

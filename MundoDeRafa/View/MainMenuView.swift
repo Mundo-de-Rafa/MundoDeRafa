@@ -64,12 +64,14 @@ class MainMenuView: HomeDefaultView {
     @objc func soundButtonTapped() {
         if let menuViewController = viewController as? MainMenuViewController {
             menuViewController.switchSound()
+            soundButton.playSoundIfNeeded(of: .click)
         }
     }
     
     @objc func musicButtonTapped() {
         if let menuViewController = viewController as? MainMenuViewController {
             menuViewController.switchMusic()
+            musicButton.playSoundIfNeeded(of: .click)
         }
     }
 }
