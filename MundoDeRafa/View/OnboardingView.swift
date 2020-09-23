@@ -13,7 +13,8 @@ class OnboardingView: HomeDefaultView {
     lazy var centerLabel: UILabel = {
         let label = UILabel()
         label.text = "Olá! Meu nome é Rafa. Venha comigo conhecer minha rotina!"
-        label.font = .balsamicR
+        label.font = UIFont.balsamicR?.withSize(UIScreen.main.bounds.height * 0.036)
+        label.adjustsFontSizeToFitWidth = true
         label.textColor = .backgroundWhite
         label.numberOfLines = 2
         label.textAlignment = .center
@@ -23,7 +24,8 @@ class OnboardingView: HomeDefaultView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        centerImage.image = UIImage(named: "rafa e chao")
+        setCenterImage(with: UIImage(named: "rafa e chao"))
+        setButtonText(with: "Próximo")
         setupCenterLabel()
     }
     
@@ -31,13 +33,14 @@ class OnboardingView: HomeDefaultView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func setupStackSubviews() {
+        super.setupStackSubviews()
+        stackView.insertArrangedSubview(centerLabel, at: 1)
+    }
+    
     func setupCenterLabel() {
-        self.addSubview(centerLabel)
         NSLayoutConstraint.activate([
-            centerLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            centerLabel.topAnchor.constraint(equalTo: centerImage.bottomAnchor, constant: 24),
-            centerLabel.heightAnchor.constraint(equalToConstant: 80),
-            centerLabel.widthAnchor.constraint(equalToConstant: 494)
+            centerLabel.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.1)
         ])
     }
 }
