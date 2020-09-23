@@ -50,7 +50,7 @@ class StoryViewController: UIViewController, UICollectionViewDelegate {
     @objc func backButtonAction() {
         self.navigationController?.popViewController(animated: true)
         backButton.playSoundIfNeeded(of: .click)
-        }
+    }
     
     func setUpBackgroundView() {
         view.addSubview(backgroundView)

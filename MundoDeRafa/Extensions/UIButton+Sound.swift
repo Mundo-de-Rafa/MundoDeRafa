@@ -12,8 +12,6 @@ import UIKit
 
 enum ButtonSoundType: String {
     case click = "clickButton"
-    case finishScene = "finishScene"
-    case finishTask = "finishTask"
 }
 
 var audioPlayer: AVAudioPlayer!
