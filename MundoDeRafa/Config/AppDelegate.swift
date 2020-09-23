@@ -22,6 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
+        MusicHelper.shared.playBackgroundMusicIfNeeded()
+        if #available(iOS 13.0, *) {
+            return true
+        }
         UserDefaults.standard.setValue(true, forKey: "didFirstLaunch")
         
         configureForTests()
