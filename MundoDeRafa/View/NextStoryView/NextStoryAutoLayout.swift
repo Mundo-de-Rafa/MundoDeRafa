@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import UIKit
+
+extension NextStoryViewController {
+    var compactConstraints: [NSLayoutConstraint] = []
+    var regularConstraints: [NSLayoutConstraint] = []
+    var sharedConstraints: [NSLayoutConstraint] = []
+}
