@@ -77,12 +77,8 @@ class StoryView: UIView {
     }
     
     @objc func didTapBackButton() {
-<<<<<<< HEAD
-        viewController?.backButtonAction()     
-=======
         viewController?.backButtonAction()
         backButton.playSoundIfNeeded(of: .click)
->>>>>>> e294a11718e6e4e987635bbf43f90b81f6c34a64
     }
     
     func setUpBackgroundView() {
