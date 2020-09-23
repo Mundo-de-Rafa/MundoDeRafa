@@ -49,6 +49,7 @@
 		AEF7B50A2514FF6C00740C95 /* KGNeatlyPrinted.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF7B5072514FF2B00740C95 /* KGNeatlyPrinted.ttf */; };
 		AEF7B50F2515027B00740C95 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7B50E2515027B00740C95 /* AppFonts.swift */; };
 		EF1912CA2517F947005A74D5 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1912C92517F947005A74D5 /* StoryViewController.swift */; };
+		EF576893251B03FC00778D7F /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF576892251B03FC00778D7F /* StoryView.swift */; };
 		EF8DB9432514DC0300B719BC /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8DB9422514DC0300B719BC /* StoryCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +119,7 @@
 		AEF7B5072514FF2B00740C95 /* KGNeatlyPrinted.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KGNeatlyPrinted.ttf; sourceTree = "<group>"; };
 		AEF7B50E2515027B00740C95 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
 		EF1912C92517F947005A74D5 /* StoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
+		EF576892251B03FC00778D7F /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
 		EF8DB9422514DC0300B719BC /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -300,6 +302,7 @@
 				AE41E09B2518E914008F52F5 /* MainMenuView.swift */,
 				AE4193412512423A00CB0DC8 /* LaunchScreen.storyboard */,
 				EF8DB9422514DC0300B719BC /* StoryCell.swift */,
+				EF576892251B03FC00778D7F /* StoryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				AE2D8B17251B76C200C93963 /* UIButton+Sound.swift in Sources */,
 				AE41E0972518E6A6008F52F5 /* HomeDefaultViewController.swift in Sources */,
 				77E33E9C2518E5E700BC41F9 /* RoundButton.swift in Sources */,
+				EF576893251B03FC00778D7F /* StoryView.swift in Sources */,
 				AE982D912514DB9000021DA2 /* HomeDefaultView.swift in Sources */,
 				AE4193392512423600CB0DC8 /* SceneDelegate.swift in Sources */,
 				EF8DB9432514DC0300B719BC /* StoryCell.swift in Sources */,
