@@ -13,6 +13,7 @@ class StoriesViewController: UIViewController {
     lazy var backgroundView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "Background")
+        imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()

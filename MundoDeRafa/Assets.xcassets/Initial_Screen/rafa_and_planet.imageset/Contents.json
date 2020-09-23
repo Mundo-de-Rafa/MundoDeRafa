@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "planeta rafa e texto.png",
+      "filename" : "rafa_and_planet.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "planeta rafa e texto@2x.png",
+      "filename" : "rafa_and_planet@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "planeta rafa e texto@3x.png",
+      "filename" : "rafa_and_planet@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

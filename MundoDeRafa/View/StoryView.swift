@@ -25,7 +25,11 @@ enum CellConstants {
 }
 
 class StoryView: UIView {
+
+    
     var viewController: StoryViewController?
+   
+
     var viewLayout = ViewLayout.iPad
     let proportion : CGFloat = 1/2
     let buttonProportion: CGFloat = 15/10
@@ -73,7 +77,12 @@ class StoryView: UIView {
     }
     
     @objc func didTapBackButton() {
+<<<<<<< HEAD
         viewController?.backButtonAction()     
+=======
+        viewController?.backButtonAction()
+        backButton.playSoundIfNeeded(of: .click)
+>>>>>>> e294a11718e6e4e987635bbf43f90b81f6c34a64
     }
     
     func setUpBackgroundView() {

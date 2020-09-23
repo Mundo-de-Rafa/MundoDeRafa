@@ -26,11 +26,10 @@ class StoryViewController: UIViewController, UICollectionViewDelegate {
         super.viewDidLoad()
 
     }
-      
+    
     func backButtonAction() {
-        print("a")
-//        let destination = HomeDefaultView()
-//        present(destination, animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
+
     }
 }
 
