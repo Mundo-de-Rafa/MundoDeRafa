@@ -25,6 +25,8 @@ enum CellConstants {
 }
 
 class StoryView: UIView {
+    
+    var viewController: StoryViewController?
    
     var viewLayout = ViewLayout.iPad
     let proportion : CGFloat = 1/2
@@ -44,6 +46,7 @@ class StoryView: UIView {
     let backButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "back_button"), for: .normal)
+        button.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -69,6 +72,11 @@ class StoryView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func didTapBackButton() {
+        viewController?.backButtonAction()
+        backButton.playSoundIfNeeded(of: .click)
     }
     
     func setUpBackgroundView() {
