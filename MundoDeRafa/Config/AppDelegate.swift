@@ -16,15 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let didFirstLaunch = UserDefaults.standard.bool(forKey: "didFirstLaunch")
         window = UIWindow(frame: UIScreen.main.bounds)
-<<<<<<< HEAD
-        let rootViewController = PresenterViewController()
-        window?.rootViewController = rootViewController
-=======
+        
         let navigationController = UINavigationController()
-        let rootViewController = didFirstLaunch ? MainMenuViewController() : OnboardingViewController() 
+        let rootViewController = didFirstLaunch ? PresenterViewController() : OnboardingViewController()
         navigationController.viewControllers = [rootViewController]
         window?.rootViewController = navigationController
->>>>>>> develop
         window?.makeKeyAndVisible()
         
         UserDefaults.standard.setValue(true, forKey: "didFirstLaunch")

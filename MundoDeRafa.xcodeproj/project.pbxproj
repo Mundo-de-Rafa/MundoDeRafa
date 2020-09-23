@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		77BFD3BC251B71710049182F /* NextStoryAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BFD3BB251B71710049182F /* NextStoryAutoLayout.swift */; };
 		77E33E9C2518E5E700BC41F9 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E33E9B2518E5E700BC41F9 /* RoundButton.swift */; };
 		77E33EA22518E67400BC41F9 /* NextStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E33EA12518E67400BC41F9 /* NextStoryView.swift */; };
 		77E33EAB2518E7DA00BC41F9 /* PresenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E33EAA2518E7DA00BC41F9 /* PresenterViewController.swift */; };
@@ -72,7 +71,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		77BFD3BB251B71710049182F /* NextStoryAutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStoryAutoLayout.swift; sourceTree = "<group>"; };
 		77E33E9B2518E5E700BC41F9 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		77E33EA12518E67400BC41F9 /* NextStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStoryView.swift; sourceTree = "<group>"; };
 		77E33EAA2518E7DA00BC41F9 /* PresenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterViewController.swift; sourceTree = "<group>"; };
@@ -154,7 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				77E33EA12518E67400BC41F9 /* NextStoryView.swift */,
-				77BFD3BB251B71710049182F /* NextStoryAutoLayout.swift */,
 			);
 			path = NextStoryView;
 			sourceTree = "<group>";
@@ -540,7 +537,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE730E6F25139FD90038F783 /* AppColors.swift in Sources */,
-				77BFD3BC251B71710049182F /* NextStoryAutoLayout.swift in Sources */,
 				AE730E712513A90B0038F783 /* OnboardingViewController.swift in Sources */,
 				EF1912CA2517F947005A74D5 /* StoryViewController.swift in Sources */,
 				77E33EB32518E80500BC41F9 /* NextStoryViewController.swift in Sources */,

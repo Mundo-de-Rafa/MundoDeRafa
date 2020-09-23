@@ -26,30 +26,3 @@ class NextStoryViewController: UIViewController {
         view = viewNextstoryView
     }
 }
-
-class StoryViewController: UIViewController, UICollectionViewDelegate {
-    
-
-     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // activate shared constraints
-        NSLayoutConstraint.activate(sharedConstraints)
-        // Captures the current traitCollection and sends it to the layoutTrait method.
-        layoutTrait(traitCollection: UIScreen.main.traitCollection)
-    }
-    func layoutTrait(traitCollection:UITraitCollection) {
-        // Ipad constraints
-        if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
-            NSLayoutConstraint.deactivate(compactConstraints)
-            NSLayoutConstraint.activate(regularConstraints)
-            
-        }
-        // Iphone constraints
-        else {
-            NSLayoutConstraint.deactivate(regularConstraints)
-            NSLayoutConstraint.activate(compactConstraints)
-        }
-    }
-}
