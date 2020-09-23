@@ -22,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
+        if #available(iOS 13.0, *) {
+            return true
+        }
         UserDefaults.standard.setValue(true, forKey: "didFirstLaunch")
         
         configureForTests()
