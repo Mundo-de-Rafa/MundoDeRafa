@@ -17,6 +17,8 @@ extension UIColor {
     ///Stories buttons
     static let primaryGreen = UIColor(red: 4/255, green: 140/255, blue: 122/255, alpha: 1)
     ///Used for interface texts and modal backgrounds
+    static let progressBarGreen = UIColor(red: 120/255, green: 211/255, blue: 197/255, alpha: 1)
+    
     static let backgroundWhite = UIColor(red: 251/255, green: 255/255, blue: 254/255, alpha: 1)
     
 }

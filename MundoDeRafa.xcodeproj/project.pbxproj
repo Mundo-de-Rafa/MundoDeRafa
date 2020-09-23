@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38A61B7F2518CE5700B48E11 /* ScenesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A61B7E2518CE5700B48E11 /* ScenesViewController.swift */; };
+		38A61B8D251906F500B48E11 /* BalsamiqSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38A61B8C251906F500B48E11 /* BalsamiqSans-Bold.ttf */; };
+		38A61B92251A1FDA00B48E11 /* SceneCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A61B91251A1FDA00B48E11 /* SceneCollectionViewCell.swift */; };
+		38A61B97251B78A600B48E11 /* SceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A61B96251B78A600B48E11 /* SceneModel.swift */; };
 		AE38E2A62514F02D0076B1A0 /* Audio in Resources */ = {isa = PBXBuildFile; fileRef = AE38E2A52514F02D0076B1A0 /* Audio */; };
 		AE4193372512423600CB0DC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4193362512423600CB0DC8 /* AppDelegate.swift */; };
 		AE4193392512423600CB0DC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4193382512423600CB0DC8 /* SceneDelegate.swift */; };
@@ -16,14 +20,10 @@
 		AE4193592512423A00CB0DC8 /* MundoDeRafaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4193582512423A00CB0DC8 /* MundoDeRafaUITests.swift */; };
 		AE730E6F25139FD90038F783 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE730E6E25139FD90038F783 /* AppColors.swift */; };
 		AE730E712513A90B0038F783 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE730E702513A90B0038F783 /* OnboardingViewController.swift */; };
-
-		AE730E732513AD950038F783 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = AE730E722513AD950038F783 /* Resources */; };
-		EF8DB9432514DC0300B719BC /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8DB9422514DC0300B719BC /* StoryCell.swift */; };
-		EF8DB9482514DC3300B719BC /* StoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8DB9472514DC3300B719BC /* StoryController.swift */; };
-
 		AE982D912514DB9000021DA2 /* HomeDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE982D902514DB9000021DA2 /* HomeDefaultView.swift */; };
 		AE982D992514DFB200021DA2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE982D982514DFB200021DA2 /* OnboardingView.swift */; };
-
+		EF8DB9432514DC0300B719BC /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8DB9422514DC0300B719BC /* StoryCell.swift */; };
+		EF8DB9482514DC3300B719BC /* StoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8DB9472514DC3300B719BC /* StoryController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		38A61B7E2518CE5700B48E11 /* ScenesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenesViewController.swift; sourceTree = "<group>"; };
+		38A61B8C251906F500B48E11 /* BalsamiqSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "BalsamiqSans-Bold.ttf"; path = "../../../Downloads/Balsamiq_Sans/BalsamiqSans-Bold.ttf"; sourceTree = "<group>"; };
+		38A61B91251A1FDA00B48E11 /* SceneCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCollectionViewCell.swift; sourceTree = "<group>"; };
+		38A61B96251B78A600B48E11 /* SceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneModel.swift; path = MundoDeRafa/View/SceneModel.swift; sourceTree = SOURCE_ROOT; };
 		AE38E2A52514F02D0076B1A0 /* Audio */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Audio; sourceTree = "<group>"; };
 		AE4193332512423600CB0DC8 /* Mundo de Rafa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mundo de Rafa.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE4193362512423600CB0DC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,14 +63,10 @@
 		AE41935A2512423A00CB0DC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE730E6E25139FD90038F783 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		AE730E702513A90B0038F783 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-
-		AE730E722513AD950038F783 /* Resources */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Resources; path = MundoDeRafa/Resources; sourceTree = SOURCE_ROOT; };
-		EF8DB9422514DC0300B719BC /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
-		EF8DB9472514DC3300B719BC /* StoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryController.swift; sourceTree = "<group>"; };
-
 		AE982D902514DB9000021DA2 /* HomeDefaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDefaultView.swift; sourceTree = "<group>"; };
 		AE982D982514DFB200021DA2 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-
+		EF8DB9422514DC0300B719BC /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
+		EF8DB9472514DC3300B719BC /* StoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +105,7 @@
 		AE41932A2512423600CB0DC8 = {
 			isa = PBXGroup;
 			children = (
+				38A61B8C251906F500B48E11 /* BalsamiqSans-Bold.ttf */,
 				AE4193352512423600CB0DC8 /* MundoDeRafa */,
 				AE41934C2512423A00CB0DC8 /* MundoDeRafaTests */,
 				AE4193572512423A00CB0DC8 /* MundoDeRafaUITests */,
@@ -161,6 +162,7 @@
 				AE982D982514DFB200021DA2 /* OnboardingView.swift */,
 				AE4193412512423A00CB0DC8 /* LaunchScreen.storyboard */,
 				EF8DB9422514DC0300B719BC /* StoryCell.swift */,
+				38A61B91251A1FDA00B48E11 /* SceneCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -170,6 +172,7 @@
 			children = (
 				AE730E702513A90B0038F783 /* OnboardingViewController.swift */,
 				EF8DB9472514DC3300B719BC /* StoryController.swift */,
+				38A61B7E2518CE5700B48E11 /* ScenesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 		AE982D8F2514DA6D00021DA2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				38A61B96251B78A600B48E11 /* SceneModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -306,6 +310,7 @@
 			files = (
 				AE38E2A62514F02D0076B1A0 /* Audio in Resources */,
 				AE4193432512423A00CB0DC8 /* LaunchScreen.storyboard in Resources */,
+				38A61B8D251906F500B48E11 /* BalsamiqSans-Bold.ttf in Resources */,
 				AE4193402512423A00CB0DC8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,7 +356,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38A61B97251B78A600B48E11 /* SceneModel.swift in Sources */,
 				AE730E6F25139FD90038F783 /* AppColors.swift in Sources */,
+				38A61B7F2518CE5700B48E11 /* ScenesViewController.swift in Sources */,
 				EF8DB9482514DC3300B719BC /* StoryController.swift in Sources */,
 				AE730E712513A90B0038F783 /* OnboardingViewController.swift in Sources */,
 				AE4193372512423600CB0DC8 /* AppDelegate.swift in Sources */,
@@ -359,6 +366,7 @@
 				AE982D912514DB9000021DA2 /* HomeDefaultView.swift in Sources */,
 				AE4193392512423600CB0DC8 /* SceneDelegate.swift in Sources */,
 				EF8DB9432514DC0300B719BC /* StoryCell.swift in Sources */,
+				38A61B92251A1FDA00B48E11 /* SceneCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
