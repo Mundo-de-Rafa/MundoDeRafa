@@ -25,10 +25,10 @@ extension UIButton: AVAudioPlayerDelegate {
                 audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
                 audioPlayer.delegate = self
                 audioPlayer.prepareToPlay()
+                audioPlayer.play()
             } catch {
                 print("Unable to play button sound \(error.localizedDescription)")
             }
-            audioPlayer.play()
         } else {
             print("Unable to find audio file")
         }

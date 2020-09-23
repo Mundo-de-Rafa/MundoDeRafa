@@ -24,6 +24,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+        
+        UserDefaults.standard.setValue(true, forKey: "didFirstLaunch")
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

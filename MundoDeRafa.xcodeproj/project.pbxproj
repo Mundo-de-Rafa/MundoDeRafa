@@ -40,6 +40,7 @@
 		AE41E0912518E37F008F52F5 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE41E0902518E37F008F52F5 /* MainMenuViewController.swift */; };
 		AE41E0972518E6A6008F52F5 /* HomeDefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE41E0962518E6A6008F52F5 /* HomeDefaultViewController.swift */; };
 		AE41E09C2518E914008F52F5 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE41E09B2518E914008F52F5 /* MainMenuView.swift */; };
+		AE588CE2251B935900A2BF74 /* MusicHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE588CE1251B935900A2BF74 /* MusicHelper.swift */; };
 		AE730E6F25139FD90038F783 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE730E6E25139FD90038F783 /* AppColors.swift */; };
 		AE730E712513A90B0038F783 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE730E702513A90B0038F783 /* OnboardingViewController.swift */; };
 		AE982D912514DB9000021DA2 /* HomeDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE982D902514DB9000021DA2 /* HomeDefaultView.swift */; };
@@ -110,6 +111,7 @@
 		AE41E0902518E37F008F52F5 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		AE41E0962518E6A6008F52F5 /* HomeDefaultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDefaultViewController.swift; sourceTree = "<group>"; };
 		AE41E09B2518E914008F52F5 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		AE588CE1251B935900A2BF74 /* MusicHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicHelper.swift; sourceTree = "<group>"; };
 		AE730E6E25139FD90038F783 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		AE730E702513A90B0038F783 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		AE982D902514DB9000021DA2 /* HomeDefaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDefaultView.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 		AE4193352512423600CB0DC8 /* MundoDeRafa */ = {
 			isa = PBXGroup;
 			children = (
+				AE588CE0251B934C00A2BF74 /* Helpers */,
 				AE730E6D25139E8D0038F783 /* Extensions */,
 				AE41E0952518E68C008F52F5 /* Protocols */,
 				AE982D8F2514DA6D00021DA2 /* Model */,
@@ -334,6 +337,14 @@
 				AE41E0962518E6A6008F52F5 /* HomeDefaultViewController.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		AE588CE0251B934C00A2BF74 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AE588CE1251B935900A2BF74 /* MusicHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		AE730E6D25139E8D0038F783 /* Extensions */ = {
@@ -541,6 +552,7 @@
 				EF1912CA2517F947005A74D5 /* StoryViewController.swift in Sources */,
 				77E33EB32518E80500BC41F9 /* NextStoryViewController.swift in Sources */,
 				77E33EAB2518E7DA00BC41F9 /* PresenterViewController.swift in Sources */,
+				AE588CE2251B935900A2BF74 /* MusicHelper.swift in Sources */,
 				77E33EA22518E67400BC41F9 /* NextStoryView.swift in Sources */,
 				AEF7B50F2515027B00740C95 /* AppFonts.swift in Sources */,
 				AE4193372512423600CB0DC8 /* AppDelegate.swift in Sources */,
