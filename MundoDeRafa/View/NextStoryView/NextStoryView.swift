@@ -32,7 +32,7 @@ class NextStoryView: UIView {
         let label = UILabel()
         label.text = "Repetir"
         label.textColor = .primaryPurple
-        label.font = UIFont.systemFont(ofSize: 32)
+        label.font = UIFont.systemFont(ofSize: 30)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -113,25 +113,25 @@ class NextStoryView: UIView {
         
         compactConstraints.append(contentsOf: [
             congratulationsImage.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            congratulationsImage.topAnchor.constraint(equalTo: self.topAnchor),
-            congratulationsImage.heightAnchor.constraint(equalToConstant: 163),
-            congratulationsImage.widthAnchor.constraint(equalToConstant: 365),
+            congratulationsImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
+            congratulationsImage.heightAnchor.constraint(equalToConstant: 130.4),
+            congratulationsImage.widthAnchor.constraint(equalToConstant: 292),
             
-//            buttonRepet.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-//            buttonRepet.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-//            buttonRepet.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 2/10),
-//            buttonRepet.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 2/10),
-//
-//            repetLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-//            repetLabel.topAnchor.constraint(equalTo: self.buttonRepet.bottomAnchor, constant: 31),
-//
-//            rafaImage.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -1),
-//            rafaImage.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -23),
-//
-//            buttonNext.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-//            buttonNext.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -67),
-//            buttonNext.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1/10),
-//            buttonNext.widthAnchor.constraint(equalToConstant: 313)
+            buttonRepet.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            buttonRepet.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 14),
+            buttonRepet.heightAnchor.constraint(equalToConstant: 90),
+            buttonRepet.widthAnchor.constraint(equalToConstant: 90),
+
+            repetLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            repetLabel.topAnchor.constraint(equalTo: self.buttonRepet.bottomAnchor, constant: 14),
+
+            rafaImage.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -1),
+            rafaImage.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -23),
+
+            buttonNext.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            buttonNext.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -30),
+            buttonNext.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1/10),
+            buttonNext.widthAnchor.constraint(equalToConstant: 313)
         ])
     }
 }
