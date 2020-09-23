@@ -14,19 +14,23 @@ class StoryViewController: UIViewController, UICollectionViewDelegate {
         return .lightContent
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let newView = StoryView(frame: UIScreen.main.bounds)
-        newView.backButton.addTarget(self, action: #selector(backButtonAction), for: .touchUpInside)
-        newView.collectionView.delegate = self
-        newView.collectionView.dataSource = self
-        view = newView
+    override func loadView() {
+        let storyView = StoryView()
+        storyView.viewController = self
+        storyView.collectionView.delegate = self
+        storyView.collectionView.dataSource = self
+        view = storyView
     }
     
-    @objc func backButtonAction(sender: UIButton) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+    }
+      
+    func backButtonAction() {
         print("a")
-        //            let destination =
-        //            present(destination, animated: true, completion: nil)
+//        let destination = HomeDefaultView()
+//        present(destination, animated: true, completion: nil)
     }
 }
 
