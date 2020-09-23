@@ -8,12 +8,25 @@
 
 import UIKit
 
-class OnboardingViewController: UIViewController {
-    
+class OnboardingViewController: UIViewController, HomeDefaultViewController {
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        view = OnboardingView(frame: UIScreen.main.bounds)
-        // Do any additional setup after loading the view.
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func loadView() {
+        let onboardingView = OnboardingView()
+        onboardingView.viewController = self
+        view = onboardingView
+    }
+    
+    func didTapButton() {
+        self.navigationController?.pushViewController(MainMenuViewController(), animated: true)
     }
     
 }
