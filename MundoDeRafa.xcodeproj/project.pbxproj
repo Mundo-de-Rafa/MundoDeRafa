@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		380EE7D0251B9492007D835D /* SceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EE7CF251B9492007D835D /* SceneView.swift */; };
+		38A61B7F2518CE5700B48E11 /* ScenesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A61B7E2518CE5700B48E11 /* ScenesViewController.swift */; };
+		38A61B92251A1FDA00B48E11 /* SceneCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A61B91251A1FDA00B48E11 /* SceneCollectionViewCell.swift */; };
+		38A61B97251B78A600B48E11 /* SceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A61B96251B78A600B48E11 /* SceneModel.swift */; };
 		77E33E9C2518E5E700BC41F9 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E33E9B2518E5E700BC41F9 /* RoundButton.swift */; };
 		77E33EA22518E67400BC41F9 /* NextStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E33EA12518E67400BC41F9 /* NextStoryView.swift */; };
 		77E33EAB2518E7DA00BC41F9 /* PresenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E33EAA2518E7DA00BC41F9 /* PresenterViewController.swift */; };
@@ -31,9 +35,6 @@
 		AE2D8B4D251B7EC000C93963 /* niceDuck.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE2D8B3A251B7EC000C93963 /* niceDuck.mp3 */; };
 		AE2D8B4E251B7EC000C93963 /* chew.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE2D8B3C251B7EC000C93963 /* chew.mp3 */; };
 		AE2D8B4F251B7EC000C93963 /* spoon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE2D8B3D251B7EC000C93963 /* spoon.mp3 */; };
-		38A61B7F2518CE5700B48E11 /* ScenesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A61B7E2518CE5700B48E11 /* ScenesViewController.swift */; };
-		38A61B92251A1FDA00B48E11 /* SceneCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A61B91251A1FDA00B48E11 /* SceneCollectionViewCell.swift */; };
-		38A61B97251B78A600B48E11 /* SceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A61B96251B78A600B48E11 /* SceneModel.swift */; };
 		AE4193372512423600CB0DC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4193362512423600CB0DC8 /* AppDelegate.swift */; };
 		AE4193392512423600CB0DC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4193382512423600CB0DC8 /* SceneDelegate.swift */; };
 		AE4193402512423A00CB0DC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE41933F2512423A00CB0DC8 /* Assets.xcassets */; };
@@ -74,6 +75,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		380EE7CF251B9492007D835D /* SceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneView.swift; sourceTree = "<group>"; };
+		38A61B7E2518CE5700B48E11 /* ScenesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenesViewController.swift; sourceTree = "<group>"; };
+		38A61B91251A1FDA00B48E11 /* SceneCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCollectionViewCell.swift; sourceTree = "<group>"; };
+		38A61B96251B78A600B48E11 /* SceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneModel.swift; path = MundoDeRafa/View/SceneModel.swift; sourceTree = SOURCE_ROOT; };
 		77E33E9B2518E5E700BC41F9 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		77E33EA12518E67400BC41F9 /* NextStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStoryView.swift; sourceTree = "<group>"; };
 		77E33EAA2518E7DA00BC41F9 /* PresenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterViewController.swift; sourceTree = "<group>"; };
@@ -98,9 +103,6 @@
 		AE2D8B3A251B7EC000C93963 /* niceDuck.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = niceDuck.mp3; sourceTree = "<group>"; };
 		AE2D8B3C251B7EC000C93963 /* chew.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chew.mp3; sourceTree = "<group>"; };
 		AE2D8B3D251B7EC000C93963 /* spoon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = spoon.mp3; sourceTree = "<group>"; };
-		38A61B7E2518CE5700B48E11 /* ScenesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenesViewController.swift; sourceTree = "<group>"; };
-		38A61B91251A1FDA00B48E11 /* SceneCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCollectionViewCell.swift; sourceTree = "<group>"; };
-		38A61B96251B78A600B48E11 /* SceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneModel.swift; path = MundoDeRafa/View/SceneModel.swift; sourceTree = SOURCE_ROOT; };
 		AE4193332512423600CB0DC8 /* Mundo de Rafa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mundo de Rafa.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE4193362512423600CB0DC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE4193382512423600CB0DC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -248,7 +250,6 @@
 		AE41932A2512423600CB0DC8 = {
 			isa = PBXGroup;
 			children = (
-				38A61B8C251906F500B48E11 /* BalsamiqSans-Bold.ttf */,
 				AE4193352512423600CB0DC8 /* MundoDeRafa */,
 				AE41934C2512423A00CB0DC8 /* MundoDeRafaTests */,
 				AE4193572512423A00CB0DC8 /* MundoDeRafaUITests */,
@@ -311,6 +312,7 @@
 				EF8DB9422514DC0300B719BC /* StoryCell.swift */,
 				38A61B91251A1FDA00B48E11 /* SceneCollectionViewCell.swift */,
 				EF576892251B03FC00778D7F /* StoryView.swift */,
+				380EE7CF251B9492007D835D /* SceneView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -320,7 +322,6 @@
 			children = (
 				77E33EA92518E70800BC41F9 /* NextStory */,
 				AE730E702513A90B0038F783 /* OnboardingViewController.swift */,
-				EF8DB9472514DC3300B719BC /* StoryController.swift */,
 				38A61B7E2518CE5700B48E11 /* ScenesViewController.swift */,
 				AE41E0902518E37F008F52F5 /* MainMenuViewController.swift */,
 				EF1912C92517F947005A74D5 /* StoryViewController.swift */,
@@ -550,7 +551,6 @@
 				38A61B97251B78A600B48E11 /* SceneModel.swift in Sources */,
 				AE730E6F25139FD90038F783 /* AppColors.swift in Sources */,
 				38A61B7F2518CE5700B48E11 /* ScenesViewController.swift in Sources */,
-				EF8DB9482514DC3300B719BC /* StoryController.swift in Sources */,
 				AE730E712513A90B0038F783 /* OnboardingViewController.swift in Sources */,
 				EF1912CA2517F947005A74D5 /* StoryViewController.swift in Sources */,
 				77E33EB32518E80500BC41F9 /* NextStoryViewController.swift in Sources */,
@@ -563,6 +563,7 @@
 				AE41E0912518E37F008F52F5 /* MainMenuViewController.swift in Sources */,
 				AE2D8B17251B76C200C93963 /* UIButton+Sound.swift in Sources */,
 				AE41E0972518E6A6008F52F5 /* HomeDefaultViewController.swift in Sources */,
+				380EE7D0251B9492007D835D /* SceneView.swift in Sources */,
 				77E33E9C2518E5E700BC41F9 /* RoundButton.swift in Sources */,
 				EF576893251B03FC00778D7F /* StoryView.swift in Sources */,
 				AE982D912514DB9000021DA2 /* HomeDefaultView.swift in Sources */,

@@ -8,31 +8,64 @@
 
 import UIKit
 
+enum SceneState {
+    case locked
+    case unlocked
+}
+
 class SceneCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "SceneCollectionViewCell"
+    let proportion: CGFloat = 1/2
     
-    var backgroundImage = UIImageView()
-    var titlePlaceHolder = UIView()
-    var title = UILabel()
-    var star = UIImageView()
+    private var sharedConstraints: [NSLayoutConstraint] = []
+    private var compactConstraints: [NSLayoutConstraint] = []
+    private var regularConstraints: [NSLayoutConstraint] = []
+    
+    var backgroundImage: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        
+        return image
+    }()
+    
+    var titlePlaceHolder: UIView = {
+        let placeHolder = UIView()
+        placeHolder.backgroundColor = UIColor.backgroundWhite
+        placeHolder.translatesAutoresizingMaskIntoConstraints = false
+        
+        return placeHolder
+    }()
+    
+    var title: UILabel = {
+        let titulo = UILabel()
+        titulo.textColor = UIColor.primaryGreen
+        titulo.font = UIFont.balsamiqB?.withSize(32)
+        titulo.numberOfLines = 0
+        titulo.adjustsFontSizeToFitWidth = true
+        titulo.translatesAutoresizingMaskIntoConstraints = false
+        
+        return titulo
+    }()
+    
+    var star: UIImageView = {
+        let star = UIImageView()
+        star.translatesAutoresizingMaskIntoConstraints = false
+        
+        return star
+    }()
+    
     var complete = Bool()
     
-    func configure(title: String, backgroundImage: UIImage, complete: Bool) {
+    func setViewLayout() {
         
-        self.backgroundImage.image = backgroundImage
-        self.title.text = title
-        
-        if complete {
-            
-            star.image = UIImage(named: "star") ?? UIImage()
-            
+        if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
+            NSLayoutConstraint.activate(regularConstraints)
+            NSLayoutConstraint.deactivate(compactConstraints)
+        } else {
+            NSLayoutConstraint.deactivate(regularConstraints)
+            NSLayoutConstraint.activate(compactConstraints)
         }
-        
-        configBackground()
-        configPlaceHolder()
-        configStar()
-        configTitle()
         
     }
     
@@ -40,27 +73,20 @@ class SceneCollectionViewCell: UICollectionViewCell {
         
         contentView.addSubview(backgroundImage)
         
-        backgroundImage.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
+        sharedConstraints.append(contentsOf:[
             backgroundImage.topAnchor.constraint(equalTo: contentView.topAnchor),
             backgroundImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             backgroundImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             backgroundImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
-        
     }
     
     func configPlaceHolder() {
         
         contentView.addSubview(titlePlaceHolder)
         
-        titlePlaceHolder.backgroundColor = UIColor.backgroundWhite
-        
-        titlePlaceHolder.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            titlePlaceHolder.heightAnchor.constraint(equalTo: backgroundImage.heightAnchor, multiplier: 0.22),
+        sharedConstraints.append(contentsOf: [
+            titlePlaceHolder.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.22),
             titlePlaceHolder.leadingAnchor.constraint(equalTo: backgroundImage.leadingAnchor),
             titlePlaceHolder.trailingAnchor.constraint(equalTo: backgroundImage.trailingAnchor, constant: -1),
             titlePlaceHolder.bottomAnchor.constraint(equalTo: backgroundImage.bottomAnchor)
@@ -70,38 +96,70 @@ class SceneCollectionViewCell: UICollectionViewCell {
     
     func configStar() {
         
-        contentView.addSubview(star)
+        self.contentView.addSubview(star)
         
-        star.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            star.topAnchor.constraint(greaterThanOrEqualTo: titlePlaceHolder.topAnchor, constant: 16),
+        regularConstraints.append(contentsOf: [
+            star.centerYAnchor.constraint(equalTo: titlePlaceHolder.centerYAnchor),
             star.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
-            star.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -16),
             star.widthAnchor.constraint(lessThanOrEqualToConstant: 48),
             star.heightAnchor.constraint(lessThanOrEqualToConstant: 48)
+        ])
+        
+        compactConstraints.append(contentsOf: [
+            
+            star.centerYAnchor.constraint(equalTo: titlePlaceHolder.centerYAnchor),
+            star.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24 * proportion),
+            star.widthAnchor.constraint(lessThanOrEqualToConstant: 48 * proportion),
+            star.heightAnchor.constraint(lessThanOrEqualToConstant: 48 * proportion)
         ])
         
     }
     
     func configTitle() {
         
-        contentView.addSubview(title)
+        self.contentView.addSubview(title)
         
-        title.numberOfLines = 0
-        title.adjustsFontSizeToFitWidth = true
-        title.font = UIFont(name: "BalsamiqSans-Bold", size: 32)
-        title.textColor = UIColor.primaryGreen
-        
-        title.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
+        regularConstraints.append(contentsOf: [
             title.topAnchor.constraint(equalTo: titlePlaceHolder.topAnchor, constant: 24),
             title.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 32),
             title.trailingAnchor.constraint(equalTo: star.leadingAnchor, constant: -136),
             title.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -24)
         ])
         
+        compactConstraints.append(contentsOf: [
+            title.topAnchor.constraint(equalTo: titlePlaceHolder.topAnchor, constant: 24 * proportion),
+            title.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 32 * proportion),
+            title.trailingAnchor.constraint(equalTo: star.leadingAnchor, constant: -136 * proportion),
+            title.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -24 * proportion)
+            
+        ])
+        
+    }
+    
+    func configure(title: String, backgroundImage: UIImage, locked: SceneState, complete: Bool) {
+        
+        switch locked {
+        case .locked:
+            self.backgroundImage.image = UIImage(named: "locked") ?? UIImage()
+            
+            self.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.3)
+        case .unlocked:
+            self.backgroundImage.image = backgroundImage
+            self.title.text = title
+        }
+        
+        if complete {
+            
+            star.image = UIImage(named: "star") ?? UIImage()
+            
+        }
+        configBackground()
+        configPlaceHolder()
+        configStar()
+        configTitle()
+        
+        NSLayoutConstraint.activate(sharedConstraints)
+        setViewLayout()
     }
     
 }
