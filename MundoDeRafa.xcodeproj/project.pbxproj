@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77C2E441251CC5D100016D6E /* NextStoryViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C2E440251CC5D100016D6E /* NextStoryViewUITests.swift */; };
 		77E33E9C2518E5E700BC41F9 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E33E9B2518E5E700BC41F9 /* RoundButton.swift */; };
 		77E33EA22518E67400BC41F9 /* NextStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E33EA12518E67400BC41F9 /* NextStoryView.swift */; };
 		77E33EAB2518E7DA00BC41F9 /* PresenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E33EAA2518E7DA00BC41F9 /* PresenterViewController.swift */; };
@@ -72,6 +73,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		77C2E440251CC5D100016D6E /* NextStoryViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStoryViewUITests.swift; sourceTree = "<group>"; };
 		77E33E9B2518E5E700BC41F9 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		77E33EA12518E67400BC41F9 /* NextStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStoryView.swift; sourceTree = "<group>"; };
 		77E33EAA2518E7DA00BC41F9 /* PresenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterViewController.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 				AE4193582512423A00CB0DC8 /* MundoDeRafaUITests.swift */,
 				AE2D8B11251B725900C93963 /* OnboardingUITests.swift */,
 				AE41935A2512423A00CB0DC8 /* Info.plist */,
+				77C2E440251CC5D100016D6E /* NextStoryViewUITests.swift */,
 			);
 			path = MundoDeRafaUITests;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77C2E441251CC5D100016D6E /* NextStoryViewUITests.swift in Sources */,
 				AE2D8B12251B725A00C93963 /* OnboardingUITests.swift in Sources */,
 				AE4193592512423A00CB0DC8 /* MundoDeRafaUITests.swift in Sources */,
 			);

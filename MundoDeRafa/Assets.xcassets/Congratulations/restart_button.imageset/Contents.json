@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "restart_button.png",
+      "filename" : "Reset Button.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "restart_button@2x.png",
+      "filename" : "Reset Button@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "restart_button@3x.png",
+      "filename" : "Reset Button@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

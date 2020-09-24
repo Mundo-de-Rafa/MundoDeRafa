@@ -21,8 +21,7 @@ class NextStoryView: UIView {
     }()
     
     lazy var buttonRepet: UIButton = {
-        let button = RoundButton()
-        button.backgroundColor = .primaryGreen
+        let button = UIButton()
         button.setImage(UIImage(named: "restart_button"), for: UIControl.State.normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -119,8 +118,8 @@ class NextStoryView: UIView {
             
             buttonRepet.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             buttonRepet.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 14),
-            buttonRepet.heightAnchor.constraint(equalToConstant: 90),
-            buttonRepet.widthAnchor.constraint(equalToConstant: 90),
+            buttonRepet.heightAnchor.constraint(equalToConstant: 120),
+            buttonRepet.widthAnchor.constraint(equalToConstant: 120),
 
             repetLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             repetLabel.topAnchor.constraint(equalTo: self.buttonRepet.bottomAnchor, constant: 14),
