@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let didFirstLaunch = UserDefaults.standard.bool(forKey: "didFirstLaunch")
         let navigationController = UINavigationController()
-        let rootViewController = didFirstLaunch ? PresenterViewController() : OnboardingViewController()
+        let rootViewController = didFirstLaunch ? MainMenuViewController() : OnboardingViewController()
         navigationController.viewControllers = [rootViewController]
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene

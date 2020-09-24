@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         let navigationController = UINavigationController()
-        let rootViewController = didFirstLaunch ? PresenterViewController() : OnboardingViewController()
+        let rootViewController = didFirstLaunch ? MainMenuViewController() : OnboardingViewController()
         navigationController.viewControllers = [rootViewController]
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
