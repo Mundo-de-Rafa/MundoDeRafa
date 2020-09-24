@@ -31,7 +31,7 @@ class NextStoryView: UIView {
         let label = UILabel()
         label.text = "Repetir"
         label.textColor = .primaryPurple
-        label.font = UIFont.systemFont(ofSize: 30)
+        label.font = UIFont.balsamicR?.withSize(UIScreen.main.bounds.height * 0.036)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -48,7 +48,7 @@ class NextStoryView: UIView {
         let button = RoundButton()
         button.backgroundColor = .primaryGreen
         button.setTitle("Próximo", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 32, weight: .bold)
+        button.titleLabel?.font = UIFont.balsamiqB?.withSize(UIScreen.main.bounds.height * 0.036)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()

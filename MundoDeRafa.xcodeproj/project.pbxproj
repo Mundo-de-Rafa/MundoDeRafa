@@ -42,14 +42,16 @@
 		AE4193432512423A00CB0DC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE4193412512423A00CB0DC8 /* LaunchScreen.storyboard */; };
 		AE41934E2512423A00CB0DC8 /* MundoDeRafaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE41934D2512423A00CB0DC8 /* MundoDeRafaTests.swift */; };
 		AE4193592512423A00CB0DC8 /* MundoDeRafaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4193582512423A00CB0DC8 /* MundoDeRafaUITests.swift */; };
-		AE41E0912518E37F008F52F5 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE41E0902518E37F008F52F5 /* MainMenuViewController.swift */; };
 		AE41E0972518E6A6008F52F5 /* HomeDefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE41E0962518E6A6008F52F5 /* HomeDefaultViewController.swift */; };
 		AE41E09C2518E914008F52F5 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE41E09B2518E914008F52F5 /* MainMenuView.swift */; };
 		AE588CE2251B935900A2BF74 /* MusicHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE588CE1251B935900A2BF74 /* MusicHelper.swift */; };
 		AE730E6F25139FD90038F783 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE730E6E25139FD90038F783 /* AppColors.swift */; };
-		AE730E712513A90B0038F783 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE730E702513A90B0038F783 /* OnboardingViewController.swift */; };
 		AE982D912514DB9000021DA2 /* HomeDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE982D902514DB9000021DA2 /* HomeDefaultView.swift */; };
 		AE982D992514DFB200021DA2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE982D982514DFB200021DA2 /* OnboardingView.swift */; };
+		AEC97E4E251CE06800264E87 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC97E4C251CE06800264E87 /* OnboardingViewController.swift */; };
+		AEC97E4F251CE06800264E87 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC97E4D251CE06800264E87 /* MainMenuViewController.swift */; };
+		AED00E73251CC49D0064F7F5 /* StoryDefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED00E72251CC49D0064F7F5 /* StoryDefaultViewController.swift */; };
+		AED00E89251CDC350064F7F5 /* UILabel+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED00E88251CDC350064F7F5 /* UILabel+Padding.swift */; };
 		AEF7B5082514FF6C00740C95 /* BalsamiqSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF7B5062514FF1000740C95 /* BalsamiqSans-Bold.ttf */; };
 		AEF7B5092514FF6C00740C95 /* BalsamiqSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF7B5052514FF1000740C95 /* BalsamiqSans-Regular.ttf */; };
 		AEF7B50A2514FF6C00740C95 /* KGNeatlyPrinted.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF7B5072514FF2B00740C95 /* KGNeatlyPrinted.ttf */; };
@@ -118,14 +120,16 @@
 		AE4193542512423A00CB0DC8 /* MundoDeRafaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MundoDeRafaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE4193582512423A00CB0DC8 /* MundoDeRafaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MundoDeRafaUITests.swift; sourceTree = "<group>"; };
 		AE41935A2512423A00CB0DC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AE41E0902518E37F008F52F5 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		AE41E0962518E6A6008F52F5 /* HomeDefaultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDefaultViewController.swift; sourceTree = "<group>"; };
 		AE41E09B2518E914008F52F5 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		AE588CE1251B935900A2BF74 /* MusicHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicHelper.swift; sourceTree = "<group>"; };
 		AE730E6E25139FD90038F783 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
-		AE730E702513A90B0038F783 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		AE982D902514DB9000021DA2 /* HomeDefaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDefaultView.swift; sourceTree = "<group>"; };
 		AE982D982514DFB200021DA2 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		AEC97E4C251CE06800264E87 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		AEC97E4D251CE06800264E87 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		AED00E72251CC49D0064F7F5 /* StoryDefaultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDefaultViewController.swift; sourceTree = "<group>"; };
+		AED00E88251CDC350064F7F5 /* UILabel+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Padding.swift"; sourceTree = "<group>"; };
 		AEF7B5052514FF1000740C95 /* BalsamiqSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalsamiqSans-Regular.ttf"; sourceTree = "<group>"; };
 		AEF7B5062514FF1000740C95 /* BalsamiqSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalsamiqSans-Bold.ttf"; sourceTree = "<group>"; };
 		AEF7B5072514FF2B00740C95 /* KGNeatlyPrinted.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KGNeatlyPrinted.ttf; sourceTree = "<group>"; };
@@ -310,10 +314,9 @@
 		AE41936825124C1500CB0DC8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AED00E7B251CC4C80064F7F5 /* Home */,
+				AED00E7A251CC4B60064F7F5 /* Stories */,
 				77E33EA02518E65C00BC41F9 /* NextStoryView */,
-				AE982D902514DB9000021DA2 /* HomeDefaultView.swift */,
-				AE982D982514DFB200021DA2 /* OnboardingView.swift */,
-				AE41E09B2518E914008F52F5 /* MainMenuView.swift */,
 				AE4193412512423A00CB0DC8 /* LaunchScreen.storyboard */,
 				EF8DB9422514DC0300B719BC /* StoryCell.swift */,
 				38A61B91251A1FDA00B48E11 /* SceneCollectionViewCell.swift */,
@@ -326,10 +329,10 @@
 		AE41936925124C1B00CB0DC8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AED00E7C251CC4D40064F7F5 /* Home */,
+				AED00E71251CC4840064F7F5 /* Stories */,
 				77E33EA92518E70800BC41F9 /* NextStory */,
-				AE730E702513A90B0038F783 /* OnboardingViewController.swift */,
 				38A61B7E2518CE5700B48E11 /* ScenesViewController.swift */,
-				AE41E0902518E37F008F52F5 /* MainMenuViewController.swift */,
 				EF1912C92517F947005A74D5 /* StoryViewController.swift */,
 			);
 			path = Controller;
@@ -368,6 +371,7 @@
 				AEF7B50E2515027B00740C95 /* AppFonts.swift */,
 				77E33E9B2518E5E700BC41F9 /* RoundButton.swift */,
 				AE2D8B16251B76C200C93963 /* UIButton+Sound.swift */,
+				AED00E88251CDC350064F7F5 /* UILabel+Padding.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -378,6 +382,40 @@
 				38A61B96251B78A600B48E11 /* SceneModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		AED00E71251CC4840064F7F5 /* Stories */ = {
+			isa = PBXGroup;
+			children = (
+				AED00E72251CC49D0064F7F5 /* StoryDefaultViewController.swift */,
+			);
+			path = Stories;
+			sourceTree = "<group>";
+		};
+		AED00E7A251CC4B60064F7F5 /* Stories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Stories;
+			sourceTree = "<group>";
+		};
+		AED00E7B251CC4C80064F7F5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AE982D902514DB9000021DA2 /* HomeDefaultView.swift */,
+				AE982D982514DFB200021DA2 /* OnboardingView.swift */,
+				AE41E09B2518E914008F52F5 /* MainMenuView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AED00E7C251CC4D40064F7F5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AEC97E4D251CE06800264E87 /* MainMenuViewController.swift */,
+				AEC97E4C251CE06800264E87 /* OnboardingViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		AEF7B5042514FEEC00740C95 /* Fonts */ = {
@@ -565,17 +603,19 @@
 				38A61B97251B78A600B48E11 /* SceneModel.swift in Sources */,
 				AE730E6F25139FD90038F783 /* AppColors.swift in Sources */,
 				38A61B7F2518CE5700B48E11 /* ScenesViewController.swift in Sources */,
-				AE730E712513A90B0038F783 /* OnboardingViewController.swift in Sources */,
 				EF1912CA2517F947005A74D5 /* StoryViewController.swift in Sources */,
+				AED00E89251CDC350064F7F5 /* UILabel+Padding.swift in Sources */,
 				77E33EB32518E80500BC41F9 /* NextStoryViewController.swift in Sources */,
 				77E33EAB2518E7DA00BC41F9 /* PresenterViewController.swift in Sources */,
 				AE588CE2251B935900A2BF74 /* MusicHelper.swift in Sources */,
+				AEC97E4F251CE06800264E87 /* MainMenuViewController.swift in Sources */,
 				77E33EA22518E67400BC41F9 /* NextStoryView.swift in Sources */,
 				AEF7B50F2515027B00740C95 /* AppFonts.swift in Sources */,
 				AE4193372512423600CB0DC8 /* AppDelegate.swift in Sources */,
 				AE982D992514DFB200021DA2 /* OnboardingView.swift in Sources */,
+				AEC97E4E251CE06800264E87 /* OnboardingViewController.swift in Sources */,
 				AE41E09C2518E914008F52F5 /* MainMenuView.swift in Sources */,
-				AE41E0912518E37F008F52F5 /* MainMenuViewController.swift in Sources */,
+				AED00E73251CC49D0064F7F5 /* StoryDefaultViewController.swift in Sources */,
 				AE2D8B17251B76C200C93963 /* UIButton+Sound.swift in Sources */,
 				AE41E0972518E6A6008F52F5 /* HomeDefaultViewController.swift in Sources */,
 				380EE7D0251B9492007D835D /* SceneView.swift in Sources */,
