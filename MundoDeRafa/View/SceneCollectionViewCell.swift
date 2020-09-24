@@ -22,14 +22,14 @@ class SceneCollectionViewCell: UICollectionViewCell {
     private var compactConstraints: [NSLayoutConstraint] = []
     private var regularConstraints: [NSLayoutConstraint] = []
     
-    var backgroundImage: UIImageView = {
+    lazy var backgroundImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         
         return image
     }()
     
-    var titlePlaceHolder: UIView = {
+    lazy var titlePlaceHolder: UIView = {
         let placeHolder = UIView()
         placeHolder.backgroundColor = UIColor.backgroundWhite
         placeHolder.translatesAutoresizingMaskIntoConstraints = false
@@ -37,7 +37,7 @@ class SceneCollectionViewCell: UICollectionViewCell {
         return placeHolder
     }()
     
-    var title: UILabel = {
+    lazy var title: UILabel = {
         let titulo = UILabel()
         titulo.textColor = UIColor.primaryGreen
         titulo.font = UIFont.balsamiqB?.withSize(32)
@@ -48,14 +48,14 @@ class SceneCollectionViewCell: UICollectionViewCell {
         return titulo
     }()
     
-    var star: UIImageView = {
+    lazy var star: UIImageView = {
         let star = UIImageView()
         star.translatesAutoresizingMaskIntoConstraints = false
         
         return star
     }()
     
-    var complete = Bool()
+    lazy var complete = Bool()
     
     func setViewLayout() {
         
