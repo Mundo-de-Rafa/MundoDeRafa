@@ -24,10 +24,12 @@ class StoryViewController: UIViewController, UICollectionViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
     
     func backButtonAction() {
         self.navigationController?.popViewController(animated: true)
+
     }
 }
 
@@ -49,7 +51,7 @@ extension StoryViewController : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let controller = StoryDefaultViewController()
-        navigationController?.pushViewController(controller, animated: true)
+        
+        self.navigationController?.pushViewController(ScenesViewController(), animated: true)
     }
 }

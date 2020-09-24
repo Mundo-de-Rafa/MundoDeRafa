@@ -16,8 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let didFirstLaunch = UserDefaults.standard.bool(forKey: "didFirstLaunch")
         window = UIWindow(frame: UIScreen.main.bounds)
+        
         let navigationController = UINavigationController()
-        let rootViewController = didFirstLaunch ? MainMenuViewController() : OnboardingViewController() 
+        let rootViewController = didFirstLaunch ? MainMenuViewController() : OnboardingViewController()
         navigationController.viewControllers = [rootViewController]
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

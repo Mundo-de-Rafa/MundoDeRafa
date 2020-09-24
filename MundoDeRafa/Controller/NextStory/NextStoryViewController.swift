@@ -12,32 +12,17 @@ import AVFoundation
 class NextStoryViewController: UIViewController {
     var audioPlayer: AVAudioPlayer?
     
+    lazy var viewNextstoryView : NextStoryView = {
+        let view = NextStoryView(frame: UIScreen.main.bounds)
+        return view
+    }()
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
-    func playSound() {
-        guard let url = Bundle.main.url(forResource: "finishScene", withExtension: "mp3") else { return }
-
-        do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-            try AVAudioSession.sharedInstance().setActive(true)
-
-            audioPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-            guard let audioPlayer = audioPlayer else { return }
-            audioPlayer.play()
-        } catch let error {
-            print(error.localizedDescription)
-        }
-    }
-    
-    override func viewDidLayoutSubviews() {
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view = NextStoryView(frame: UIScreen.main.bounds)
-        playSound()
+        view = viewNextstoryView
     }
 }
