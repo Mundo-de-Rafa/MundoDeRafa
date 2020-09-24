@@ -47,4 +47,9 @@ extension StoryViewController : UICollectionViewDataSource {
         }
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        self.navigationController?.pushViewController(ScenesViewController(), animated: true)
+    }
 }

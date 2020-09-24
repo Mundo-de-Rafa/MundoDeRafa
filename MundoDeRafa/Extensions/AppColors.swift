@@ -19,6 +19,8 @@ extension UIColor {
     static let secondaryGreen = UIColor(red: 133/255, green: 220/255, blue: 207/255, alpha: 1)
     ///Card locked
     static let darkPurple = UIColor(red: 44/255, green: 13/255, blue: 93/255, alpha: 1)
+    
+    static let progressBarGreen = UIColor(red: 120/255, green: 211/255, blue: 197/255, alpha: 1)
     ///Used for interface texts and modal backgrounds
     static let backgroundWhite = UIColor(red: 251/255, green: 255/255, blue: 254/255, alpha: 1)
 }
