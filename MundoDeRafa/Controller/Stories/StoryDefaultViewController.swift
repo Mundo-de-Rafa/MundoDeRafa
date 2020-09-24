@@ -34,13 +34,16 @@ class StoryDefaultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        view.backgroundColor = .secondaryPurple
         setupPauseButton()
         setupInstructionsLabel()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        showInstructionsLabel(with: "Hello World! I'm testing this label with a very big text, to see how big the text inside the label can be, and if it break the layout Hello World! I'm testing this label with a very big text, to see how big the text inside the label can be, and if it break the layou Hello World! I'm testing this label with a very big text, to see how big the text inside the label can be, and if it break the layou Hello World! I'm testing this label with a very big text, to see how big the text inside the label can be, and if it break the layou")
+    }
+    
     @objc func didTapPauseButton() {
-//        showInstructionsLabel(with: "Hello World! I'm testing this label with a very big text, to see how big the text inside the label can be, and if it break the layout Hello World! I'm testing this label with a very big text, to see how big the text inside the label can be, and if it break the layou Hello World! I'm testing this label with a very big text, to see how big the text inside the label can be, and if it break the layou Hello World! I'm testing this label with a very big text, to see how big the text inside the label can be, and if it break the layou")
         navigationController?.present(NextStoryViewController(), animated: true, completion: nil)
     }
     
@@ -69,13 +72,13 @@ class StoryDefaultViewController: UIViewController {
     func showInstructionsLabel(with text: String) {
         instructionsLabel.text = text
         instructionsLabel.isHidden = false
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.5, animations: {
             self.instructionsLabel.alpha = 1
-        }
+        }, completion: {_ in self.hideInstructionsLabel()})
     }
     
     func hideInstructionsLabel() {
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 4, animations: {
             self.instructionsLabel.alpha = 0
         }, completion: { _ in self.instructionsLabel.isHidden = true })
     }
