@@ -53,4 +53,7 @@ extension ScenesViewController: UICollectionViewDelegate, UICollectionViewDataSo
         return cell
     }
         
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        navigationController?.pushViewController(StoryDefaultViewController(), animated: true)
+    }
 }
