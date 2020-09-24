@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Reset Button.png",
+      "filename" : "Artboard.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Reset Button@2x.png",
+      "filename" : "Artboard@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Reset Button@3x.png",
+      "filename" : "Artboard@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
