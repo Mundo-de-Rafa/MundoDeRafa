@@ -10,8 +10,13 @@ import UIKit
 
 class MainMenuViewController: UIViewController, HomeDefaultViewController {
 
-    var isMusicOn: Bool = UserDefaults.standard.bool(forKey: "isMusicOn")
     var isSoundOn: Bool = UserDefaults.standard.bool(forKey: "isSoundOn")
+    var isMusicOn: Bool = UserDefaults.standard.bool(forKey: "isMusicOn") {
+        didSet {
+            isMusicOn ? MusicHelper.shared.playMusic() :
+                        MusicHelper.shared.stopMusic()
+         }
+    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
