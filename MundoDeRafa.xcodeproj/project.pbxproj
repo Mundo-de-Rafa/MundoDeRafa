@@ -45,6 +45,8 @@
 		AE730E712513A90B0038F783 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE730E702513A90B0038F783 /* OnboardingViewController.swift */; };
 		AE982D912514DB9000021DA2 /* HomeDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE982D902514DB9000021DA2 /* HomeDefaultView.swift */; };
 		AE982D992514DFB200021DA2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE982D982514DFB200021DA2 /* OnboardingView.swift */; };
+		AED00E73251CC49D0064F7F5 /* StoryDefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED00E72251CC49D0064F7F5 /* StoryDefaultViewController.swift */; };
+		AED00E89251CDC350064F7F5 /* UILabel+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED00E88251CDC350064F7F5 /* UILabel+Padding.swift */; };
 		AEF7B5082514FF6C00740C95 /* BalsamiqSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF7B5062514FF1000740C95 /* BalsamiqSans-Bold.ttf */; };
 		AEF7B5092514FF6C00740C95 /* BalsamiqSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF7B5052514FF1000740C95 /* BalsamiqSans-Regular.ttf */; };
 		AEF7B50A2514FF6C00740C95 /* KGNeatlyPrinted.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF7B5072514FF2B00740C95 /* KGNeatlyPrinted.ttf */; };
@@ -116,6 +118,8 @@
 		AE730E702513A90B0038F783 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		AE982D902514DB9000021DA2 /* HomeDefaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDefaultView.swift; sourceTree = "<group>"; };
 		AE982D982514DFB200021DA2 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		AED00E72251CC49D0064F7F5 /* StoryDefaultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDefaultViewController.swift; sourceTree = "<group>"; };
+		AED00E88251CDC350064F7F5 /* UILabel+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Padding.swift"; sourceTree = "<group>"; };
 		AEF7B5052514FF1000740C95 /* BalsamiqSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalsamiqSans-Regular.ttf"; sourceTree = "<group>"; };
 		AEF7B5062514FF1000740C95 /* BalsamiqSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalsamiqSans-Bold.ttf"; sourceTree = "<group>"; };
 		AEF7B5072514FF2B00740C95 /* KGNeatlyPrinted.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KGNeatlyPrinted.ttf; sourceTree = "<group>"; };
@@ -299,10 +303,9 @@
 		AE41936825124C1500CB0DC8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AED00E7B251CC4C80064F7F5 /* Home */,
+				AED00E7A251CC4B60064F7F5 /* Stories */,
 				77E33EA02518E65C00BC41F9 /* NextStoryView */,
-				AE982D902514DB9000021DA2 /* HomeDefaultView.swift */,
-				AE982D982514DFB200021DA2 /* OnboardingView.swift */,
-				AE41E09B2518E914008F52F5 /* MainMenuView.swift */,
 				AE4193412512423A00CB0DC8 /* LaunchScreen.storyboard */,
 				EF8DB9422514DC0300B719BC /* StoryCell.swift */,
 				EF576892251B03FC00778D7F /* StoryView.swift */,
@@ -313,9 +316,9 @@
 		AE41936925124C1B00CB0DC8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AED00E7C251CC4D40064F7F5 /* Home */,
+				AED00E71251CC4840064F7F5 /* Stories */,
 				77E33EA92518E70800BC41F9 /* NextStory */,
-				AE730E702513A90B0038F783 /* OnboardingViewController.swift */,
-				AE41E0902518E37F008F52F5 /* MainMenuViewController.swift */,
 				EF1912C92517F947005A74D5 /* StoryViewController.swift */,
 			);
 			path = Controller;
@@ -354,6 +357,7 @@
 				AEF7B50E2515027B00740C95 /* AppFonts.swift */,
 				77E33E9B2518E5E700BC41F9 /* RoundButton.swift */,
 				AE2D8B16251B76C200C93963 /* UIButton+Sound.swift */,
+				AED00E88251CDC350064F7F5 /* UILabel+Padding.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -363,6 +367,40 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		AED00E71251CC4840064F7F5 /* Stories */ = {
+			isa = PBXGroup;
+			children = (
+				AED00E72251CC49D0064F7F5 /* StoryDefaultViewController.swift */,
+			);
+			path = Stories;
+			sourceTree = "<group>";
+		};
+		AED00E7A251CC4B60064F7F5 /* Stories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Stories;
+			sourceTree = "<group>";
+		};
+		AED00E7B251CC4C80064F7F5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AE982D902514DB9000021DA2 /* HomeDefaultView.swift */,
+				AE982D982514DFB200021DA2 /* OnboardingView.swift */,
+				AE41E09B2518E914008F52F5 /* MainMenuView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AED00E7C251CC4D40064F7F5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AE730E702513A90B0038F783 /* OnboardingViewController.swift */,
+				AE41E0902518E37F008F52F5 /* MainMenuViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		AEF7B5042514FEEC00740C95 /* Fonts */ = {
@@ -550,6 +588,7 @@
 				AE730E6F25139FD90038F783 /* AppColors.swift in Sources */,
 				AE730E712513A90B0038F783 /* OnboardingViewController.swift in Sources */,
 				EF1912CA2517F947005A74D5 /* StoryViewController.swift in Sources */,
+				AED00E89251CDC350064F7F5 /* UILabel+Padding.swift in Sources */,
 				77E33EB32518E80500BC41F9 /* NextStoryViewController.swift in Sources */,
 				77E33EAB2518E7DA00BC41F9 /* PresenterViewController.swift in Sources */,
 				AE588CE2251B935900A2BF74 /* MusicHelper.swift in Sources */,
@@ -559,6 +598,7 @@
 				AE982D992514DFB200021DA2 /* OnboardingView.swift in Sources */,
 				AE41E09C2518E914008F52F5 /* MainMenuView.swift in Sources */,
 				AE41E0912518E37F008F52F5 /* MainMenuViewController.swift in Sources */,
+				AED00E73251CC49D0064F7F5 /* StoryDefaultViewController.swift in Sources */,
 				AE2D8B17251B76C200C93963 /* UIButton+Sound.swift in Sources */,
 				AE41E0972518E6A6008F52F5 /* HomeDefaultViewController.swift in Sources */,
 				77E33E9C2518E5E700BC41F9 /* RoundButton.swift in Sources */,
