@@ -26,10 +26,7 @@ enum CellConstants {
 
 class StoryView: UIView {
 
-    
     var viewController: StoryViewController?
-   
-
     var viewLayout = ViewLayout.iPad
     let proportion : CGFloat = 1/2
     let buttonProportion: CGFloat = 15/10
