@@ -23,6 +23,32 @@ class NextStoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view = viewNextstoryView
+        playSound()
+    }
+    
+    override func loadView() {
+        let nextStoryView = NextStoryView()
+        nextStoryView.viewController = self
+        view = nextStoryView
+    }
+    
+    public func bAction() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func playSound() {
+        guard let url = Bundle.main.url(forResource: "finishScene", withExtension: "mp3"),
+              UserDefaults.standard.bool(forKey: "isSoundOn") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            audioPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            guard let audioPlayer = audioPlayer else { return }
+            audioPlayer.play()
+        } catch let error {
+            print(error.localizedDescription)
+        }
     }
 }

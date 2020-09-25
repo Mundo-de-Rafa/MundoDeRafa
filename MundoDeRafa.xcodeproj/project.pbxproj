@@ -11,6 +11,8 @@
 		38A61B7F2518CE5700B48E11 /* ScenesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A61B7E2518CE5700B48E11 /* ScenesViewController.swift */; };
 		38A61B92251A1FDA00B48E11 /* SceneCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A61B91251A1FDA00B48E11 /* SceneCollectionViewCell.swift */; };
 		38A61B97251B78A600B48E11 /* SceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A61B96251B78A600B48E11 /* SceneModel.swift */; };
+		77478690251E13FF00B816CE /* KitchenSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7747868F251E13FF00B816CE /* KitchenSceneViewController.swift */; };
+		77478695251E141100B816CE /* KitchenSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77478694251E141100B816CE /* KitchenSceneView.swift */; };
 		77C2E441251CC5D100016D6E /* NextStoryViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C2E440251CC5D100016D6E /* NextStoryViewUITests.swift */; };
 		77E33E9C2518E5E700BC41F9 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E33E9B2518E5E700BC41F9 /* RoundButton.swift */; };
 		77E33EA22518E67400BC41F9 /* NextStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E33EA12518E67400BC41F9 /* NextStoryView.swift */; };
@@ -85,6 +87,8 @@
 		38A61B7E2518CE5700B48E11 /* ScenesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenesViewController.swift; sourceTree = "<group>"; };
 		38A61B91251A1FDA00B48E11 /* SceneCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCollectionViewCell.swift; sourceTree = "<group>"; };
 		38A61B96251B78A600B48E11 /* SceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneModel.swift; path = MundoDeRafa/View/SceneModel.swift; sourceTree = SOURCE_ROOT; };
+		7747868F251E13FF00B816CE /* KitchenSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenSceneViewController.swift; sourceTree = "<group>"; };
+		77478694251E141100B816CE /* KitchenSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenSceneView.swift; sourceTree = "<group>"; };
 		77C2E440251CC5D100016D6E /* NextStoryViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStoryViewUITests.swift; sourceTree = "<group>"; };
 		77E33E9B2518E5E700BC41F9 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		77E33EA12518E67400BC41F9 /* NextStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStoryView.swift; sourceTree = "<group>"; };
@@ -168,6 +172,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7747868D251E12EB00B816CE /* KitchenScene */ = {
+			isa = PBXGroup;
+			children = (
+				77478694251E141100B816CE /* KitchenSceneView.swift */,
+			);
+			path = KitchenScene;
+			sourceTree = "<group>";
+		};
+		7747868E251E12F300B816CE /* KitchenScene */ = {
+			isa = PBXGroup;
+			children = (
+				7747868F251E13FF00B816CE /* KitchenSceneViewController.swift */,
+			);
+			path = KitchenScene;
+			sourceTree = "<group>";
+		};
 		77E33EA02518E65C00BC41F9 /* NextStoryView */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,7 +338,11 @@
 		AE41936825124C1500CB0DC8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+
 				EF5768BF251D1EAA00778D7F /* Scenes */,
+
+				7747868D251E12EB00B816CE /* KitchenScene */,
+
 				AED00E7B251CC4C80064F7F5 /* Home */,
 				AED00E7A251CC4B60064F7F5 /* Stories */,
 				77E33EA02518E65C00BC41F9 /* NextStoryView */,
@@ -334,7 +358,9 @@
 		AE41936925124C1B00CB0DC8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+
 				EF5768C8251D379500778D7F /* Scenes */,
+				7747868E251E12F300B816CE /* KitchenScene */,
 				AED00E7C251CC4D40064F7F5 /* Home */,
 				AED00E71251CC4840064F7F5 /* Stories */,
 				77E33EA92518E70800BC41F9 /* NextStory */,
@@ -622,6 +648,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77478695251E141100B816CE /* KitchenSceneView.swift in Sources */,
 				38A61B97251B78A600B48E11 /* SceneModel.swift in Sources */,
 				AE730E6F25139FD90038F783 /* AppColors.swift in Sources */,
 				38A61B7F2518CE5700B48E11 /* ScenesViewController.swift in Sources */,
@@ -630,6 +657,7 @@
 				77E33EB32518E80500BC41F9 /* NextStoryViewController.swift in Sources */,
 				77E33EAB2518E7DA00BC41F9 /* PresenterViewController.swift in Sources */,
 				AE588CE2251B935900A2BF74 /* MusicHelper.swift in Sources */,
+				77478690251E13FF00B816CE /* KitchenSceneViewController.swift in Sources */,
 				AEC97E4F251CE06800264E87 /* MainMenuViewController.swift in Sources */,
 				77E33EA22518E67400BC41F9 /* NextStoryView.swift in Sources */,
 				AEF7B50F2515027B00740C95 /* AppFonts.swift in Sources */,

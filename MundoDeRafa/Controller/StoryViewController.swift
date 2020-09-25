@@ -29,7 +29,6 @@ class StoryViewController: UIViewController, UICollectionViewDelegate {
     
     func backButtonAction() {
         self.navigationController?.popViewController(animated: true)
-
     }
 }
 

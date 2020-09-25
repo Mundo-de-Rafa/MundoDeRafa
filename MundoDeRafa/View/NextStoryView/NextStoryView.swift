@@ -12,6 +12,7 @@ class NextStoryView: UIView {
     var compactConstraints: [NSLayoutConstraint] = []
     var regularConstraints: [NSLayoutConstraint] = []
     var sharedConstraints: [NSLayoutConstraint] = []
+    var viewController: NextStoryViewController?
     
     lazy var congratulationsImage : UIImageView = {
         let imageV = UIImageView()
@@ -23,7 +24,9 @@ class NextStoryView: UIView {
     lazy var buttonRepet: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "restart_button"), for: UIControl.State.normal)
+        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.imageView?.contentMode = .scaleAspectFit
         return button
     }()
     
@@ -63,6 +66,11 @@ class NextStoryView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @objc func buttonAction() {
+        viewController?.bAction()
+        buttonRepet.playSoundIfNeeded(of: .click)
+    }
+    
     // SETUP.
     func setupUI() {
         self.backgroundColor = .backgroundWhite
@@ -96,7 +104,7 @@ class NextStoryView: UIView {
             buttonRepet.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             buttonRepet.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             buttonRepet.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 2/10),
-            buttonRepet.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 2/10),
+            buttonRepet.widthAnchor.constraint(equalTo: self.buttonRepet.heightAnchor),
             
             repetLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             repetLabel.topAnchor.constraint(equalTo: self.buttonRepet.bottomAnchor, constant: 31),
