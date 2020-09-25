@@ -65,6 +65,7 @@ class SceneCollectionViewCell: UICollectionViewCell {
         } else {
             NSLayoutConstraint.deactivate(regularConstraints)
             NSLayoutConstraint.activate(compactConstraints)
+            title.font = UIFont.balsamiqB?.withSize(24)
         }
         
     }
@@ -120,18 +121,15 @@ class SceneCollectionViewCell: UICollectionViewCell {
         self.contentView.addSubview(title)
         
         regularConstraints.append(contentsOf: [
-            title.topAnchor.constraint(equalTo: titlePlaceHolder.topAnchor, constant: 24),
+            title.centerYAnchor.constraint(equalTo: titlePlaceHolder.centerYAnchor),
             title.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 32),
-            title.trailingAnchor.constraint(equalTo: star.leadingAnchor, constant: -136),
-            title.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -24)
+            title.trailingAnchor.constraint(equalTo: star.leadingAnchor, constant: -136)
         ])
         
         compactConstraints.append(contentsOf: [
-            title.topAnchor.constraint(equalTo: titlePlaceHolder.topAnchor, constant: 24 * proportion),
+            title.centerYAnchor.constraint(equalTo: titlePlaceHolder.centerYAnchor),
             title.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 32 * proportion),
-            title.trailingAnchor.constraint(equalTo: star.leadingAnchor, constant: -136 * proportion),
-            title.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -24 * proportion)
-            
+            title.trailingAnchor.constraint(equalTo: star.leadingAnchor, constant: -136 * proportion)            
         ])
         
     }
