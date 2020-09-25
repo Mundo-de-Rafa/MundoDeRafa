@@ -19,7 +19,7 @@
 
  👤 **Felipe Santana**
 * Github: [@FelipeSantana16](https://github.com/FelipeSantana16)
-* LinkedIn: [Felipe Santan](https://www.linkedin.com/in/felipe-santana-84a97a1b5)
+* LinkedIn: [Felipe Santana](https://www.linkedin.com/in/felipe-santana-84a97a1b5)
 
 ## Show your support
 Give a ⭐️ if this project helped you!
