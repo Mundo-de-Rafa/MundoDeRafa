@@ -33,7 +33,6 @@ class NextStoryViewController: UIViewController {
     }
     
     public func bAction() {
-        print("djjh")
         dismiss(animated: true, completion: nil)
     }
     
