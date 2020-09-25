@@ -12,6 +12,7 @@ class NextStoryView: UIView {
     var compactConstraints: [NSLayoutConstraint] = []
     var regularConstraints: [NSLayoutConstraint] = []
     var sharedConstraints: [NSLayoutConstraint] = []
+    var viewController: NextStoryViewController?
     
     lazy var congratulationsImage : UIImageView = {
         let imageV = UIImageView()
@@ -23,7 +24,9 @@ class NextStoryView: UIView {
     lazy var buttonRepet: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "restart_button"), for: UIControl.State.normal)
+        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.imageView?.contentMode = .scaleAspectFit
         return button
     }()
     
@@ -31,7 +34,7 @@ class NextStoryView: UIView {
         let label = UILabel()
         label.text = "Repetir"
         label.textColor = .primaryPurple
-        label.font = UIFont.systemFont(ofSize: 30)
+        label.font = UIFont.balsamicR?.withSize(UIScreen.main.bounds.height * 0.036)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -48,7 +51,7 @@ class NextStoryView: UIView {
         let button = RoundButton()
         button.backgroundColor = .primaryGreen
         button.setTitle("Próximo", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 32, weight: .bold)
+        button.titleLabel?.font = UIFont.balsamiqB?.withSize(UIScreen.main.bounds.height * 0.036)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -61,6 +64,11 @@ class NextStoryView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func buttonAction() {
+        viewController?.bAction()
+        buttonRepet.playSoundIfNeeded(of: .click)
     }
     
     // SETUP.
@@ -96,7 +104,7 @@ class NextStoryView: UIView {
             buttonRepet.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             buttonRepet.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             buttonRepet.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 2/10),
-            buttonRepet.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 2/10),
+            buttonRepet.widthAnchor.constraint(equalTo: self.buttonRepet.heightAnchor),
             
             repetLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             repetLabel.topAnchor.constraint(equalTo: self.buttonRepet.bottomAnchor, constant: 31),

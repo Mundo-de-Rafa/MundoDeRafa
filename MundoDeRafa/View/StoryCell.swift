@@ -84,14 +84,12 @@ class StoryCell: UICollectionViewCell {
         regularConstraints.append(contentsOf: [
             cardImage.heightAnchor.constraint(equalToConstant: 151),
             cardImage.widthAnchor.constraint(equalToConstant: 128),
-            cardImage.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 210),
             cardImage.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
             cardImage.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor)
         ])
         compactConstraints.append(contentsOf: [
             cardImage.heightAnchor.constraint(equalToConstant: 151*proportion),
             cardImage.widthAnchor.constraint(equalToConstant: 128*proportion),
-            cardImage.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 210*proportion),
             cardImage.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
             cardImage.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor)
         ])
