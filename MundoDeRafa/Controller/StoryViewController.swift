@@ -24,6 +24,7 @@ class StoryViewController: UIViewController, UICollectionViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
     
     func backButtonAction() {
