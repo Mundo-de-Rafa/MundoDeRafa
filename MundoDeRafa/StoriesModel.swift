@@ -21,14 +21,7 @@ struct Card {
     let state: CardState
 }
 
-
 var cards : [Card] = []
-var cardUnlocked = Card(title: "Rafa se preparando para escola", image: UIImage(named: "rafa_at_home") ?? UIImage(), progress: 0.4, state: .unlocked)
+var firstCard = Card(title: "Rafa se preparando para escola", image: UIImage(named: "rafa_at_home") ?? UIImage(), progress: 0.4, state: .unlocked)
 
-let cardLocked = Card(title: "Bloqueado", image: UIImage(named: "locked") ?? UIImage(), progress: 0.0, state: .locked)
-
-
-
-
-
-
+let cardLocked = Card(title: "Em breve", image: UIImage(named: "locked") ?? UIImage(), progress: 0.0, state: .locked)
