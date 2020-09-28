@@ -338,11 +338,8 @@
 		AE41936825124C1500CB0DC8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-
-				EF5768BF251D1EAA00778D7F /* Scenes */,
-
+				EF5768BF251D1EAA00778D7F /* BedroomScene */,
 				7747868D251E12EB00B816CE /* KitchenScene */,
-
 				AED00E7B251CC4C80064F7F5 /* Home */,
 				AED00E7A251CC4B60064F7F5 /* Stories */,
 				77E33EA02518E65C00BC41F9 /* NextStoryView */,
@@ -358,8 +355,7 @@
 		AE41936925124C1B00CB0DC8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-
-				EF5768C8251D379500778D7F /* Scenes */,
+				EF5768C8251D379500778D7F /* BedroomScene */,
 				7747868E251E12F300B816CE /* KitchenScene */,
 				AED00E7C251CC4D40064F7F5 /* Home */,
 				AED00E71251CC4840064F7F5 /* Stories */,
@@ -460,20 +456,20 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		EF5768BF251D1EAA00778D7F /* Scenes */ = {
+		EF5768BF251D1EAA00778D7F /* BedroomScene */ = {
 			isa = PBXGroup;
 			children = (
 				EF5768C0251D1ED400778D7F /* BedroomView.swift */,
 			);
-			path = Scenes;
+			path = BedroomScene;
 			sourceTree = "<group>";
 		};
-		EF5768C8251D379500778D7F /* Scenes */ = {
+		EF5768C8251D379500778D7F /* BedroomScene */ = {
 			isa = PBXGroup;
 			children = (
 				EF5768C9251D37E500778D7F /* BedroomViewController.swift */,
 			);
-			path = Scenes;
+			path = BedroomScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
