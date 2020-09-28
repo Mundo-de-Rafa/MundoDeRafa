@@ -10,13 +10,7 @@ import Foundation
 import UIKit
 
 enum CellConstantsScene {
-    static let cellHeightConstant: CGFloat = 400
-    static let cellWidthConstant: CGFloat = 600
-    static let insetTop: CGFloat = 138
-    static let insetLeft: CGFloat = 88
-    static let insetBottom: CGFloat = 0
-    static let insetRight: CGFloat = 72
-    static let minimumLineSpacing: CGFloat = 72
+    
 }
 
 class SceneView: UIView {
@@ -138,14 +132,14 @@ class SceneView: UIView {
         
         self.addSubview(progressBar)
         regularConstraints.append(contentsOf: [
-            progressBar.topAnchor.constraint(equalTo: self.topAnchor, constant: 40),
+            progressBar.centerYAnchor.constraint(equalTo: backButton.centerYAnchor),
             progressBar.leadingAnchor.constraint(equalTo: backButton.trailingAnchor, constant: 104),
             progressBar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -216),
             progressBar.heightAnchor.constraint(equalToConstant: 40)
         ])
         
         compactConstraints.append(contentsOf: [
-            progressBar.topAnchor.constraint(equalTo: self.topAnchor, constant: 40 * proportion),
+            progressBar.centerYAnchor.constraint(equalTo: backButton.centerYAnchor),
             progressBar.leadingAnchor.constraint(equalTo: backButton.trailingAnchor, constant: 104 * proportion),
             progressBar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -216 * proportion),
             progressBar.heightAnchor.constraint(equalToConstant: 40 * proportion)
@@ -192,10 +186,10 @@ class SceneView: UIView {
         self.addSubview(sceneCollectionView)
 
         sharedConstraints.append(contentsOf: [
-            sceneCollectionView.topAnchor.constraint(equalTo: self.topAnchor),
+            sceneCollectionView.topAnchor.constraint(equalTo: self.topAnchor, constant: 72),
             sceneCollectionView.leftAnchor.constraint(equalTo: self.leftAnchor),
             sceneCollectionView.rightAnchor.constraint(equalTo: self.rightAnchor),
-            sceneCollectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            sceneCollectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor/*, constant: -0.2 * self.bounds.height*/)
         ])
     }
     
@@ -207,32 +201,40 @@ extension SceneView {
         
         let flowLayout = UICollectionViewFlowLayout()
         
+        let cellHeightConstant: CGFloat = 500
+        let cellWidthConstant: CGFloat = 1.5 * cellHeightConstant
+        let insetTop: CGFloat = 0
+        let insetLeft: CGFloat = 88
+        let insetBottom: CGFloat = 0
+        let insetRight: CGFloat = 72
+        let minimumLineSpacing: CGFloat = 72
+        
         if viewLayout == ViewLayout.iPad {
             
-            flowLayout.minimumLineSpacing = CellConstantsScene.minimumLineSpacing
+            flowLayout.minimumLineSpacing = minimumLineSpacing
             flowLayout.scrollDirection = .horizontal
             
             flowLayout.sectionInset = UIEdgeInsets(
-                top: CellConstantsScene.insetTop,
-                left: CellConstantsScene.insetLeft,
-                bottom: CellConstantsScene.insetBottom,
-                right: CellConstantsScene.insetRight)
+                top: insetTop,
+                left: insetLeft,
+                bottom: insetBottom,
+                right: insetRight)
             
-            flowLayout.itemSize = CGSize(width: CellConstantsScene.cellWidthConstant, height: CellConstantsScene.cellHeightConstant)
+            flowLayout.itemSize = CGSize(width: cellWidthConstant, height: cellHeightConstant)
             
             return flowLayout
             
         } else {
             
-            flowLayout.minimumLineSpacing = CellConstantsScene.minimumLineSpacing*proportion
+            flowLayout.minimumLineSpacing = minimumLineSpacing*proportion
             flowLayout.scrollDirection = .horizontal
             flowLayout.sectionInset = UIEdgeInsets(
-                top: CellConstantsScene.insetTop*proportion,
-                left: CellConstantsScene.insetLeft*proportion,
-                bottom: CellConstantsScene.insetBottom,
-                right: CellConstantsScene.insetRight*proportion)
+                top: insetTop*proportion,
+                left: insetLeft*proportion,
+                bottom: insetBottom,
+                right: insetRight*proportion)
             
-            flowLayout.itemSize = CGSize(width: CellConstantsScene.cellWidthConstant*proportion , height: CellConstantsScene.cellHeightConstant*proportion)
+            flowLayout.itemSize = CGSize(width: cellWidthConstant*proportion , height: cellHeightConstant*proportion)
             return flowLayout
             
         }
