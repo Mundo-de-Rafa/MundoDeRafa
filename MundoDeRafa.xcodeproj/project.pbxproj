@@ -20,6 +20,7 @@
 		77E33EA22518E67400BC41F9 /* NextStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E33EA12518E67400BC41F9 /* NextStoryView.swift */; };
 		77E33EAB2518E7DA00BC41F9 /* PresenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E33EAA2518E7DA00BC41F9 /* PresenterViewController.swift */; };
 		77E33EB32518E80500BC41F9 /* NextStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E33EB22518E80500BC41F9 /* NextStoryViewController.swift */; };
+		AE16EB83251E29FC003CDCB2 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE16EB82251E29FC003CDCB2 /* ItemCollectionViewCell.swift */; };
 		AE2D8B12251B725A00C93963 /* OnboardingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D8B11251B725900C93963 /* OnboardingUITests.swift */; };
 		AE2D8B17251B76C200C93963 /* UIButton+Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D8B16251B76C200C93963 /* UIButton+Sound.swift */; };
 		AE2D8B3E251B7EC000C93963 /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE2D8B28251B7EC000C93963 /* music.mp3 */; };
@@ -62,6 +63,8 @@
 		AEF7B50F2515027B00740C95 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7B50E2515027B00740C95 /* AppFonts.swift */; };
 		EF1912CA2517F947005A74D5 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1912C92517F947005A74D5 /* StoryViewController.swift */; };
 		EF576893251B03FC00778D7F /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF576892251B03FC00778D7F /* StoryView.swift */; };
+		EF5768C1251D1ED400778D7F /* BedroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5768C0251D1ED400778D7F /* BedroomView.swift */; };
+		EF5768CA251D37E500778D7F /* BedroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5768C9251D37E500778D7F /* BedroomViewController.swift */; };
 		EF8DB9432514DC0300B719BC /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8DB9422514DC0300B719BC /* StoryCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +99,7 @@
 		77E33EA12518E67400BC41F9 /* NextStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStoryView.swift; sourceTree = "<group>"; };
 		77E33EAA2518E7DA00BC41F9 /* PresenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterViewController.swift; sourceTree = "<group>"; };
 		77E33EB22518E80500BC41F9 /* NextStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStoryViewController.swift; sourceTree = "<group>"; };
+		AE16EB82251E29FC003CDCB2 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		AE2D8B11251B725900C93963 /* OnboardingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingUITests.swift; sourceTree = "<group>"; };
 		AE2D8B16251B76C200C93963 /* UIButton+Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Sound.swift"; sourceTree = "<group>"; };
 		AE2D8B28251B7EC000C93963 /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 		AEF7B50E2515027B00740C95 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
 		EF1912C92517F947005A74D5 /* StoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
 		EF576892251B03FC00778D7F /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
+		EF5768C0251D1ED400778D7F /* BedroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedroomView.swift; sourceTree = "<group>"; };
+		EF5768C9251D37E500778D7F /* BedroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedroomViewController.swift; sourceTree = "<group>"; };
 		EF8DB9422514DC0300B719BC /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -338,6 +344,7 @@
 		AE41936825124C1500CB0DC8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EF5768BF251D1EAA00778D7F /* BedroomScene */,
 				7747868D251E12EB00B816CE /* KitchenScene */,
 				AED00E7B251CC4C80064F7F5 /* Home */,
 				AED00E7A251CC4B60064F7F5 /* Stories */,
@@ -355,9 +362,10 @@
 		AE41936925124C1B00CB0DC8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				EF5768C8251D379500778D7F /* BedroomScene */,
+				AED00E71251CC4840064F7F5 /* Stories */,
 				7747868E251E12F300B816CE /* KitchenScene */,
 				AED00E7C251CC4D40064F7F5 /* Home */,
-				AED00E71251CC4840064F7F5 /* Stories */,
 				77E33EA92518E70800BC41F9 /* NextStory */,
 				38A61B7E2518CE5700B48E11 /* ScenesViewController.swift */,
 				EF1912C92517F947005A74D5 /* StoryViewController.swift */,
@@ -392,6 +400,15 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		AE61B3B5251E1D0F003B9EC0 /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				AED00E72251CC49D0064F7F5 /* StoryDefaultViewController.swift */,
+				AE16EB82251E29FC003CDCB2 /* ItemCollectionViewCell.swift */,
+			);
+			path = Default;
+			sourceTree = "<group>";
+		};
 		AE730E6D25139E8D0038F783 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -415,7 +432,7 @@
 		AED00E71251CC4840064F7F5 /* Stories */ = {
 			isa = PBXGroup;
 			children = (
-				AED00E72251CC49D0064F7F5 /* StoryDefaultViewController.swift */,
+				AE61B3B5251E1D0F003B9EC0 /* Default */,
 			);
 			path = Stories;
 			sourceTree = "<group>";
@@ -454,6 +471,22 @@
 				AEF7B5072514FF2B00740C95 /* KGNeatlyPrinted.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		EF5768BF251D1EAA00778D7F /* BedroomScene */ = {
+			isa = PBXGroup;
+			children = (
+				EF5768C0251D1ED400778D7F /* BedroomView.swift */,
+			);
+			path = BedroomScene;
+			sourceTree = "<group>";
+		};
+		EF5768C8251D379500778D7F /* BedroomScene */ = {
+			isa = PBXGroup;
+			children = (
+				EF5768C9251D37E500778D7F /* BedroomViewController.swift */,
+			);
+			path = BedroomScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -643,11 +676,14 @@
 				AEC97E4F251CE06800264E87 /* MainMenuViewController.swift in Sources */,
 				77E33EA22518E67400BC41F9 /* NextStoryView.swift in Sources */,
 				AEF7B50F2515027B00740C95 /* AppFonts.swift in Sources */,
+				AE16EB83251E29FC003CDCB2 /* ItemCollectionViewCell.swift in Sources */,
 				AE4193372512423600CB0DC8 /* AppDelegate.swift in Sources */,
 				AE982D992514DFB200021DA2 /* OnboardingView.swift in Sources */,
 				AEC97E4E251CE06800264E87 /* OnboardingViewController.swift in Sources */,
+				EF5768CA251D37E500778D7F /* BedroomViewController.swift in Sources */,
 				AE41E09C2518E914008F52F5 /* MainMenuView.swift in Sources */,
 				AED00E73251CC49D0064F7F5 /* StoryDefaultViewController.swift in Sources */,
+				EF5768C1251D1ED400778D7F /* BedroomView.swift in Sources */,
 				AE2D8B17251B76C200C93963 /* UIButton+Sound.swift in Sources */,
 				AE41E0972518E6A6008F52F5 /* HomeDefaultViewController.swift in Sources */,
 				380EE7D0251B9492007D835D /* SceneView.swift in Sources */,
