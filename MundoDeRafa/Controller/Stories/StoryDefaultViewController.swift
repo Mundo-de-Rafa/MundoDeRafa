@@ -44,7 +44,7 @@ class StoryDefaultViewController: UIViewController {
     }
     
     @objc func didTapPauseButton() {
-        navigationController?.present(NextStoryViewController(), animated: true, completion: nil)
+        navigationController?.present(PauseViewController(), animated: true, completion: nil)
     }
     
     private func setupPauseButton() {
