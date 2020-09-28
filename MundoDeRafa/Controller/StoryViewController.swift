@@ -9,7 +9,8 @@
 import UIKit
 
 class StoryViewController: UIViewController, UICollectionViewDelegate {
-    
+    let cards : [Card] = [cardUnlocked, cardLocked]
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -34,19 +35,39 @@ class StoryViewController: UIViewController, UICollectionViewDelegate {
 
 extension StoryViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        5
+        cards.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StoryCell.identifier, for: indexPath)
-        
-        if let cell = cell as? StoryCell {
-            cell.cardState = .locked
-            cell.cardLabel.text = "Bloqueado"
-            cell.cardImage.image = UIImage(named: "locked")
+       
+        switch cards[indexPath.row].state {
+            case .locked:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StoryCellLocked.identifier, for: indexPath)
+                if let cell = cell as? StoryCellLocked {
+                    cell.cardLabel.text = cards[indexPath.item].title
+                    cell.cardImage.image = cards[indexPath.item].image
+                    cell.progressIndicator.progress = cards[indexPath.item].progress
+                }
+                return cell
+                
+            case .unlocked:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StoryCellUnlocked.identifier, for: indexPath)
+                if let cell = cell as? StoryCellUnlocked {
+                    cell.cardLabel.text = cards[indexPath.item].title
+                    cell.cardImage.image = cards[indexPath.item].image
+                    cell.progressIndicator.progress = cards[indexPath.item].progress
+
+                }
+                return cell
         }
-        return cell
+
+//        if let cell = cell as? StoryCell {
+//            cell.cardState = cards[indexPath.item].state
+//            cell.cardLabel.text = cards[indexPath.item].title
+//            cell.cardImage.image = cards[indexPath.item].image
+//            cell.progressIndicator.progress = cards[indexPath.item].progress
+//
+//        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
