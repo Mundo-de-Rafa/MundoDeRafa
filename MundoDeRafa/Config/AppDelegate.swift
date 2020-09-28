@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         let navigationController = UINavigationController()
-        let rootViewController = didFirstLaunch ? MainMenuViewController() : OnboardingViewController()
+        let rootViewController = didFirstLaunch ? KitchenSceneViewController() : OnboardingViewController()
         navigationController.viewControllers = [rootViewController]
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
