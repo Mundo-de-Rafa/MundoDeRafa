@@ -19,6 +19,7 @@
 		77E33EAB2518E7DA00BC41F9 /* PresenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E33EAA2518E7DA00BC41F9 /* PresenterViewController.swift */; };
 		77E33EB32518E80500BC41F9 /* NextStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E33EB22518E80500BC41F9 /* NextStoryViewController.swift */; };
 		AE16EB83251E29FC003CDCB2 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE16EB82251E29FC003CDCB2 /* ItemCollectionViewCell.swift */; };
+		AE16EB9F25222D61003CDCB2 /* DockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE16EB9E25222D61003CDCB2 /* DockItem.swift */; };
 		AE2D8B12251B725A00C93963 /* OnboardingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D8B11251B725900C93963 /* OnboardingUITests.swift */; };
 		AE2D8B17251B76C200C93963 /* UIButton+Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D8B16251B76C200C93963 /* UIButton+Sound.swift */; };
 		AE2D8B3E251B7EC000C93963 /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE2D8B28251B7EC000C93963 /* music.mp3 */; };
@@ -96,6 +97,7 @@
 		77E33EAA2518E7DA00BC41F9 /* PresenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterViewController.swift; sourceTree = "<group>"; };
 		77E33EB22518E80500BC41F9 /* NextStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStoryViewController.swift; sourceTree = "<group>"; };
 		AE16EB82251E29FC003CDCB2 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		AE16EB9E25222D61003CDCB2 /* DockItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockItem.swift; sourceTree = "<group>"; };
 		AE2D8B11251B725900C93963 /* OnboardingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingUITests.swift; sourceTree = "<group>"; };
 		AE2D8B16251B76C200C93963 /* UIButton+Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Sound.swift"; sourceTree = "<group>"; };
 		AE2D8B28251B7EC000C93963 /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				AED00E72251CC49D0064F7F5 /* StoryDefaultViewController.swift */,
+				AE16EB9E25222D61003CDCB2 /* DockItem.swift */,
 				AE16EB82251E29FC003CDCB2 /* ItemCollectionViewCell.swift */,
 			);
 			path = Default;
@@ -676,6 +679,7 @@
 				AE41E09C2518E914008F52F5 /* MainMenuView.swift in Sources */,
 				AED00E73251CC49D0064F7F5 /* StoryDefaultViewController.swift in Sources */,
 				EF5768C1251D1ED400778D7F /* BedroomView.swift in Sources */,
+				AE16EB9F25222D61003CDCB2 /* DockItem.swift in Sources */,
 				AE2D8B17251B76C200C93963 /* UIButton+Sound.swift in Sources */,
 				AE41E0972518E6A6008F52F5 /* HomeDefaultViewController.swift in Sources */,
 				380EE7D0251B9492007D835D /* SceneView.swift in Sources */,

@@ -10,7 +10,7 @@ import UIKit
 
 class StoryDefaultViewController: UIViewController {
 
-    var elements = ["garfo", "colher", "espatula"]
+    var elements = [DockItem(name: "garfo"), DockItem(name: "colher"), DockItem(name: "espatula")]
     
     lazy var pauseButton: UIButton = {
         let button = UIButton()
@@ -51,6 +51,7 @@ class StoryDefaultViewController: UIViewController {
         view.backgroundColor = .secondaryPurple
         itemsDock.delegate = self
         itemsDock.dataSource = self
+        itemsDock.dragDelegate = self
         setupPauseButton()
         setupInstructionsLabel()
         setupItemsDock()
@@ -106,6 +107,7 @@ class StoryDefaultViewController: UIViewController {
     }
     
     private func setupItemsDock() {
+        itemsDock.dragInteractionEnabled = true
         view.addSubview(itemsDock)
         NSLayoutConstraint.activate([
             itemsDock.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -127,7 +129,7 @@ extension StoryDefaultViewController: UICollectionViewDelegate, UICollectionView
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath)
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: elements[indexPath.row])
+        imageView.image = UIImage(named: elements[indexPath.row].name)
         cell.backgroundView = imageView
         return cell
     }
@@ -144,13 +146,17 @@ extension StoryDefaultViewController: UICollectionViewDelegate, UICollectionView
 }
 
 extension StoryDefaultViewController: UICollectionViewDragDelegate {
-    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+    
+      func dragItems(for indexPath: IndexPath) -> [UIDragItem] {
         let item = elements[indexPath.row]
-        let itemProvider = NSItemProvider(object: item as NSString)
+        let itemProvider = NSItemProvider(object: item.name as NSString)
         let dragItem = UIDragItem(itemProvider: itemProvider)
         dragItem.localObject = item
-        
         return [dragItem]
+      }
+    
+    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        return dragItems(for: indexPath)
     }
     
 }
