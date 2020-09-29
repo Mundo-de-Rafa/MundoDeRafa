@@ -11,6 +11,7 @@
 		38A61B7F2518CE5700B48E11 /* ScenesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A61B7E2518CE5700B48E11 /* ScenesViewController.swift */; };
 		38A61B92251A1FDA00B48E11 /* SceneCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A61B91251A1FDA00B48E11 /* SceneCollectionViewCell.swift */; };
 		38A61B97251B78A600B48E11 /* SceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A61B96251B78A600B48E11 /* SceneModel.swift */; };
+		7731804A25235DA9005B764A /* unsuccessfulAction.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7731804925235DA9005B764A /* unsuccessfulAction.mp3 */; };
 		77478690251E13FF00B816CE /* KitchenSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7747868F251E13FF00B816CE /* KitchenSceneViewController.swift */; };
 		77478695251E141100B816CE /* KitchenSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77478694251E141100B816CE /* KitchenSceneView.swift */; };
 		77C2E441251CC5D100016D6E /* NextStoryViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C2E440251CC5D100016D6E /* NextStoryViewUITests.swift */; };
@@ -65,7 +66,6 @@
 		EF8DB9432514DC0300B719BC /* StoryCellUnlocked.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8DB9422514DC0300B719BC /* StoryCellUnlocked.swift */; };
 		EFDC8E4D25220F5500056988 /* StoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDC8E4C25220F5500056988 /* StoriesModel.swift */; };
 		EFDC8E642522205300056988 /* StoryCellLocked.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDC8E632522205300056988 /* StoryCellLocked.swift */; };
-		EFDC8E752522835700056988 /* unsuccessfulAction.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFDC8E742522835700056988 /* unsuccessfulAction.mp3 */; };
 		EFDC8E7A252287AE00056988 /* SoundHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDC8E79252287AE00056988 /* SoundHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +91,7 @@
 		38A61B7E2518CE5700B48E11 /* ScenesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenesViewController.swift; sourceTree = "<group>"; };
 		38A61B91251A1FDA00B48E11 /* SceneCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCollectionViewCell.swift; sourceTree = "<group>"; };
 		38A61B96251B78A600B48E11 /* SceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneModel.swift; path = MundoDeRafa/View/SceneModel.swift; sourceTree = SOURCE_ROOT; };
+		7731804925235DA9005B764A /* unsuccessfulAction.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = unsuccessfulAction.mp3; sourceTree = "<group>"; };
 		7747868F251E13FF00B816CE /* KitchenSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenSceneViewController.swift; sourceTree = "<group>"; };
 		77478694251E141100B816CE /* KitchenSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenSceneView.swift; sourceTree = "<group>"; };
 		77C2E440251CC5D100016D6E /* NextStoryViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStoryViewUITests.swift; sourceTree = "<group>"; };
@@ -151,7 +152,6 @@
 		EF8DB9422514DC0300B719BC /* StoryCellUnlocked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCellUnlocked.swift; sourceTree = "<group>"; };
 		EFDC8E4C25220F5500056988 /* StoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StoriesModel.swift; path = MundoDeRafa/StoriesModel.swift; sourceTree = SOURCE_ROOT; };
 		EFDC8E632522205300056988 /* StoryCellLocked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCellLocked.swift; sourceTree = "<group>"; };
-		EFDC8E742522835700056988 /* unsuccessfulAction.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = unsuccessfulAction.mp3; path = ../../../../../../unsuccessfulAction.mp3; sourceTree = "<group>"; };
 		EFDC8E79252287AE00056988 /* SoundHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -242,7 +242,7 @@
 		AE2D8B2A251B7EC000C93963 /* general */ = {
 			isa = PBXGroup;
 			children = (
-				EFDC8E742522835700056988 /* unsuccessfulAction.mp3 */,
+				7731804925235DA9005B764A /* unsuccessfulAction.mp3 */,
 				AE2D8B2B251B7EC000C93963 /* clickButton.mp3 */,
 				AE2D8B2C251B7EC000C93963 /* finishTask.mp3 */,
 				AE2D8B2D251B7EC000C93963 /* finishScene.mp3 */,
@@ -610,7 +610,7 @@
 				AE2D8B43251B7EC000C93963 /* shower1 2.mp3 in Resources */,
 				AE2D8B45251B7EC000C93963 /* shower3 3.mp3 in Resources */,
 				AEF7B5092514FF6C00740C95 /* BalsamiqSans-Regular.ttf in Resources */,
-				EFDC8E752522835700056988 /* unsuccessfulAction.mp3 in Resources */,
+				7731804A25235DA9005B764A /* unsuccessfulAction.mp3 in Resources */,
 				AE2D8B3E251B7EC000C93963 /* music.mp3 in Resources */,
 				AE2D8B4B251B7EC000C93963 /* niceDuck 2.mp3 in Resources */,
 				AE2D8B4F251B7EC000C93963 /* spoon.mp3 in Resources */,
