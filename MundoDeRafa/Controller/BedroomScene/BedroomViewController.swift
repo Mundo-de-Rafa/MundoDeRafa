@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BedroomViewController: UIViewController {
+class BedroomViewController: SceneDefaultViewController {
 
     override func loadView() {
         let bedroomView = BedroomView()
@@ -20,6 +20,18 @@ class BedroomViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
 
-        // Do any additional setup after loading the view.
+        itemsDock.dropDelegate = self
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        showInstructionsLabel(with: "Ajude o Rafa a se vestir! Arraste as peças de roupa para as partes do corpo corretas!", for: .now() + 6)
+    }
+}
+
+// MARK: Items Dock Drop Delegate
+extension BedroomViewController: UICollectionViewDropDelegate {
+    func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
+        //Fit clothes
+    }
+    
 }
