@@ -16,7 +16,6 @@
 		77C2E441251CC5D100016D6E /* NextStoryViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C2E440251CC5D100016D6E /* NextStoryViewUITests.swift */; };
 		77E33E9C2518E5E700BC41F9 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E33E9B2518E5E700BC41F9 /* RoundButton.swift */; };
 		77E33EA22518E67400BC41F9 /* NextStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E33EA12518E67400BC41F9 /* NextStoryView.swift */; };
-		77E33EAB2518E7DA00BC41F9 /* PresenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E33EAA2518E7DA00BC41F9 /* PresenterViewController.swift */; };
 		77E33EB32518E80500BC41F9 /* NextStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E33EB22518E80500BC41F9 /* NextStoryViewController.swift */; };
 		AE16EB83251E29FC003CDCB2 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE16EB82251E29FC003CDCB2 /* ItemCollectionViewCell.swift */; };
 		AE2D8B12251B725A00C93963 /* OnboardingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D8B11251B725900C93963 /* OnboardingUITests.swift */; };
@@ -93,7 +92,6 @@
 		77C2E440251CC5D100016D6E /* NextStoryViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStoryViewUITests.swift; sourceTree = "<group>"; };
 		77E33E9B2518E5E700BC41F9 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		77E33EA12518E67400BC41F9 /* NextStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStoryView.swift; sourceTree = "<group>"; };
-		77E33EAA2518E7DA00BC41F9 /* PresenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterViewController.swift; sourceTree = "<group>"; };
 		77E33EB22518E80500BC41F9 /* NextStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStoryViewController.swift; sourceTree = "<group>"; };
 		AE16EB82251E29FC003CDCB2 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		AE2D8B11251B725900C93963 /* OnboardingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingUITests.swift; sourceTree = "<group>"; };
@@ -201,7 +199,6 @@
 		77E33EA92518E70800BC41F9 /* NextStory */ = {
 			isa = PBXGroup;
 			children = (
-				77E33EAA2518E7DA00BC41F9 /* PresenterViewController.swift */,
 				77E33EB22518E80500BC41F9 /* NextStoryViewController.swift */,
 			);
 			path = NextStory;
@@ -662,7 +659,6 @@
 				EF1912CA2517F947005A74D5 /* StoryViewController.swift in Sources */,
 				AED00E89251CDC350064F7F5 /* UILabel+Padding.swift in Sources */,
 				77E33EB32518E80500BC41F9 /* NextStoryViewController.swift in Sources */,
-				77E33EAB2518E7DA00BC41F9 /* PresenterViewController.swift in Sources */,
 				AE588CE2251B935900A2BF74 /* MusicHelper.swift in Sources */,
 				77478690251E13FF00B816CE /* KitchenSceneViewController.swift in Sources */,
 				AEC97E4F251CE06800264E87 /* MainMenuViewController.swift in Sources */,
