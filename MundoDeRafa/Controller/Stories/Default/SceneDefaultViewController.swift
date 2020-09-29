@@ -151,11 +151,11 @@ extension SceneDefaultViewController: UICollectionViewDragDelegate {
       }
     
     func collectionView(_ collectionView: UICollectionView, dragSessionWillBegin session: UIDragSession) {
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.5, animations: {
             self.itemsDock.alpha = 0
-        } completion: { _ in
+        }, completion: { _ in
             self.itemsDock.isHidden = true
-        }
+        })
     }
     
     func collectionView(_ collectionView: UICollectionView, dragSessionDidEnd session: UIDragSession) {

@@ -30,8 +30,17 @@ class BedroomViewController: SceneDefaultViewController {
 
 // MARK: Items Dock Drop Delegate
 extension BedroomViewController: UICollectionViewDropDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, canHandle session: UIDropSession) -> Bool {
+        print(session)
+        return true
+    }
+    
     func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
         //Fit clothes
+        guard let bedroomView = view as? BedroomView else { return }
+        print(coordinator.destinationIndexPath)
+        
     }
     
 }

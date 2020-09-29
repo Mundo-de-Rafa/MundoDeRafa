@@ -106,7 +106,7 @@ class BedroomView: UIView {
         regularConstraints.append(contentsOf: [
             shoes.widthAnchor.constraint(equalToConstant: 138),
             shoes.heightAnchor.constraint(equalToConstant: 30),
-            shoes.topAnchor.constraint(equalTo: self.topAnchor, constant: 750),
+            shoes.bottomAnchor.constraint(equalTo: rafaImage.bottomAnchor, constant: 0),
             shoes.leftAnchor.constraint(equalTo: self.leftAnchor,constant: 472)
             
         ])
@@ -176,6 +176,8 @@ class BedroomView: UIView {
     }
     
     func setShirt() {
+        shirt.isHidden = true
+        
         self.addSubview(shirt)
         regularConstraints.append(contentsOf: [
             shirt.widthAnchor.constraint(equalToConstant: 177),
@@ -240,9 +242,9 @@ class BedroomView: UIView {
         setDottedShoes()
         setDottedPants()
         setDottedShirt()
-//        setShoes()
-//        setPants()
-//        setShirt()
+        setShoes()
+        setPants()
+        setShirt()
         NSLayoutConstraint.activate(sharedConstraints)
         setLayoutTrait(traitCollection: UIScreen.main.traitCollection)
         
