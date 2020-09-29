@@ -8,18 +8,12 @@
 
 import UIKit
 
-enum CardState {
-    case locked
-    case unlocked
-}
-
-class StoryCell: UICollectionViewCell {
-    static let identifier: String = "Cell"
+class StoryCellUnlocked: UICollectionViewCell {
+    static let identifier: String = "CellUnlocked"
     let proportion : CGFloat = 1/2
     private var compactConstraints: [NSLayoutConstraint] = []
     private var regularConstraints: [NSLayoutConstraint] = []
     
-    var cardState = CardState.locked
     var cardImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -79,21 +73,6 @@ class StoryCell: UICollectionViewCell {
             cardImage.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 8*proportion)
         ])
     }
-    func setUpCardImagelocked() {
-        self.contentView.addSubview(cardImage)
-        regularConstraints.append(contentsOf: [
-            cardImage.heightAnchor.constraint(equalToConstant: 151),
-            cardImage.widthAnchor.constraint(equalToConstant: 128),
-            cardImage.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
-            cardImage.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor)
-        ])
-        compactConstraints.append(contentsOf: [
-            cardImage.heightAnchor.constraint(equalToConstant: 151*proportion),
-            cardImage.widthAnchor.constraint(equalToConstant: 128*proportion),
-            cardImage.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
-            cardImage.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor)
-        ])
-    }
     
     func setUpProgressIndicator() {
         self.contentView.addSubview(progressIndicator)
@@ -126,18 +105,10 @@ class StoryCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        //card radius
         self.layer.cornerRadius = 16
-        switch cardState {
-        case .locked:
-            setUpCardImagelocked()
-            self.backgroundColor = UIColor.darkPurple
-            progressIndicator.setProgress(0, animated: false)
-            cardLabel.text = "Bloqueado"
-        case .unlocked:
-            setUpCardImageUnlocked()
-            self.backgroundColor = UIColor.secondaryPurple
-        }
+        setUpCardImageUnlocked()
+        self.backgroundColor = UIColor.secondaryPurple
+        
         setUpCardLabel()
         setUpProgressIndicator()
         setViewLayout()

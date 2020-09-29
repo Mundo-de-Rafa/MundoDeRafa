@@ -62,7 +62,11 @@
 		EF576893251B03FC00778D7F /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF576892251B03FC00778D7F /* StoryView.swift */; };
 		EF5768C1251D1ED400778D7F /* BedroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5768C0251D1ED400778D7F /* BedroomView.swift */; };
 		EF5768CA251D37E500778D7F /* BedroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5768C9251D37E500778D7F /* BedroomViewController.swift */; };
-		EF8DB9432514DC0300B719BC /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8DB9422514DC0300B719BC /* StoryCell.swift */; };
+		EF8DB9432514DC0300B719BC /* StoryCellUnlocked.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8DB9422514DC0300B719BC /* StoryCellUnlocked.swift */; };
+		EFDC8E4D25220F5500056988 /* StoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDC8E4C25220F5500056988 /* StoriesModel.swift */; };
+		EFDC8E642522205300056988 /* StoryCellLocked.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDC8E632522205300056988 /* StoryCellLocked.swift */; };
+		EFDC8E752522835700056988 /* unsuccessfulAction.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFDC8E742522835700056988 /* unsuccessfulAction.mp3 */; };
+		EFDC8E7A252287AE00056988 /* SoundHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDC8E79252287AE00056988 /* SoundHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,7 +148,11 @@
 		EF576892251B03FC00778D7F /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
 		EF5768C0251D1ED400778D7F /* BedroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedroomView.swift; sourceTree = "<group>"; };
 		EF5768C9251D37E500778D7F /* BedroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedroomViewController.swift; sourceTree = "<group>"; };
-		EF8DB9422514DC0300B719BC /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
+		EF8DB9422514DC0300B719BC /* StoryCellUnlocked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCellUnlocked.swift; sourceTree = "<group>"; };
+		EFDC8E4C25220F5500056988 /* StoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StoriesModel.swift; path = MundoDeRafa/StoriesModel.swift; sourceTree = SOURCE_ROOT; };
+		EFDC8E632522205300056988 /* StoryCellLocked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCellLocked.swift; sourceTree = "<group>"; };
+		EFDC8E742522835700056988 /* unsuccessfulAction.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = unsuccessfulAction.mp3; path = ../../../../../../unsuccessfulAction.mp3; sourceTree = "<group>"; };
+		EFDC8E79252287AE00056988 /* SoundHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +242,7 @@
 		AE2D8B2A251B7EC000C93963 /* general */ = {
 			isa = PBXGroup;
 			children = (
+				EFDC8E742522835700056988 /* unsuccessfulAction.mp3 */,
 				AE2D8B2B251B7EC000C93963 /* clickButton.mp3 */,
 				AE2D8B2C251B7EC000C93963 /* finishTask.mp3 */,
 				AE2D8B2D251B7EC000C93963 /* finishScene.mp3 */,
@@ -343,10 +352,11 @@
 				AED00E7A251CC4B60064F7F5 /* Stories */,
 				77E33EA02518E65C00BC41F9 /* NextStoryView */,
 				AE4193412512423A00CB0DC8 /* LaunchScreen.storyboard */,
-				EF8DB9422514DC0300B719BC /* StoryCell.swift */,
+				EF8DB9422514DC0300B719BC /* StoryCellUnlocked.swift */,
 				38A61B91251A1FDA00B48E11 /* SceneCollectionViewCell.swift */,
 				EF576892251B03FC00778D7F /* StoryView.swift */,
 				380EE7CF251B9492007D835D /* SceneView.swift */,
+				EFDC8E632522205300056988 /* StoryCellLocked.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -387,6 +397,7 @@
 			isa = PBXGroup;
 			children = (
 				AE588CE1251B935900A2BF74 /* MusicHelper.swift */,
+				EFDC8E79252287AE00056988 /* SoundHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -416,6 +427,7 @@
 			isa = PBXGroup;
 			children = (
 				38A61B96251B78A600B48E11 /* SceneModel.swift */,
+				EFDC8E4C25220F5500056988 /* StoriesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -598,6 +610,7 @@
 				AE2D8B43251B7EC000C93963 /* shower1 2.mp3 in Resources */,
 				AE2D8B45251B7EC000C93963 /* shower3 3.mp3 in Resources */,
 				AEF7B5092514FF6C00740C95 /* BalsamiqSans-Regular.ttf in Resources */,
+				EFDC8E752522835700056988 /* unsuccessfulAction.mp3 in Resources */,
 				AE2D8B3E251B7EC000C93963 /* music.mp3 in Resources */,
 				AE2D8B4B251B7EC000C93963 /* niceDuck 2.mp3 in Resources */,
 				AE2D8B4F251B7EC000C93963 /* spoon.mp3 in Resources */,
@@ -673,13 +686,16 @@
 				AED00E73251CC49D0064F7F5 /* StoryDefaultViewController.swift in Sources */,
 				EF5768C1251D1ED400778D7F /* BedroomView.swift in Sources */,
 				AE2D8B17251B76C200C93963 /* UIButton+Sound.swift in Sources */,
+				EFDC8E7A252287AE00056988 /* SoundHelper.swift in Sources */,
 				AE41E0972518E6A6008F52F5 /* HomeDefaultViewController.swift in Sources */,
 				380EE7D0251B9492007D835D /* SceneView.swift in Sources */,
 				77E33E9C2518E5E700BC41F9 /* RoundButton.swift in Sources */,
+				EFDC8E642522205300056988 /* StoryCellLocked.swift in Sources */,
 				EF576893251B03FC00778D7F /* StoryView.swift in Sources */,
+				EFDC8E4D25220F5500056988 /* StoriesModel.swift in Sources */,
 				AE982D912514DB9000021DA2 /* HomeDefaultView.swift in Sources */,
 				AE4193392512423600CB0DC8 /* SceneDelegate.swift in Sources */,
-				EF8DB9432514DC0300B719BC /* StoryCell.swift in Sources */,
+				EF8DB9432514DC0300B719BC /* StoryCellUnlocked.swift in Sources */,
 				38A61B92251A1FDA00B48E11 /* SceneCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -901,7 +917,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MundoDeRafa.app/MundoDeRafa";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mundo de Rafa.app/Mundo de Rafa";
 			};
 			name = Debug;
 		};
@@ -923,7 +939,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MundoDeRafa.app/MundoDeRafa";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mundo de Rafa.app/Mundo de Rafa";
 			};
 			name = Release;
 		};

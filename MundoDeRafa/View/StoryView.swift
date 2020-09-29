@@ -52,7 +52,8 @@ class StoryView: UIView {
     
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
-        collectionView.register(StoryCell.self, forCellWithReuseIdentifier: StoryCell.identifier)
+        collectionView.register(StoryCellUnlocked.self, forCellWithReuseIdentifier: StoryCellUnlocked.identifier)
+        collectionView.register(StoryCellLocked.self, forCellWithReuseIdentifier: StoryCellLocked.identifier)
         collectionView.backgroundView = backgroundView
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
