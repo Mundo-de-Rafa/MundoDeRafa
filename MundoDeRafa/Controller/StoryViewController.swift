@@ -81,6 +81,7 @@ extension StoryViewController : UICollectionViewDataSource {
             SoundHelper.playSound(resource: "unsuccessfulAction")
             
         } else {
+            SoundHelper.playSound(resource: "clickButton")
             self.navigationController?.pushViewController(ScenesViewController(), animated: true)
         }
     }
