@@ -161,6 +161,9 @@ extension StoryDefaultViewController: UICollectionViewDragDelegate {
     func collectionView(_ collectionView: UICollectionView, dragPreviewParametersForItemAt indexPath: IndexPath) -> UIDragPreviewParameters? {
         let previewParameters = UIDragPreviewParameters()
         
+        if #available(iOS 14.0, *) {
+            previewParameters.shadowPath = UIBezierPath()
+        }
         previewParameters.backgroundColor = UIColor.clear // Transparent background
         return previewParameters
     }
