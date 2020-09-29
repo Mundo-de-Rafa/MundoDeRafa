@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Captura de Tela 2020-09-15 às 11.09.03.png",
+      "filename" : "blusa.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Captura de Tela 2020-09-15 às 11.09.03@2x.png",
+      "filename" : "blusa@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Captura de Tela 2020-09-15 às 11.09.03@3x.png",
+      "filename" : "blusa@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
