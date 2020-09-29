@@ -17,7 +17,7 @@ class KitchenSceneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view = viewBackground
-//        viewBackground.setBackgroundImage()
+        viewBackground.setBackgroundImage()
         self.navigationController?.isNavigationBarHidden = true
     }
 }
