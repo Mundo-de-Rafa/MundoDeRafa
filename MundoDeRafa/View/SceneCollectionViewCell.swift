@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class SceneCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "SceneCollectionViewCell"
