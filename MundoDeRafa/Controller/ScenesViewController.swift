@@ -12,11 +12,6 @@ class ScenesViewController: UIViewController {
     
     lazy var scenesModels: [SceneModel] = []
     
-    let bathRoomSceneCard = SceneModel(image: "card_bathroom", title: "Rafa Tomando Banho", isComplete: false, isBlocked: true)
-    
-    let bedRoomSceneCard = SceneModel(image: "card_bedroom", title: "Rafa se vestindo", isComplete: false, isBlocked: false)
-    
-    let kitchenSceneCard = SceneModel(image: "card_kitchen", title: "Café da manhã de Rafa", isComplete: false, isBlocked: true)
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
@@ -30,12 +25,32 @@ class ScenesViewController: UIViewController {
         view = sceneView
     }
     
+    func loadScenesCards() {
+        
+        if FileController().directoryExists(with: "SceneModel.Json") {
+
+            guard let scenes = readSceneModelsFromFile() else { return }
+            self.scenesModels = scenes
+            
+        } else {
+            
+            //let bathRoomSceneCard = SceneModel(image: "card_bathroom", title: "Rafa Tomando Banho", isComplete: false, isBlocked: true)
+            
+            let bedRoomSceneCard = SceneModel(image: "card_bedroom", title: "Rafa se vestindo", isComplete: false, isBlocked: false)
+            
+            let kitchenSceneCard = SceneModel(image: "card_kitchen", title: "Café da manhã de Rafa", isComplete: false, isBlocked: true)
+            
+            self.scenesModels.append(contentsOf:[ bedRoomSceneCard, kitchenSceneCard])
+            createSceneModelNewFile(data: scenesModels)
+            
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        scenesModels.append(contentsOf:[ bedRoomSceneCard, kitchenSceneCard])
-        createSceneModelNewFile(data: scenesModels)
-        let existsDirectory = FileController().directoryExists(with: "SceneModel.Json")
-        print(existsDirectory)
+        loadScenesCards()
+        
     }
     
     func backButtonAction() {
@@ -66,12 +81,25 @@ extension ScenesViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         return cell
     }
+    
+    func shakingAnimation() -> CAKeyframeAnimation {
+        // transform is a property of CAlayer which can rotate, translate and scale
+        let transformAnim  = CAKeyframeAnimation(keyPath:"transform")
+        //animation values from a position to another
+        // CATransform3DMakeRotation(angle , x vector, y vector, z vector)
+        // 2 values for initial position and final position
+        transformAnim.values  = [NSValue(caTransform3D: CATransform3DMakeRotation(0.04, 0, 0, 1)),NSValue(caTransform3D: CATransform3DMakeRotation(-0.04 , 0, 0, 1))]
+        transformAnim.duration  = 0.1
+        transformAnim.repeatCount = 3
+        return transformAnim
+    }
         
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if scenesModels[indexPath.row].isBlocked {
             
-            print("Celula bloqueada")
+            collectionView.cellForItem(at: indexPath)?.layer.add(shakingAnimation(), forKey: "transform")
+            SoundHelper.playSound(resource: "unsuccessfulAction")
             
         } else {
             
