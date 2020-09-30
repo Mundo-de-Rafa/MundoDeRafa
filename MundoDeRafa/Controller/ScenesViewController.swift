@@ -74,9 +74,10 @@ extension ScenesViewController: UICollectionViewDelegate, UICollectionViewDataSo
             print("Celula bloqueada")
             
         } else {
-        
-        navigationController?.pushViewController(StoryDefaultViewController(), animated: true)
-        
+            
+            SoundHelper.playSound(resource: "clickButton")
+            navigationController?.pushViewController(StoryDefaultViewController(), animated: true)
+            
         }
     }
 }
