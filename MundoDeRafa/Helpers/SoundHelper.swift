@@ -30,5 +30,4 @@ class SoundHelper {
             print(error.localizedDescription)
         }
     }
-    
 }

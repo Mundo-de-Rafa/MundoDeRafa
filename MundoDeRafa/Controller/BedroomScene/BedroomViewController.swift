@@ -53,7 +53,14 @@ class BedroomViewController: SceneDefaultViewController {
         }
         
         if winCount == 3 {
-            self.win()
+            SoundHelper.playSound(resource: "finishScene")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.hideDock()
+                self.hideInstructionsLabel()
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.win()
+            }
         }
     }
 }

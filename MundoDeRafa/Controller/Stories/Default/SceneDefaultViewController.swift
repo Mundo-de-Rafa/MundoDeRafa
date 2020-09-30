@@ -118,6 +118,20 @@ class SceneDefaultViewController: UIViewController {
         ])
     }
     
+    func hideDock() {
+        UIView.animate(withDuration: 0.1, animations: {
+            self.itemsDock.alpha = 0
+        }, completion: { _ in
+            self.itemsDock.isHidden = true
+        })
+    }
+    
+    func showDock() {
+        self.itemsDock.isHidden = false
+        UIView.animate(withDuration: 0.5) {
+            self.itemsDock.alpha = 1
+        }
+    }
 }
 
 extension SceneDefaultViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -155,18 +169,11 @@ extension SceneDefaultViewController: UICollectionViewDragDelegate {
       }
     
     func collectionView(_ collectionView: UICollectionView, dragSessionWillBegin session: UIDragSession) {
-        UIView.animate(withDuration: 0.1, animations: {
-            self.itemsDock.alpha = 0
-        }, completion: { _ in
-            self.itemsDock.isHidden = true
-        })
+        hideDock()
     }
     
     func collectionView(_ collectionView: UICollectionView, dragSessionDidEnd session: UIDragSession) {
-        self.itemsDock.isHidden = false
-        UIView.animate(withDuration: 0.5) {
-            self.itemsDock.alpha = 1
-        }
+        showDock()
     }
     
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
