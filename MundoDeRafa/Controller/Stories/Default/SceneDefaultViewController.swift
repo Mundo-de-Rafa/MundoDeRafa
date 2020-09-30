@@ -155,7 +155,7 @@ extension SceneDefaultViewController: UICollectionViewDragDelegate {
       }
     
     func collectionView(_ collectionView: UICollectionView, dragSessionWillBegin session: UIDragSession) {
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.1, animations: {
             self.itemsDock.alpha = 0
         }, completion: { _ in
             self.itemsDock.isHidden = true
@@ -164,7 +164,7 @@ extension SceneDefaultViewController: UICollectionViewDragDelegate {
     
     func collectionView(_ collectionView: UICollectionView, dragSessionDidEnd session: UIDragSession) {
         self.itemsDock.isHidden = false
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.5) {
             self.itemsDock.alpha = 1
         }
     }
