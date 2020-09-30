@@ -8,9 +8,11 @@
 
 import Foundation
 
-struct SceneModel {
+struct SceneModel : Codable {
     
     let image: String
     let title: String
-    let complete: Bool
+    let isComplete: Bool
+    let isBlocked: Bool
+    
 }
