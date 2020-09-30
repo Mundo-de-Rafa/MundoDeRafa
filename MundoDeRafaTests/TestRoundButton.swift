@@ -7,17 +7,14 @@
 //
 
 import XCTest
-import Mundo_de_Rafa
+@testable import Mundo_de_Rafa
 
-class RoundButton: XCTestCase {
+class TestRoundButton: XCTestCase {
 
-    func test_calculateCornerRadius_roundButton(){
-        let button = UIButton()
-        
-        
-        
-        
-        
+    func test_calculateCornerRadius_roundButton() {
+        let button = RoundButton()
+        button.calculatesCornerRadius()
+        XCTAssertTrue(button.layer.cornerRadius == button.bounds.height/2)
     }
 
 }

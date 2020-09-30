@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import MundoDeRafa
+@testable import Mundo_de_Rafa
 
 class MundoDeRafaTests: XCTestCase {
 
