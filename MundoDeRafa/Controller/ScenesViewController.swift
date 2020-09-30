@@ -11,6 +11,7 @@ import UIKit
 class ScenesViewController: UIViewController {
     
     lazy var scenesModels: [SceneModel] = []
+    lazy var progress = Double()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
@@ -46,9 +47,26 @@ class ScenesViewController: UIViewController {
         
     }
     
+    func calculateProgress() -> Double {
+        var progressAux = 0.0
+        
+        for index in 0...scenesModels.count - 1 {
+            
+            if scenesModels[index].isComplete {
+                
+                progressAux += 1
+                
+            }
+            
+        }
+        
+        return progressAux/Double(scenesModels.count)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadScenesCards()
+        self.progress = calculateProgress()
         
     }
     
