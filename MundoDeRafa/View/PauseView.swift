@@ -223,14 +223,14 @@ class PauseView: UIView {
     }
     
     @objc func soundButtonTapped() {
-        if let pauseController = controller as? PauseViewController {
+        if let pauseController = controller {
             pauseController.switchSound()
             soundButton.playSoundIfNeeded(of: .click)
         }
     }
     
     @objc func musicButtonTapped() {
-        if let pauseController = controller as? PauseViewController {
+        if let pauseController = controller {
             pauseController.switchMusic()
             musicButton.playSoundIfNeeded(of: .click)
         }

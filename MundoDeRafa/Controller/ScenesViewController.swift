@@ -10,6 +10,14 @@ import UIKit
 
 class ScenesViewController: UIViewController {
     
+    lazy var scenesModels: [SceneModel] = []
+    
+    let bathRoomSceneCard = SceneModel(image: "card_bathroom", title: "Rafa Tomando Banho", isComplete: false, isBlocked: true)
+    
+    let bedRoomSceneCard = SceneModel(image: "card_bedroom", title: "Rafa se vestindo", isComplete: false, isBlocked: false)
+    
+    let kitchenSceneCard = SceneModel(image: "card_kitchen", title: "Café da manhã de Rafa", isComplete: false, isBlocked: true)
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
     }
@@ -24,6 +32,10 @@ class ScenesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        scenesModels.append(contentsOf:[ bedRoomSceneCard, kitchenSceneCard])
+        createSceneModelNewFile(data: scenesModels)
+        let existsDirectory = FileController().directoryExists(with: "SceneModel.Json")
+        print(existsDirectory)
     }
     
     func backButtonAction() {
@@ -34,7 +46,7 @@ class ScenesViewController: UIViewController {
 extension ScenesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        3
+        scenesModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -45,8 +57,10 @@ extension ScenesViewController: UICollectionViewDelegate, UICollectionViewDataSo
 
             cell.layer.cornerRadius = 12
             cell.layer.masksToBounds = true
+            
+            let sceneCard = scenesModels[indexPath.row]
 
-            cell.configure(title: "Rafa Tomando Banho", backgroundImage: UIImage(named: "card_bathroom") ?? UIImage(), locked: .unlocked, complete: true)
+            cell.configure(title: sceneCard.title, backgroundImage: UIImage(named: sceneCard.image) ?? UIImage(), isComplete: sceneCard.isComplete, isLocked: sceneCard.isBlocked)
 
         }
         
@@ -54,6 +68,15 @@ extension ScenesViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
         
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if scenesModels[indexPath.row].isBlocked {
+            
+            print("Celula bloqueada")
+            
+        } else {
+        
         navigationController?.pushViewController(StoryDefaultViewController(), animated: true)
+        
+        }
     }
 }
