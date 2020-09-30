@@ -36,7 +36,7 @@ class ItemDockCollectionViewCell: UICollectionViewCell {
             imageView.topAnchor.constraint(equalTo: topAnchor, constant: self.frame.height * 0.08),
             imageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: self.frame.height * -0.08),
             imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor, multiplier: 2)
+            imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor, multiplier: 1.2)
         ])
     }
 }

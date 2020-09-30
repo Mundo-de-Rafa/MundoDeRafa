@@ -106,5 +106,6 @@ extension ScenesViewController: UICollectionViewDelegate, UICollectionViewDataSo
             navigationController?.pushViewController(StoryDefaultViewController(), animated: true)
             
         }
+
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StoryDefaultViewController: UIViewController {
+class SceneDefaultViewController: UIViewController {
 
     var elements = [DockItem(name: "shirt"), DockItem(name: "shoes"), DockItem(name: "pants")]
     
@@ -58,12 +58,12 @@ class StoryDefaultViewController: UIViewController {
         setupItemsDock()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        showInstructionsLabel(with: "Hello World!", for: .now() + 4)
+    func win() {
+        navigationController?.present(NextStoryViewController(), animated: true, completion: nil)
     }
     
     @objc func didTapPauseButton() {
-        navigationController?.present(NextStoryViewController(), animated: true, completion: nil)
+        
     }
     
     func showInstructionsLabel(with text: String, for time: DispatchTime) {
@@ -90,15 +90,15 @@ class StoryDefaultViewController: UIViewController {
         NSLayoutConstraint.activate([
             pauseButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2),
             pauseButton.widthAnchor.constraint(equalTo: pauseButton.heightAnchor),
-            pauseButton.topAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.height * 0.02),
-            pauseButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: view.frame.width * -0.02)
+            pauseButton.topAnchor.constraint(equalTo: view.topAnchor, constant: UIScreen.main.bounds.height * 0.02),
+            pauseButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: UIScreen.main.bounds.height * -0.02)
         ])
     }
     
     private func setupInstructionsLabel() {
         view.addSubview(instructionsLabel)
         NSLayoutConstraint.activate([
-            instructionsLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.height*0.08),
+            instructionsLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: UIScreen.main.bounds.height * 0.08),
             instructionsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             instructionsLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2),
             instructionsLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6)
@@ -112,15 +112,29 @@ class StoryDefaultViewController: UIViewController {
         view.addSubview(itemsDock)
         NSLayoutConstraint.activate([
             itemsDock.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            itemsDock.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: view.frame.height * -0.08),
+            itemsDock.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: UIScreen.main.bounds.height * -0.08),
             itemsDock.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.16),
             itemsDock.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6)
         ])
     }
     
+    func hideDock() {
+        UIView.animate(withDuration: 0.1, animations: {
+            self.itemsDock.alpha = 0
+        }, completion: { _ in
+            self.itemsDock.isHidden = true
+        })
+    }
+    
+    func showDock() {
+        self.itemsDock.isHidden = false
+        UIView.animate(withDuration: 0.5) {
+            self.itemsDock.alpha = 1
+        }
+    }
 }
 
-extension StoryDefaultViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension SceneDefaultViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return elements.count
@@ -144,7 +158,7 @@ extension StoryDefaultViewController: UICollectionViewDelegate, UICollectionView
     }
 }
 
-extension StoryDefaultViewController: UICollectionViewDragDelegate {
+extension SceneDefaultViewController: UICollectionViewDragDelegate {
     
       func dragItems(for indexPath: IndexPath) -> [UIDragItem] {
         let item = elements[indexPath.row]
@@ -153,6 +167,14 @@ extension StoryDefaultViewController: UICollectionViewDragDelegate {
         dragItem.localObject = item
         return [dragItem]
       }
+    
+    func collectionView(_ collectionView: UICollectionView, dragSessionWillBegin session: UIDragSession) {
+        hideDock()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, dragSessionDidEnd session: UIDragSession) {
+        showDock()
+    }
     
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
         return dragItems(for: indexPath)
