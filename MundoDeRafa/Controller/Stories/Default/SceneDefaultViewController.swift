@@ -8,7 +8,11 @@
 
 import UIKit
 
-class SceneDefaultViewController: UIViewController {
+class SceneDefaultViewController: UIViewController, PauseMenuDelegate {
+    func goToScenes() {
+        navigationController?.popViewController(animated: true)
+    }
+    
 
     var elements = [DockItem(name: "shirt"), DockItem(name: "shoes"), DockItem(name: "pants")]
     
@@ -63,7 +67,9 @@ class SceneDefaultViewController: UIViewController {
     }
     
     @objc func didTapPauseButton() {
-        navigationController?.present(PauseViewController(), animated: true, completion: nil)
+        let destination = PauseViewController()
+        destination.delegate = self
+        navigationController?.present(destination, animated: true)
     }
     
     func showInstructionsLabel(with text: String, for time: DispatchTime) {
