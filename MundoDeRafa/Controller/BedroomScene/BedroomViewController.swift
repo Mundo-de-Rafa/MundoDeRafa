@@ -9,6 +9,10 @@
 import UIKit
 
 class BedroomViewController: SceneDefaultViewController {
+    
+    var viewsForElements: [String:UIImageView?]?
+    var dottedViewsForElements: [String:UIImageView?]?
+    lazy var bedroomView = self.view as? BedroomView
 
     override func loadView() {
         let bedroomView = BedroomView()
@@ -19,7 +23,10 @@ class BedroomViewController: SceneDefaultViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
-
+        
+        viewsForElements = ["shirt": self.bedroomView?.shirt, "shoes": self.bedroomView?.shoes, "pants": self.bedroomView?.pants]
+        dottedViewsForElements = ["shirt": self.bedroomView?.dottedShirt, "shoes": self.bedroomView?.dottedShoes, "pants": self.bedroomView?.dottedPants]
+        
         let dropInteraction = UIDropInteraction(delegate: self)
         view.addInteraction(dropInteraction)
     }
@@ -28,32 +35,34 @@ class BedroomViewController: SceneDefaultViewController {
         showInstructionsLabel(with: "Ajude o Rafa a se vestir! Arraste as peças de roupa para as partes do corpo corretas!", for: .now() + 6)
     }
     
+    private func unhide(element: String) {
+        guard let view = viewsForElements?[element],
+              let dottedView = dottedViewsForElements?[element] else { return }
+        
+        view!.isHidden = false
+        dottedView!.isHidden = true
+    }
+    
 }
 
 // MARK: Items Dock Drop Delegate
 extension BedroomViewController: UIDropInteractionDelegate {
     
     func dropInteraction(_ interaction: UIDropInteraction, performDrop session: UIDropSession) {
-        session.loadObjects(ofClass: String.self) { (dockItems) in
-            if dockItems.contains("shirt") {
-                if let view = self.view as? BedroomView {
-                    if view.shirt.frame.contains(session.location(in: view)) {
-                        view.shirt.isHidden = false
-                        view.dottedShirt.isHidden = true
+        _ = session.loadObjects(ofClass: String.self) { (dockItems) in
+            self.elements.forEach { (item) in
+                if dockItems.contains(item.name) {
+                    guard let itemView = self.viewsForElements?[item.name] else { return }
+                    if itemView!.frame.contains(session.location(in: self.view)) {
+                        self.unhide(element: item.name)
                     }
                 }
             }
         }
-
-    }
-    
-    func dropInteraction(_ interaction: UIDropInteraction, sessionDidEnd session: UIDropSession) {
-        
     }
     
     func dropInteraction(_ interaction: UIDropInteraction, sessionDidUpdate session: UIDropSession) -> UIDropProposal {
         print(session.location(in: view))
         return UIDropProposal(operation: .move)
     }
-
 }

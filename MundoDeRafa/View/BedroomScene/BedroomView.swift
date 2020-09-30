@@ -102,6 +102,7 @@ class BedroomView: UIView {
     }
     
     func setShoes() {
+        shoes.isHidden = true
         
         self.addSubview(shoes)
         sharedConstraints.append(contentsOf: [
@@ -144,6 +145,8 @@ class BedroomView: UIView {
     }
     
     func setPants() {
+        pants.isHidden = true
+        
         self.addSubview(pants)
         sharedConstraints.append(contentsOf: [
             pants.centerXAnchor.constraint(equalTo: rafaImage.centerXAnchor)
