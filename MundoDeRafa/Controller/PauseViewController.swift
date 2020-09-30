@@ -56,4 +56,11 @@ class PauseViewController: UIViewController {
         UserDefaults.standard.setValue(isMusicOn, forKey: "isMusicOn")
     }
     
+    func goToScenes() {
+        let destination = ScenesViewController()
+        destination.modalPresentationStyle = .fullScreen
+        present(destination, animated: true, completion: nil)
+//        navigationController?.popToViewController(ScenesViewController(), animated: true)
+//        navigationController?.popToRootViewController(animated: true)
+    }
 }

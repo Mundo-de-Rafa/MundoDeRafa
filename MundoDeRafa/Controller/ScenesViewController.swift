@@ -103,7 +103,7 @@ extension ScenesViewController: UICollectionViewDelegate, UICollectionViewDataSo
         } else {
             
             SoundHelper.playSound(resource: "clickButton")
-            navigationController?.pushViewController(StoryDefaultViewController(), animated: true)
+            navigationController?.pushViewController(BedroomViewController(), animated: true)
             
         }
 

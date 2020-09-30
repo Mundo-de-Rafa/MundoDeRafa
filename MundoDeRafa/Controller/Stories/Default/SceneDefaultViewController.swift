@@ -63,7 +63,7 @@ class SceneDefaultViewController: UIViewController {
     }
     
     @objc func didTapPauseButton() {
-        
+        navigationController?.present(PauseViewController(), animated: true, completion: nil)
     }
     
     func showInstructionsLabel(with text: String, for time: DispatchTime) {
