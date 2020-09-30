@@ -41,8 +41,21 @@ class BedroomViewController: SceneDefaultViewController {
         
         view!.isHidden = false
         dottedView!.isHidden = true
+        
+        verifyWinning()
     }
     
+    private func verifyWinning() {
+        var winCount = 0
+        guard let views = dottedViewsForElements else { return }
+        views.forEach { (_, view: UIImageView?) in
+            winCount += view?.isHidden ?? false ? 1 : 0
+        }
+        
+        if winCount == 3 {
+            self.win()
+        }
+    }
 }
 
 // MARK: Items Dock Drop Delegate
@@ -62,7 +75,6 @@ extension BedroomViewController: UIDropInteractionDelegate {
     }
     
     func dropInteraction(_ interaction: UIDropInteraction, sessionDidUpdate session: UIDropSession) -> UIDropProposal {
-        print(session.location(in: view))
         return UIDropProposal(operation: .move)
     }
 }

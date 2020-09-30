@@ -58,8 +58,12 @@ class SceneDefaultViewController: UIViewController {
         setupItemsDock()
     }
     
-    @objc func didTapPauseButton() {
+    func win() {
         navigationController?.present(NextStoryViewController(), animated: true, completion: nil)
+    }
+    
+    @objc func didTapPauseButton() {
+        
     }
     
     func showInstructionsLabel(with text: String, for time: DispatchTime) {
