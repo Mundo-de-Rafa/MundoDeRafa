@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		380EE7D0251B9492007D835D /* SceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EE7CF251B9492007D835D /* SceneView.swift */; };
+		385462FD251E37C000E28565 /* PauseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385462FC251E37C000E28565 /* PauseViewController.swift */; };
+		38546302251E3B4100E28565 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38546301251E3B4100E28565 /* PauseView.swift */; };
+		3854631D2522315100E28565 /* FileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3854631C2522315100E28565 /* FileController.swift */; };
+		38546325252231CD00E28565 /* SceneCardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38546324252231CD00E28565 /* SceneCardManager.swift */; };
 		38A61B7F2518CE5700B48E11 /* ScenesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A61B7E2518CE5700B48E11 /* ScenesViewController.swift */; };
 		38A61B92251A1FDA00B48E11 /* SceneCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A61B91251A1FDA00B48E11 /* SceneCollectionViewCell.swift */; };
 		38A61B97251B78A600B48E11 /* SceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A61B96251B78A600B48E11 /* SceneModel.swift */; };
@@ -89,6 +93,10 @@
 
 /* Begin PBXFileReference section */
 		380EE7CF251B9492007D835D /* SceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneView.swift; sourceTree = "<group>"; };
+		385462FC251E37C000E28565 /* PauseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseViewController.swift; sourceTree = "<group>"; };
+		38546301251E3B4100E28565 /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
+		3854631C2522315100E28565 /* FileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileController.swift; sourceTree = "<group>"; };
+		38546324252231CD00E28565 /* SceneCardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCardManager.swift; sourceTree = "<group>"; };
 		38A61B7E2518CE5700B48E11 /* ScenesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenesViewController.swift; sourceTree = "<group>"; };
 		38A61B91251A1FDA00B48E11 /* SceneCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCollectionViewCell.swift; sourceTree = "<group>"; };
 		38A61B96251B78A600B48E11 /* SceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneModel.swift; path = MundoDeRafa/View/SceneModel.swift; sourceTree = SOURCE_ROOT; };
@@ -182,6 +190,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3854631B2522312900E28565 /* File Manager */ = {
+			isa = PBXGroup;
+			children = (
+				3854631C2522315100E28565 /* FileController.swift */,
+				38546324252231CD00E28565 /* SceneCardManager.swift */,
+			);
+			path = "File Manager";
+			sourceTree = "<group>";
+		};
 		7747868D251E12EB00B816CE /* KitchenScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,6 +329,7 @@
 		AE4193352512423600CB0DC8 /* MundoDeRafa */ = {
 			isa = PBXGroup;
 			children = (
+				3854631B2522312900E28565 /* File Manager */,
 				AE588CE0251B934C00A2BF74 /* Helpers */,
 				AE730E6D25139E8D0038F783 /* Extensions */,
 				AE41E0952518E68C008F52F5 /* Protocols */,
@@ -358,6 +376,7 @@
 				38A61B91251A1FDA00B48E11 /* SceneCollectionViewCell.swift */,
 				EF576892251B03FC00778D7F /* StoryView.swift */,
 				380EE7CF251B9492007D835D /* SceneView.swift */,
+				38546301251E3B4100E28565 /* PauseView.swift */,
 				EFDC8E632522205300056988 /* StoryCellLocked.swift */,
 			);
 			path = View;
@@ -367,12 +386,13 @@
 			isa = PBXGroup;
 			children = (
 				EF5768C8251D379500778D7F /* BedroomScene */,
+				AED00E71251CC4840064F7F5 /* Stories */,
 				7747868E251E12F300B816CE /* KitchenScene */,
 				AED00E7C251CC4D40064F7F5 /* Home */,
-				AED00E71251CC4840064F7F5 /* Stories */,
 				77E33EA92518E70800BC41F9 /* NextStory */,
 				38A61B7E2518CE5700B48E11 /* ScenesViewController.swift */,
 				EF1912C92517F947005A74D5 /* StoryViewController.swift */,
+				385462FC251E37C000E28565 /* PauseViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -671,10 +691,13 @@
 				77478695251E141100B816CE /* KitchenSceneView.swift in Sources */,
 				38A61B97251B78A600B48E11 /* SceneModel.swift in Sources */,
 				AE730E6F25139FD90038F783 /* AppColors.swift in Sources */,
+				38546302251E3B4100E28565 /* PauseView.swift in Sources */,
 				38A61B7F2518CE5700B48E11 /* ScenesViewController.swift in Sources */,
 				AE16EBA425235AFD003CDCB2 /* ItemDockCollectionViewCell.swift in Sources */,
 				EF1912CA2517F947005A74D5 /* StoryViewController.swift in Sources */,
+				385462FD251E37C000E28565 /* PauseViewController.swift in Sources */,
 				AED00E89251CDC350064F7F5 /* UILabel+Padding.swift in Sources */,
+				38546325252231CD00E28565 /* SceneCardManager.swift in Sources */,
 				77E33EB32518E80500BC41F9 /* NextStoryViewController.swift in Sources */,
 				AE588CE2251B935900A2BF74 /* MusicHelper.swift in Sources */,
 				77478690251E13FF00B816CE /* KitchenSceneViewController.swift in Sources */,
@@ -690,6 +713,7 @@
 				EF5768C1251D1ED400778D7F /* BedroomView.swift in Sources */,
 				AE16EB9F25222D61003CDCB2 /* DockItem.swift in Sources */,
 				AE2D8B17251B76C200C93963 /* UIButton+Sound.swift in Sources */,
+				3854631D2522315100E28565 /* FileController.swift in Sources */,
 				EFDC8E7A252287AE00056988 /* SoundHelper.swift in Sources */,
 				AE41E0972518E6A6008F52F5 /* HomeDefaultViewController.swift in Sources */,
 				380EE7D0251B9492007D835D /* SceneView.swift in Sources */,
