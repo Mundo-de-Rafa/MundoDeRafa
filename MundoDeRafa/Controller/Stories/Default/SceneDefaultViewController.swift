@@ -8,9 +8,9 @@
 
 import UIKit
 
-class StoryDefaultViewController: UIViewController {
+class SceneDefaultViewController: UIViewController {
 
-    var elements = ["garfo", "colher", "espatula"]
+    var elements = [DockItem(name: "shirt"), DockItem(name: "shoes"), DockItem(name: "pants")]
     
     lazy var pauseButton: UIButton = {
         let button = UIButton()
@@ -36,13 +36,14 @@ class StoryDefaultViewController: UIViewController {
     
     lazy var itemsDock: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 16
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.isScrollEnabled = false
         collection.backgroundColor = UIColor.backgroundWhite.withAlphaComponent(0.9)
         collection.layer.cornerRadius = 24
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.dragInteractionEnabled = true
-        collection.register(ItemCollectionViewCell.self, forCellWithReuseIdentifier: "ItemCell")
+        collection.register(ItemDockCollectionViewCell.self, forCellWithReuseIdentifier: ItemDockCollectionViewCell.identifier)
         return collection
     }()
     
@@ -51,17 +52,18 @@ class StoryDefaultViewController: UIViewController {
         view.backgroundColor = .secondaryPurple
         itemsDock.delegate = self
         itemsDock.dataSource = self
+        itemsDock.dragDelegate = self
         setupPauseButton()
         setupInstructionsLabel()
         setupItemsDock()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        showInstructionsLabel(with: "Hello World!", for: .now() + 4)
+    func win() {
+        navigationController?.present(NextStoryViewController(), animated: true, completion: nil)
     }
     
     @objc func didTapPauseButton() {
-        navigationController?.present(NextStoryViewController(), animated: true, completion: nil)
+        
     }
     
     func showInstructionsLabel(with text: String, for time: DispatchTime) {
@@ -88,15 +90,15 @@ class StoryDefaultViewController: UIViewController {
         NSLayoutConstraint.activate([
             pauseButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2),
             pauseButton.widthAnchor.constraint(equalTo: pauseButton.heightAnchor),
-            pauseButton.topAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.height * 0.02),
-            pauseButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: view.frame.width * -0.02)
+            pauseButton.topAnchor.constraint(equalTo: view.topAnchor, constant: UIScreen.main.bounds.height * 0.02),
+            pauseButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: UIScreen.main.bounds.height * -0.02)
         ])
     }
     
     private func setupInstructionsLabel() {
         view.addSubview(instructionsLabel)
         NSLayoutConstraint.activate([
-            instructionsLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.height*0.08),
+            instructionsLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: UIScreen.main.bounds.height * 0.08),
             instructionsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             instructionsLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2),
             instructionsLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6)
@@ -106,29 +108,42 @@ class StoryDefaultViewController: UIViewController {
     }
     
     private func setupItemsDock() {
+        itemsDock.dragInteractionEnabled = true
         view.addSubview(itemsDock)
         NSLayoutConstraint.activate([
             itemsDock.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            itemsDock.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: view.frame.height * -0.08),
+            itemsDock.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: UIScreen.main.bounds.height * -0.08),
             itemsDock.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.16),
             itemsDock.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6)
         ])
     }
     
+    func hideDock() {
+        UIView.animate(withDuration: 0.1, animations: {
+            self.itemsDock.alpha = 0
+        }, completion: { _ in
+            self.itemsDock.isHidden = true
+        })
+    }
+    
+    func showDock() {
+        self.itemsDock.isHidden = false
+        UIView.animate(withDuration: 0.5) {
+            self.itemsDock.alpha = 1
+        }
+    }
 }
 
-extension StoryDefaultViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension SceneDefaultViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return elements.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath)
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: elements[indexPath.row])
-        cell.backgroundView = imageView
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemDockCollectionViewCell.identifier, for: indexPath)
+                as? ItemDockCollectionViewCell else { return UICollectionViewCell() }
+        cell.imageView.image = UIImage(named: elements[indexPath.row].name)
         return cell
     }
     
@@ -143,14 +158,35 @@ extension StoryDefaultViewController: UICollectionViewDelegate, UICollectionView
     }
 }
 
-extension StoryDefaultViewController: UICollectionViewDragDelegate {
-    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+extension SceneDefaultViewController: UICollectionViewDragDelegate {
+    
+      func dragItems(for indexPath: IndexPath) -> [UIDragItem] {
         let item = elements[indexPath.row]
-        let itemProvider = NSItemProvider(object: item as NSString)
+        let itemProvider = NSItemProvider(object: item.name as NSString)
         let dragItem = UIDragItem(itemProvider: itemProvider)
         dragItem.localObject = item
-        
         return [dragItem]
+      }
+    
+    func collectionView(_ collectionView: UICollectionView, dragSessionWillBegin session: UIDragSession) {
+        hideDock()
     }
     
+    func collectionView(_ collectionView: UICollectionView, dragSessionDidEnd session: UIDragSession) {
+        showDock()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        return dragItems(for: indexPath)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, dragPreviewParametersForItemAt indexPath: IndexPath) -> UIDragPreviewParameters? {
+        let previewParameters = UIDragPreviewParameters()
+        
+        if #available(iOS 14.0, *) {
+            previewParameters.shadowPath = UIBezierPath()
+        }
+        previewParameters.backgroundColor = UIColor.clear // Transparent background
+        return previewParameters
+    }
 }

@@ -88,7 +88,7 @@ class BedroomView: UIView {
         compactConstraints.append(contentsOf: [
             rafaImage.widthAnchor.constraint(equalToConstant: 245*proportion),
             rafaImage.heightAnchor.constraint(equalToConstant: 591*proportion),
-            rafaImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 186*0.6),
+            rafaImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 100),
             rafaImage.leftAnchor.constraint(equalTo: self.leftAnchor,constant: 375)
         ])
         
@@ -96,119 +96,130 @@ class BedroomView: UIView {
             rafaImage.widthAnchor.constraint(equalToConstant: 245),
             rafaImage.heightAnchor.constraint(equalToConstant: 591),
             rafaImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 186),
-            rafaImage.leftAnchor.constraint(equalTo: self.leftAnchor,constant: 417)
+            rafaImage.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+            
         ])
     }
     
     func setShoes() {
+        shoes.isHidden = true
         
         self.addSubview(shoes)
+        sharedConstraints.append(contentsOf: [
+            shoes.centerXAnchor.constraint(equalTo: rafaImage.centerXAnchor)
+        ])
+        
         regularConstraints.append(contentsOf: [
             shoes.widthAnchor.constraint(equalToConstant: 138),
             shoes.heightAnchor.constraint(equalToConstant: 30),
-            shoes.topAnchor.constraint(equalTo: self.topAnchor, constant: 750),
-            shoes.leftAnchor.constraint(equalTo: self.leftAnchor,constant: 472)
+            shoes.topAnchor.constraint(equalTo: rafaImage.topAnchor, constant: 565)
             
         ])
         
         compactConstraints.append(contentsOf: [
             shoes.widthAnchor.constraint(equalToConstant: 138*proportion),
             shoes.heightAnchor.constraint(equalToConstant: 30*proportion),
-            shoes.topAnchor.constraint(equalTo: self.topAnchor, constant: 395),
-            shoes.leftAnchor.constraint(equalTo: self.leftAnchor,constant: 402.5)
-            
+            shoes.topAnchor.constraint(equalTo: rafaImage.topAnchor, constant: 565*proportion)
         ])
     }
     
     func setDottedShoes() {
         self.addSubview(dottedShoes)
+        sharedConstraints.append(contentsOf: [
+            dottedShoes.centerXAnchor.constraint(equalTo: rafaImage.centerXAnchor)
+        ])
+        
         regularConstraints.append(contentsOf: [
             dottedShoes.widthAnchor.constraint(equalToConstant: 138),
             dottedShoes.heightAnchor.constraint(equalToConstant: 30),
-            dottedShoes.topAnchor.constraint(equalTo: self.topAnchor, constant: 750),
-            dottedShoes.leftAnchor.constraint(equalTo: self.leftAnchor,constant: 472)
+            dottedShoes.topAnchor.constraint(equalTo: rafaImage.topAnchor, constant: 565)
             
         ])
+        
         compactConstraints.append(contentsOf: [
             dottedShoes.widthAnchor.constraint(equalToConstant: 138*proportion),
             dottedShoes.heightAnchor.constraint(equalToConstant: 30*proportion),
-            dottedShoes.topAnchor.constraint(equalTo: self.topAnchor, constant: 395),
-            dottedShoes.leftAnchor.constraint(equalTo: self.leftAnchor,constant: 402.5)
-            
+            dottedShoes.topAnchor.constraint(equalTo: rafaImage.topAnchor, constant: 565*proportion)
         ])
         
     }
     
     func setPants() {
+        pants.isHidden = true
+        
         self.addSubview(pants)
+        sharedConstraints.append(contentsOf: [
+            pants.centerXAnchor.constraint(equalTo: rafaImage.centerXAnchor)
+        ])
+        
         regularConstraints.append(contentsOf: [
-            
             pants.widthAnchor.constraint(equalToConstant: 132),
             pants.heightAnchor.constraint(equalToConstant: 180),
-            pants.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -75 ),
-            pants.leftAnchor.constraint(equalTo: self.leftAnchor,constant: 472)
+            pants.topAnchor.constraint(equalTo: rafaImage.topAnchor, constant: 370)
         ])
         
         compactConstraints.append(contentsOf: [
             pants.widthAnchor.constraint(equalToConstant: 132*proportion),
             pants.heightAnchor.constraint(equalToConstant: 180*proportion),
-            pants.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -27 ),
-            pants.leftAnchor.constraint(equalTo: self.leftAnchor,constant: 402.5)
+            pants.topAnchor.constraint(equalTo: rafaImage.topAnchor, constant: 370*proportion)
         ])
     }
     
     func setDottedPants() {
         self.addSubview(dottedPants)
+        sharedConstraints.append(contentsOf: [
+            dottedPants.centerXAnchor.constraint(equalTo: rafaImage.centerXAnchor)
+        ])
+        
         regularConstraints.append(contentsOf: [
             dottedPants.widthAnchor.constraint(equalToConstant: 132),
             dottedPants.heightAnchor.constraint(equalToConstant: 180),
-            dottedPants.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -75 ),
-            dottedPants.leftAnchor.constraint(equalTo: self.leftAnchor,constant: 472)
+            dottedPants.topAnchor.constraint(equalTo: rafaImage.topAnchor, constant: 370)
         ])
         
         compactConstraints.append(contentsOf: [
             dottedPants.widthAnchor.constraint(equalToConstant: 132*proportion),
             dottedPants.heightAnchor.constraint(equalToConstant: 180*proportion),
-            dottedPants.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -27 ),
-            dottedPants.leftAnchor.constraint(equalTo: self.leftAnchor,constant: 402.5)
+            dottedPants.topAnchor.constraint(equalTo: rafaImage.topAnchor, constant: 370*proportion)
         ])
         
     }
     
     func setShirt() {
+        shirt.isHidden = true
+        
         self.addSubview(shirt)
+        sharedConstraints.append(contentsOf: [
+            shirt.centerXAnchor.constraint(equalTo: rafaImage.centerXAnchor)
+        ])
         regularConstraints.append(contentsOf: [
             shirt.widthAnchor.constraint(equalToConstant: 177),
             shirt.heightAnchor.constraint(equalToConstant: 155),
-            shirt.topAnchor.constraint(equalTo: self.topAnchor, constant: 405 ),
-            shirt.leftAnchor.constraint(equalTo: self.leftAnchor,constant: 453)
-            
+            shirt.topAnchor.constraint(equalTo: rafaImage.topAnchor, constant: 224 )
         ])
         
         compactConstraints.append(contentsOf: [
             shirt.widthAnchor.constraint(equalToConstant: 177*proportion),
             shirt.heightAnchor.constraint(equalToConstant: 155*proportion),
-            shirt.topAnchor.constraint(equalTo: self.topAnchor, constant: 222 ),
-            shirt.leftAnchor.constraint(equalTo: self.leftAnchor,constant: 393)
-            
+            shirt.topAnchor.constraint(equalTo: rafaImage.topAnchor, constant: 224/2 )
         ])
     }
     
     func setDottedShirt() {
         self.addSubview(dottedShirt)
+        sharedConstraints.append(contentsOf: [
+            dottedShirt.centerXAnchor.constraint(equalTo: rafaImage.centerXAnchor)
+        ])
         regularConstraints.append(contentsOf: [
             dottedShirt.widthAnchor.constraint(equalToConstant: 177),
             dottedShirt.heightAnchor.constraint(equalToConstant: 155),
-            dottedShirt.topAnchor.constraint(equalTo: self.topAnchor, constant: 405 ),
-            dottedShirt.leftAnchor.constraint(equalTo: self.leftAnchor,constant: 453)
-            
+            dottedShirt.topAnchor.constraint(equalTo: rafaImage.topAnchor, constant: 224 )
         ])
         
         compactConstraints.append(contentsOf: [
             dottedShirt.widthAnchor.constraint(equalToConstant: 177*proportion),
             dottedShirt.heightAnchor.constraint(equalToConstant: 155*proportion),
-            dottedShirt.topAnchor.constraint(equalTo: self.topAnchor, constant: 222 ),
-            dottedShirt.leftAnchor.constraint(equalTo: self.leftAnchor,constant: 393)
+            dottedShirt.topAnchor.constraint(equalTo: rafaImage.topAnchor, constant: 224/2 )
         ])
     }
     
@@ -240,9 +251,9 @@ class BedroomView: UIView {
         setDottedShoes()
         setDottedPants()
         setDottedShirt()
-//        setShoes()
-//        setPants()
-//        setShirt()
+        setShoes()
+        setPants()
+        setShirt()
         NSLayoutConstraint.activate(sharedConstraints)
         setLayoutTrait(traitCollection: UIScreen.main.traitCollection)
         
