@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol PauseMenuDelegate: class {
+    func goToScenes()
+}
+
 class PauseViewController: UIViewController {
+    
+    var delegate: PauseMenuDelegate?
 
     var isSoundOn: Bool = UserDefaults.standard.bool(forKey: "isSoundOn")
     var isMusicOn: Bool = UserDefaults.standard.bool(forKey: "isMusicOn") {
@@ -57,10 +63,7 @@ class PauseViewController: UIViewController {
     }
     
     func goToScenes() {
-        let destination = ScenesViewController()
-        destination.modalPresentationStyle = .fullScreen
-        present(destination, animated: true, completion: nil)
-//        navigationController?.popToViewController(ScenesViewController(), animated: true)
-//        navigationController?.popToRootViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
+        delegate?.goToScenes()
     }
 }
