@@ -240,6 +240,7 @@ class PauseView: UIView {
     @objc func didTapMenuButton() {
         if let pauseController = controller {
             pauseController.goToScenes()
+            sceneMenuButton.playSoundIfNeeded(of: .click)
         }
     }
 }

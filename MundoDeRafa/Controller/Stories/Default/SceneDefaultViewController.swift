@@ -9,11 +9,7 @@
 import UIKit
 
 class SceneDefaultViewController: UIViewController, PauseMenuDelegate {
-    func goToScenes() {
-        navigationController?.popViewController(animated: true)
-    }
     
-
     var elements = [DockItem(name: "shirt"), DockItem(name: "shoes"), DockItem(name: "pants")]
     
     lazy var pauseButton: UIButton = {
@@ -67,9 +63,14 @@ class SceneDefaultViewController: UIViewController, PauseMenuDelegate {
     }
     
     @objc func didTapPauseButton() {
+        pauseButton.playSoundIfNeeded(of: .click)
         let destination = PauseViewController()
         destination.delegate = self
         navigationController?.present(destination, animated: true)
+    }
+    
+    func goToScenes() {
+        navigationController?.popViewController(animated: true)
     }
     
     func showInstructionsLabel(with text: String, for time: DispatchTime) {
