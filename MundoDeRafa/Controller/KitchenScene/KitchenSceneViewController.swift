@@ -9,12 +9,18 @@
 import UIKit
 
 class KitchenSceneViewController: UIViewController {
+    lazy var viewBackground: KitchenSceneView = {
+        let view = KitchenSceneView()
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view = viewBackground
+        viewBackground.setBackgroundImage()
+        self.navigationController?.isNavigationBarHidden = true
     }
+<<<<<<< HEAD
     
     /*
     // MARK: - Navigation
@@ -26,4 +32,6 @@ class KitchenSceneViewController: UIViewController {
     }
     */
 
+=======
+>>>>>>> develop
 }

@@ -10,7 +10,7 @@ import UIKit
 
 class StoryDefaultViewController: UIViewController {
 
-    var elements = ["garfo", "colher", "espatula"]
+    var elements = [DockItem(name: "shirt"), DockItem(name: "shoes"), DockItem(name: "pants")]
     
     lazy var pauseButton: UIButton = {
         let button = UIButton()
@@ -36,13 +36,14 @@ class StoryDefaultViewController: UIViewController {
     
     lazy var itemsDock: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 16
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.isScrollEnabled = false
         collection.backgroundColor = UIColor.backgroundWhite.withAlphaComponent(0.9)
         collection.layer.cornerRadius = 24
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.dragInteractionEnabled = true
-        collection.register(ItemCollectionViewCell.self, forCellWithReuseIdentifier: "ItemCell")
+        collection.register(ItemDockCollectionViewCell.self, forCellWithReuseIdentifier: ItemDockCollectionViewCell.identifier)
         return collection
     }()
     
@@ -51,6 +52,7 @@ class StoryDefaultViewController: UIViewController {
         view.backgroundColor = .secondaryPurple
         itemsDock.delegate = self
         itemsDock.dataSource = self
+        itemsDock.dragDelegate = self
         setupPauseButton()
         setupInstructionsLabel()
         setupItemsDock()
@@ -106,6 +108,7 @@ class StoryDefaultViewController: UIViewController {
     }
     
     private func setupItemsDock() {
+        itemsDock.dragInteractionEnabled = true
         view.addSubview(itemsDock)
         NSLayoutConstraint.activate([
             itemsDock.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -124,11 +127,9 @@ extension StoryDefaultViewController: UICollectionViewDelegate, UICollectionView
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath)
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: elements[indexPath.row])
-        cell.backgroundView = imageView
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemDockCollectionViewCell.identifier, for: indexPath)
+                as? ItemDockCollectionViewCell else { return UICollectionViewCell() }
+        cell.imageView.image = UIImage(named: elements[indexPath.row].name)
         return cell
     }
     
@@ -144,13 +145,26 @@ extension StoryDefaultViewController: UICollectionViewDelegate, UICollectionView
 }
 
 extension StoryDefaultViewController: UICollectionViewDragDelegate {
-    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+    
+      func dragItems(for indexPath: IndexPath) -> [UIDragItem] {
         let item = elements[indexPath.row]
-        let itemProvider = NSItemProvider(object: item as NSString)
+        let itemProvider = NSItemProvider(object: item.name as NSString)
         let dragItem = UIDragItem(itemProvider: itemProvider)
         dragItem.localObject = item
-        
         return [dragItem]
+      }
+    
+    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        return dragItems(for: indexPath)
     }
     
+    func collectionView(_ collectionView: UICollectionView, dragPreviewParametersForItemAt indexPath: IndexPath) -> UIDragPreviewParameters? {
+        let previewParameters = UIDragPreviewParameters()
+        
+        if #available(iOS 14.0, *) {
+            previewParameters.shadowPath = UIBezierPath()
+        }
+        previewParameters.backgroundColor = UIColor.clear // Transparent background
+        return previewParameters
+    }
 }
