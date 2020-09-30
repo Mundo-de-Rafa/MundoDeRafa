@@ -54,6 +54,7 @@ class BedroomViewController: SceneDefaultViewController {
         
         if winCount == 3 {
             SoundHelper.playSound(resource: "finishScene")
+            pauseButton.isHidden = true
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 self.hideDock()
                 self.hideInstructionsLabel()
