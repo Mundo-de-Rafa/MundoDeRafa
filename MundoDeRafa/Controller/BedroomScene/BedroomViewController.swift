@@ -20,27 +20,40 @@ class BedroomViewController: SceneDefaultViewController {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
 
-        itemsDock.dropDelegate = self
+        let dropInteraction = UIDropInteraction(delegate: self)
+        view.addInteraction(dropInteraction)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         showInstructionsLabel(with: "Ajude o Rafa a se vestir! Arraste as peças de roupa para as partes do corpo corretas!", for: .now() + 6)
     }
+    
 }
 
 // MARK: Items Dock Drop Delegate
-extension BedroomViewController: UICollectionViewDropDelegate {
+extension BedroomViewController: UIDropInteractionDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, canHandle session: UIDropSession) -> Bool {
-        print(session)
-        return true
+    func dropInteraction(_ interaction: UIDropInteraction, performDrop session: UIDropSession) {
+        session.loadObjects(ofClass: String.self) { (dockItems) in
+            if dockItems.contains("shirt") {
+                if let view = self.view as? BedroomView {
+                    if view.shirt.frame.contains(session.location(in: view)) {
+                        view.shirt.isHidden = false
+                        view.dottedShirt.isHidden = true
+                    }
+                }
+            }
+        }
+
     }
     
-    func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
-        //Fit clothes
-        guard let bedroomView = view as? BedroomView else { return }
-        print(coordinator.destinationIndexPath)
+    func dropInteraction(_ interaction: UIDropInteraction, sessionDidEnd session: UIDropSession) {
         
     }
     
+    func dropInteraction(_ interaction: UIDropInteraction, sessionDidUpdate session: UIDropSession) -> UIDropProposal {
+        print(session.location(in: view))
+        return UIDropProposal(operation: .move)
+    }
+
 }
