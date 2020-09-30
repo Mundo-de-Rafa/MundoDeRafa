@@ -54,6 +54,6 @@ extension ScenesViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
         
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        navigationController?.pushViewController(StoryDefaultViewController(), animated: true)
+        navigationController?.pushViewController(BedroomViewController(), animated: true)
     }
 }
