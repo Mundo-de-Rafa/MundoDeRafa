@@ -12,7 +12,11 @@ import UIKit
 class RoundButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
-
+        calculatesCornerRadius()
+    }
+    
+    func calculatesCornerRadius() {
         layer.cornerRadius = bounds.height / 2
+        
     }
 }
