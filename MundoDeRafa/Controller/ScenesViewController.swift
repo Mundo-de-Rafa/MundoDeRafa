@@ -12,7 +12,6 @@ class ScenesViewController: UIViewController {
     
     lazy var scenesModels: [SceneModel] = []
     
-    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
     }
