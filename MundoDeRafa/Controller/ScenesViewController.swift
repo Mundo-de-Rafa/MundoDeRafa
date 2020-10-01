@@ -47,12 +47,12 @@ class ScenesViewController: UIViewController {
         
     }
     
-    func calculateProgress() -> Double {
+    func calculateProgress(models: [SceneModel]) -> Double {
         var progressAux = 0.0
         
-        for index in 0...scenesModels.count - 1 {
+        for index in 0...models.count - 1 {
             
-            if scenesModels[index].isComplete {
+            if models[index].isComplete {
                 
                 progressAux += 1
                 
@@ -60,13 +60,13 @@ class ScenesViewController: UIViewController {
             
         }
         
-        return progressAux/Double(scenesModels.count)
+        return progressAux/Double(models.count)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadScenesCards()
-        self.progress = calculateProgress()
+        self.progress = calculateProgress(models: self.scenesModels)
         
     }
     
