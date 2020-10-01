@@ -8,11 +8,6 @@
 
 import UIKit
 
-enum SceneState {
-    case locked
-    case unlocked
-}
-
 class SceneCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "SceneCollectionViewCell"
@@ -54,8 +49,22 @@ class SceneCollectionViewCell: UICollectionViewCell {
         
         return star
     }()
+
+    lazy var isBlockedView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.8)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }()
     
-    lazy var complete = Bool()
+    lazy var lockImage: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "locked")
+        image.translatesAutoresizingMaskIntoConstraints = false
+        
+        return image
+    }()
     
     func setViewLayout() {
         
@@ -134,27 +143,60 @@ class SceneCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func configure(title: String, backgroundImage: UIImage, locked: SceneState, complete: Bool) {
+    func configIsBlockedView() {
         
-        switch locked {
-        case .locked:
-            self.backgroundImage.image = UIImage(named: "locked") ?? UIImage()
+        self.contentView.addSubview(isBlockedView)
+        
+        sharedConstraints.append(contentsOf: [
+            isBlockedView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            isBlockedView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            isBlockedView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            isBlockedView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
+        
+    }
+    
+    func configLockImage() {
+        
+        self.contentView.addSubview(lockImage)
+        
+        sharedConstraints.append(contentsOf: [
+            lockImage.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            lockImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            lockImage.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.48),
+            lockImage.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.27)
+        ])
+        
+    }
+    
+    func configure(title: String, backgroundImage: UIImage, isComplete: Bool, isLocked: Bool) {
+        
+        if !isLocked {
             
-            self.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.3)
-        case .unlocked:
             self.backgroundImage.image = backgroundImage
             self.title.text = title
+            self.isBlockedView.isHidden = true
+            self.lockImage.isHidden = true
+            
+        } else {
+            
+            self.backgroundImage.image = backgroundImage
+            self.title.text = title
+        
         }
         
-        if complete {
+        if isComplete {
             
             star.image = UIImage(named: "star") ?? UIImage()
             
         }
+        
         configBackground()
         configPlaceHolder()
         configStar()
         configTitle()
+        configIsBlockedView()
+        configLockImage()
         
         NSLayoutConstraint.activate(sharedConstraints)
         setViewLayout()
