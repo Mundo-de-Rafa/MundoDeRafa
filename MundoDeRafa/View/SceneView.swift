@@ -192,13 +192,13 @@ class SceneView: UIView {
             sceneCollectionView.topAnchor.constraint(equalTo: self.topAnchor, constant: 72),
             sceneCollectionView.leftAnchor.constraint(equalTo: self.leftAnchor),
             sceneCollectionView.rightAnchor.constraint(equalTo: self.rightAnchor),
-            sceneCollectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor/*, constant: -0.2 * self.bounds.height*/)
+            sceneCollectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
     
     func getProgress() -> Double {
         
-        guard let progressDouble = viewController?.calculateProgress() else { return 0.0}
+        guard let progressDouble = viewController?.progress else {return 0.0}
         
         return progressDouble
     }

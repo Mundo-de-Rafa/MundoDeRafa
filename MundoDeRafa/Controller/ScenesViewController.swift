@@ -11,7 +11,22 @@ import UIKit
 class ScenesViewController: UIViewController {
     
     lazy var scenesModels: [SceneModel] = []
-    lazy var progress = Double()
+    lazy var progress = Double() {
+        didSet {
+            
+            if let view = self.view as? SceneView {
+                
+                view.progressBar.setProgress(Float(calculateProgress(models: scenesModels)), animated: false)
+                
+                let progress = Int(calculateProgress(models: scenesModels) * 100)
+                view.progressPorcentage.text = String(progress) + "%"
+                
+                view.sceneCollectionView.reloadData()
+                
+            }
+            
+        }
+    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
@@ -47,12 +62,12 @@ class ScenesViewController: UIViewController {
         
     }
     
-    func calculateProgress() -> Double {
+    func calculateProgress(models: [SceneModel]) -> Double {
         var progressAux = 0.0
         
-        for index in 0...scenesModels.count - 1 {
+        for index in 0...models.count - 1 {
             
-            if scenesModels[index].isComplete {
+            if models[index].isComplete {
                 
                 progressAux += 1
                 
@@ -60,13 +75,16 @@ class ScenesViewController: UIViewController {
             
         }
         
-        return progressAux/Double(scenesModels.count)
+        return progressAux/Double(models.count)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadScenesCards()
+        self.progress = calculateProgress(models: self.scenesModels)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadScenesCards()
-        self.progress = calculateProgress()
         
     }
     
