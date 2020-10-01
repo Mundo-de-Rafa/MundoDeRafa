@@ -14,7 +14,7 @@ protocol PauseMenuDelegate: class {
 
 class PauseViewController: UIViewController {
     
-    var delegate: PauseMenuDelegate?
+    weak var delegate: PauseMenuDelegate?
 
     var isSoundOn: Bool = UserDefaults.standard.bool(forKey: "isSoundOn")
     var isMusicOn: Bool = UserDefaults.standard.bool(forKey: "isMusicOn") {
