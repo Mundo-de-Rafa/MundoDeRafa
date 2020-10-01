@@ -8,8 +8,7 @@
 
 import UIKit
 
-class SceneDefaultViewController: UIViewController {
-
+class SceneDefaultViewController: UIViewController, PauseMenuDelegate, NextStoryDelegate {
     var elements = [DockItem(name: "shirt"), DockItem(name: "shoes"), DockItem(name: "pants")]
     
     lazy var pauseButton: UIButton = {
@@ -59,11 +58,20 @@ class SceneDefaultViewController: UIViewController {
     }
     
     func win() {
-        navigationController?.present(NextStoryViewController(), animated: true, completion: nil)
+        let destination = NextStoryViewController()
+        destination.delegate = self
+        navigationController?.present(destination, animated: true, completion: nil)
     }
     
     @objc func didTapPauseButton() {
-        
+        pauseButton.playSoundIfNeeded(of: .click)
+        let destination = PauseViewController()
+        destination.delegate = self
+        navigationController?.present(destination, animated: true)
+    }
+    
+    func goToScenes() {
+        navigationController?.popViewController(animated: true)
     }
     
     func showInstructionsLabel(with text: String, for time: DispatchTime) {
@@ -131,6 +139,15 @@ class SceneDefaultViewController: UIViewController {
         UIView.animate(withDuration: 0.5) {
             self.itemsDock.alpha = 1
         }
+    }
+    
+    func resetScene() {
+        showDock()
+        pauseButton.isHidden = false
+    }
+    
+    func goToScene() {
+        navigationController?.popViewController(animated: true)
     }
 }
 

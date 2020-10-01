@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol PauseMenuDelegate: class {
+    func goToScenes()
+}
+
 class PauseViewController: UIViewController {
+    
+    var delegate: PauseMenuDelegate?
 
     var isSoundOn: Bool = UserDefaults.standard.bool(forKey: "isSoundOn")
     var isMusicOn: Bool = UserDefaults.standard.bool(forKey: "isMusicOn") {
@@ -56,4 +62,8 @@ class PauseViewController: UIViewController {
         UserDefaults.standard.setValue(isMusicOn, forKey: "isMusicOn")
     }
     
+    func goToScenes() {
+        self.dismiss(animated: true, completion: nil)
+        delegate?.goToScenes()
+    }
 }

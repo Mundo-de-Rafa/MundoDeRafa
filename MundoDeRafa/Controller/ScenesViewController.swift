@@ -11,6 +11,7 @@ import UIKit
 class ScenesViewController: UIViewController {
     
     lazy var scenesModels: [SceneModel] = []
+    lazy var progress = Double()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
@@ -46,9 +47,26 @@ class ScenesViewController: UIViewController {
         
     }
     
+    func calculateProgress(models: [SceneModel]) -> Double {
+        var progressAux = 0.0
+        
+        for index in 0...models.count - 1 {
+            
+            if models[index].isComplete {
+                
+                progressAux += 1
+                
+            }
+            
+        }
+        
+        return progressAux/Double(models.count)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadScenesCards()
+        self.progress = calculateProgress(models: self.scenesModels)
         
     }
     
@@ -103,7 +121,7 @@ extension ScenesViewController: UICollectionViewDelegate, UICollectionViewDataSo
         } else {
             
             SoundHelper.playSound(resource: "clickButton")
-            navigationController?.pushViewController(StoryDefaultViewController(), animated: true)
+            navigationController?.pushViewController(BedroomViewController(), animated: true)
             
         }
 

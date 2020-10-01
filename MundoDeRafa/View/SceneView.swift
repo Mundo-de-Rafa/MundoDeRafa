@@ -47,7 +47,6 @@ class SceneView: UIView {
         let progress = UIProgressView(progressViewStyle: .bar)
         progress.tintColor = UIColor.secondaryGreen
         progress.trackTintColor = UIColor.primaryGreen
-        progress.setProgress(0.5/*progresso vai vir da controler*/, animated: false)
         progress.layer.cornerRadius = 8
         progress.clipsToBounds = true
         progress.translatesAutoresizingMaskIntoConstraints = false
@@ -60,7 +59,6 @@ class SceneView: UIView {
         porcentage.numberOfLines = 0
         porcentage.adjustsFontSizeToFitWidth = true
         porcentage.font = UIFont.balsamiqB?.withSize(32)
-        porcentage.text = "50%" /*Essa porcentagem vem da controller, puxando do model*/
         porcentage.textColor = UIColor.backgroundWhite
         
         porcentage.translatesAutoresizingMaskIntoConstraints = false
@@ -130,6 +128,8 @@ class SceneView: UIView {
     
     func setUpProgressBar() {
         
+        progressBar.setProgress(Float(getProgress()), animated: false)
+        
         self.addSubview(progressBar)
         regularConstraints.append(contentsOf: [
             progressBar.centerYAnchor.constraint(equalTo: backButton.centerYAnchor),
@@ -148,6 +148,9 @@ class SceneView: UIView {
     }
     
     func setUpProgressPorcentage() {
+        
+        let progress = Int(round(getProgress()))
+        progressPorcentage.text = String(progress) + "%"
         
         self.addSubview(progressPorcentage)
         regularConstraints.append(contentsOf: [
@@ -191,6 +194,13 @@ class SceneView: UIView {
             sceneCollectionView.rightAnchor.constraint(equalTo: self.rightAnchor),
             sceneCollectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor/*, constant: -0.2 * self.bounds.height*/)
         ])
+    }
+    
+    func getProgress() -> Double {
+        
+        guard let progressDouble = viewController?.calculateProgress(models: viewController?.scenesModels ?? []) else { return 0.0}
+        
+        return progressDouble
     }
     
 }

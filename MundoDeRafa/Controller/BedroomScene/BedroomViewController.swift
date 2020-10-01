@@ -9,7 +9,6 @@
 import UIKit
 
 class BedroomViewController: SceneDefaultViewController {
-    
     var viewsForElements: [String:UIImageView?]?
     var dottedViewsForElements: [String:UIImageView?]?
     lazy var bedroomView = self.view as? BedroomView
@@ -54,6 +53,7 @@ class BedroomViewController: SceneDefaultViewController {
         
         if winCount == 3 {
             SoundHelper.playSound(resource: "finishScene")
+            pauseButton.isHidden = true
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 self.hideDock()
                 self.hideInstructionsLabel()
@@ -62,6 +62,17 @@ class BedroomViewController: SceneDefaultViewController {
                 self.win()
             }
         }
+    }
+    
+    override func resetScene() {
+        super.resetScene()
+        bedroomView?.pants.isHidden = true
+        bedroomView?.shoes.isHidden = true
+        bedroomView?.shirt.isHidden = true
+        bedroomView?.dottedPants.isHidden = false
+        bedroomView?.dottedShirt.isHidden = false
+        bedroomView?.dottedShoes.isHidden = false
+        showInstructionsLabel(with: "Ajude o Rafa a se vestir! Arraste as peças de roupa para as partes do corpo corretas!", for: .now() + 6)
     }
 }
 

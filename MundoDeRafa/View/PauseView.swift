@@ -56,6 +56,7 @@ class PauseView: UIView {
         button.backgroundColor = UIColor.primaryGreen
         button.setTitle("Mudar Cena", for: .normal)
         button.titleLabel?.font = UIFont.balsamiqB?.withSize(22)
+        button.addTarget(self, action: #selector(didTapMenuButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
@@ -236,4 +237,10 @@ class PauseView: UIView {
         }
     }
 
+    @objc func didTapMenuButton() {
+        if let pauseController = controller {
+            pauseController.goToScenes()
+            sceneMenuButton.playSoundIfNeeded(of: .click)
+        }
+    }
 }

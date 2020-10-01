@@ -50,7 +50,8 @@ class NextStoryView: UIView {
     lazy var buttonNext : UIButton = {
         let button = RoundButton()
         button.backgroundColor = .primaryGreen
-        button.setTitle("Próximo", for: .normal)
+        button.setTitle("Mudar Cena", for: .normal)
+        button.addTarget(self, action: #selector(didTapNextButton), for: .touchUpInside)
         button.titleLabel?.font = UIFont.balsamiqB?.withSize(UIScreen.main.bounds.height * 0.036)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -69,6 +70,11 @@ class NextStoryView: UIView {
     @objc func buttonAction() {
         viewController?.bAction()
         buttonRepet.playSoundIfNeeded(of: .click)
+    }
+    
+    @objc func didTapNextButton() {
+        viewController?.nextStory()
+        buttonNext.playSoundIfNeeded(of: .click)
     }
     
     // SETUP.
