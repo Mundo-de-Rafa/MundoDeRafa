@@ -8,8 +8,7 @@
 
 import UIKit
 
-class SceneDefaultViewController: UIViewController, PauseMenuDelegate {
-    
+class SceneDefaultViewController: UIViewController, PauseMenuDelegate, NextStoryDelegate {
     var elements = [DockItem(name: "shirt"), DockItem(name: "shoes"), DockItem(name: "pants")]
     
     lazy var pauseButton: UIButton = {
@@ -59,7 +58,9 @@ class SceneDefaultViewController: UIViewController, PauseMenuDelegate {
     }
     
     func win() {
-        navigationController?.present(NextStoryViewController(), animated: true, completion: nil)
+        let destination = NextStoryViewController()
+        destination.delegate = self
+        navigationController?.present(destination, animated: true, completion: nil)
     }
     
     @objc func didTapPauseButton() {
@@ -138,6 +139,15 @@ class SceneDefaultViewController: UIViewController, PauseMenuDelegate {
         UIView.animate(withDuration: 0.5) {
             self.itemsDock.alpha = 1
         }
+    }
+    
+    func resetScene() {
+        showDock()
+        pauseButton.isHidden = false
+    }
+    
+    func goToScene() {
+        navigationController?.popViewController(animated: true)
     }
 }
 
