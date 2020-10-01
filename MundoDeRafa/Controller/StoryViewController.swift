@@ -24,10 +24,8 @@ class StoryViewController: UIViewController, UICollectionViewDelegate {
         view = storyView
         loadScenesCards()
 
-        for index in 0...cards.count - 1 {
-            if cards[index].state == .unlocked {
+        for index in 0...cards.count - 1 where cards[index].state == .unlocked {
                 cards[index].progress = calculateProgress()
-            }
         }
 
     }
@@ -42,10 +40,8 @@ class StoryViewController: UIViewController, UICollectionViewDelegate {
         if let view = self.view as? StoryView {
             loadScenesCards()
             
-            for index in 0...cards.count - 1 {
-                if cards[index].state == .unlocked {
-                    cards[index].progress = calculateProgress()
-                }
+            for index in 0...cards.count - 1 where cards[index].state == .unlocked {
+                cards[index].progress = calculateProgress()
             }
             view.collectionView.reloadData()
         }
@@ -78,22 +74,13 @@ class StoryViewController: UIViewController, UICollectionViewDelegate {
     func calculateProgress() -> Float {
         var progressAux: Float = 0.0
         
-        for index in 0...scenesModels.count - 1 {
-            
-            if scenesModels[index].isComplete {
-                
+        for index in 0...scenesModels.count - 1 where scenesModels[index].isComplete {
                 progressAux += 1
-                
-            }
-            
         }
         
         return progressAux/Float(scenesModels.count)
     }
 }
-
-
-
 
 extension StoryViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

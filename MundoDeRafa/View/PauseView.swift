@@ -5,7 +5,7 @@
 //  Created by Felipe Santana on 25/09/20.
 //  Copyright © 2020 Albert Rayneer. All rights reserved.
 //
-
+//swiftlint:disable function_body_length
 import UIKit
 
 class PauseView: UIView {
