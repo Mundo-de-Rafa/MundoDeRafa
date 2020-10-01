@@ -9,6 +9,7 @@
 import XCTest
 @testable import Mundo_de_Rafa
 
+//swiftlint:disable trailing_whitespace
 class SceneVCTests: XCTestCase {
     
     var scenes: [SceneModel] = []
@@ -21,10 +22,8 @@ class SceneVCTests: XCTestCase {
         let sceneCard3 = SceneModel(image: "card_bathroom", title: "Banho de Rafa", isComplete: false, isBlocked: false)
         let sceneCard4 = SceneModel(image: "card_bathroom", title: "Banho de Rafa", isComplete: false, isBlocked: true)
         
-        
         scenes.append(contentsOf: [sceneCard1, sceneCard2, sceneCard3, sceneCard4])
 
-        
     }
     
     func test_calculateProgress_toBeEqual50() {

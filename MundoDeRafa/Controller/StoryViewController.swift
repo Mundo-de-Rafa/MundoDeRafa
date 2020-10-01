@@ -92,9 +92,6 @@ class StoryViewController: UIViewController, UICollectionViewDelegate {
     }
 }
 
-
-
-
 extension StoryViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         cards.count
