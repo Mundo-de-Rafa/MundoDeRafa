@@ -198,7 +198,7 @@ class SceneView: UIView {
     
     func getProgress() -> Double {
         
-        guard let progressDouble = viewController?.calculateProgress() else { return 0.0}
+        guard let progressDouble = viewController?.calculateProgress(models: viewController?.scenesModels ?? []) else { return 0.0}
         
         return progressDouble
     }
