@@ -23,7 +23,7 @@ class StoryViewController: UIViewController, UICollectionViewDelegate {
         storyView.collectionView.dataSource = self
         view = storyView
         loadScenesCards()
-        
+
         for index in 0...cards.count - 1 {
             if cards[index].state == .unlocked {
                 cards[index].progress = calculateProgress()
@@ -38,21 +38,17 @@ class StoryViewController: UIViewController, UICollectionViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let storyView = StoryView()
-        storyView.viewController = self
-        storyView.collectionView.delegate = self
-        storyView.collectionView.dataSource = self
-  
-        loadScenesCards()
         
-        for index in 0...cards.count - 1 {
-            if cards[index].state == .unlocked {
-                cards[index].progress = calculateProgress()
+        if let view = self.view as? StoryView {
+            loadScenesCards()
+            
+            for index in 0...cards.count - 1 {
+                if cards[index].state == .unlocked {
+                    cards[index].progress = calculateProgress()
+                }
             }
+            view.collectionView.reloadData()
         }
-        
-        storyView.collectionView.reloadData()
-        view = storyView
 
     }
     
