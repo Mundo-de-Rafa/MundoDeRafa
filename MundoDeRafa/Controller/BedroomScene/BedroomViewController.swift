@@ -60,8 +60,23 @@ class BedroomViewController: SceneDefaultViewController {
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.win()
+                self.updateScenes()
+            
             }
         }
+    }
+    
+    func updateScenes() {
+        
+        let bedRoomSceneCard = SceneModel(image: "card_bedroom", title: "Rafa se vestindo", isComplete: true, isBlocked: false)
+        
+        let kitchenSceneCard = SceneModel(image: "card_kitchen", title: "Café da manhã de Rafa", isComplete: false, isBlocked: true)
+        
+        var scenesModels: [SceneModel] = []
+        scenesModels.append(contentsOf: [bedRoomSceneCard, kitchenSceneCard])
+        
+        updateSceneModelsDataFile(data: scenesModels)
+        
     }
     
     override func resetScene() {
