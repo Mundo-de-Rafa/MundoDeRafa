@@ -9,9 +9,16 @@
 import UIKit
 import AVFoundation
 
+protocol NextStoryDelegate: class {
+    func resetScene()
+    func goToScene()
+}
+
 class NextStoryViewController: UIViewController {
+    weak var delegate: NextStoryDelegate?
     var audioPlayer: AVAudioPlayer?
-    
+    lazy var bedroomView = self.view as? BedroomView
+
     lazy var viewNextstoryView : NextStoryView = {
         let view = NextStoryView(frame: UIScreen.main.bounds)
         return view
@@ -33,5 +40,11 @@ class NextStoryViewController: UIViewController {
     
     public func bAction() {
         dismiss(animated: true, completion: nil)
+        delegate?.resetScene()
+    }
+    
+    public func nextStory() {
+        dismiss(animated: true, completion: nil)
+        delegate?.goToScene()
     }
 }
