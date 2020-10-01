@@ -37,6 +37,25 @@ class StoryViewController: UIViewController, UICollectionViewDelegate {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        let storyView = StoryView()
+        storyView.viewController = self
+        storyView.collectionView.delegate = self
+        storyView.collectionView.dataSource = self
+  
+        loadScenesCards()
+        
+        for index in 0...cards.count - 1 {
+            if cards[index].state == .unlocked {
+                cards[index].progress = calculateProgress()
+            }
+        }
+        
+        storyView.collectionView.reloadData()
+        view = storyView
+
+    }
+    
     func backButtonAction() {
         self.navigationController?.popViewController(animated: true)
     }
