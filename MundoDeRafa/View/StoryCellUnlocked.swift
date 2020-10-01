@@ -108,7 +108,6 @@ class StoryCellUnlocked: UICollectionViewCell {
         self.layer.cornerRadius = 16
         setUpCardImageUnlocked()
         self.backgroundColor = UIColor.secondaryPurple
-        
         setUpCardLabel()
         setUpProgressIndicator()
         setViewLayout()

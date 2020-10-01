@@ -9,7 +9,8 @@
 import UIKit
 
 class StoryViewController: UIViewController, UICollectionViewDelegate {
-    let cards : [Card] = [firstCard, cardLocked, cardLocked, cardLocked]
+    var cards : [Card] = [firstCard, cardLocked, cardLocked, cardLocked]
+    lazy var scenesModels: [SceneModel] = []
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -21,6 +22,14 @@ class StoryViewController: UIViewController, UICollectionViewDelegate {
         storyView.collectionView.delegate = self
         storyView.collectionView.dataSource = self
         view = storyView
+        loadScenesCards()
+        
+        for index in 0...cards.count - 1 {
+            if cards[index].state == .unlocked {
+                cards[index].progress = calculateProgress()
+            }
+        }
+
     }
     
     override func viewDidLoad() {
@@ -31,7 +40,45 @@ class StoryViewController: UIViewController, UICollectionViewDelegate {
     func backButtonAction() {
         self.navigationController?.popViewController(animated: true)
     }
+    func loadScenesCards() {
+        
+        if FileController().directoryExists(with: "SceneModel.Json") {
+
+            guard let scenes = readSceneModelsFromFile() else { return }
+            self.scenesModels = scenes
+            
+        } else {
+            
+            let bedRoomSceneCard = SceneModel(image: "card_bedroom", title: "Rafa se vestindo", isComplete: false, isBlocked: false)
+            
+            let kitchenSceneCard = SceneModel(image: "card_kitchen", title: "Café da manhã de Rafa", isComplete: false, isBlocked: true)
+            
+            self.scenesModels.append(contentsOf:[ bedRoomSceneCard, kitchenSceneCard])
+            createSceneModelNewFile(data: scenesModels)
+            
+        }
+        
+    }
+    
+    func calculateProgress() -> Float {
+        var progressAux: Float = 0.0
+        
+        for index in 0...scenesModels.count - 1 {
+            
+            if scenesModels[index].isComplete {
+                
+                progressAux += 1
+                
+            }
+            
+        }
+        
+        return progressAux/Float(scenesModels.count)
+    }
 }
+
+
+
 
 extension StoryViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
