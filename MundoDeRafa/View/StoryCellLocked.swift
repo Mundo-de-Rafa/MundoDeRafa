@@ -34,8 +34,8 @@ class StoryCellLocked: UICollectionViewCell {
     
     var progressIndicator: UIProgressView = {
         let progress = UIProgressView(progressViewStyle: .bar)
-        progress.tintColor = UIColor.primaryGreen
-        progress.trackTintColor = UIColor.secondaryGreen
+        progress.tintColor = UIColor.secondaryGreen
+        progress.trackTintColor = UIColor.primaryGreen
         progress.setProgress(0.5, animated: false)
         progress.layer.cornerRadius = 8
         progress.clipsToBounds = true
