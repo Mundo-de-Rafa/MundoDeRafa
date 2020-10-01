@@ -69,6 +69,7 @@
 		EFDC8E642522205300056988 /* StoryCellLocked.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDC8E632522205300056988 /* StoryCellLocked.swift */; };
 		EFDC8E7A252287AE00056988 /* SoundHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDC8E79252287AE00056988 /* SoundHelper.swift */; };
 		EFDC8F492524B55700056988 /* TestRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDC8F482524B55700056988 /* TestRoundButton.swift */; };
+		EFDC8F6F2524CA4900056988 /* GeneralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDC8F6E2524CA4900056988 /* GeneralTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +158,7 @@
 		EFDC8E632522205300056988 /* StoryCellLocked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCellLocked.swift; sourceTree = "<group>"; };
 		EFDC8E79252287AE00056988 /* SoundHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundHelper.swift; sourceTree = "<group>"; };
 		EFDC8F482524B55700056988 /* TestRoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRoundButton.swift; sourceTree = "<group>"; };
+		EFDC8F6E2524CA4900056988 /* GeneralTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,6 +346,7 @@
 				AE2D8B11251B725900C93963 /* OnboardingUITests.swift */,
 				AE41935A2512423A00CB0DC8 /* Info.plist */,
 				77C2E440251CC5D100016D6E /* NextStoryViewUITests.swift */,
+				EFDC8F6E2524CA4900056988 /* GeneralTests.swift */,
 			);
 			path = MundoDeRafaUITests;
 			sourceTree = "<group>";
@@ -722,6 +725,7 @@
 			files = (
 				77C2E441251CC5D100016D6E /* NextStoryViewUITests.swift in Sources */,
 				AE2D8B12251B725A00C93963 /* OnboardingUITests.swift in Sources */,
+				EFDC8F6F2524CA4900056988 /* GeneralTests.swift in Sources */,
 				AE4193592512423A00CB0DC8 /* MundoDeRafaUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
