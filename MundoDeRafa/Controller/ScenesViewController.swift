@@ -65,14 +65,8 @@ class ScenesViewController: UIViewController {
     func calculateProgress(models: [SceneModel]) -> Double {
         var progressAux = 0.0
         
-        for index in 0...models.count - 1 {
-            
-            if models[index].isComplete {
-                
+        for index in 0...models.count - 1 where models[index].isComplete {
                 progressAux += 1
-                
-            }
-            
         }
         
         return progressAux/Double(models.count)
