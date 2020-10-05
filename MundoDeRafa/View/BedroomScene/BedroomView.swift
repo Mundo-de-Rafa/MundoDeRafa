@@ -33,6 +33,7 @@ class BedroomView: UIView {
     
     lazy var shoes: UIImageView = {
         let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(named: "shoes_rafa")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -88,15 +89,20 @@ class BedroomView: UIView {
         compactConstraints.append(contentsOf: [
             rafaImage.widthAnchor.constraint(equalToConstant: 245*proportion),
             rafaImage.heightAnchor.constraint(equalToConstant: 591*proportion),
-            rafaImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 100),
-            rafaImage.leftAnchor.constraint(equalTo: self.leftAnchor,constant: 375)
+//            rafaImage.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 16),
+            rafaImage.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16),
+            rafaImage.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 16)
+//            rafaImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 100),
+//            rafaImage.leftAnchor.constraint(equalTo: self.leftAnchor,constant: 375)
         ])
         
         regularConstraints.append(contentsOf: [
             rafaImage.widthAnchor.constraint(equalToConstant: 245),
             rafaImage.heightAnchor.constraint(equalToConstant: 591),
-            rafaImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 186),
-            rafaImage.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+            rafaImage.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -64),
+            rafaImage.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -16)
+//            rafaImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 186),
+//            rafaImage.centerXAnchor.constraint(equalTo: self.centerXAnchor)
             
         ])
     }
@@ -118,8 +124,8 @@ class BedroomView: UIView {
         
         compactConstraints.append(contentsOf: [
             shoes.widthAnchor.constraint(equalToConstant: 138*proportion),
-            shoes.heightAnchor.constraint(equalToConstant: 30*proportion),
-            shoes.topAnchor.constraint(equalTo: rafaImage.topAnchor, constant: 565*proportion)
+            shoes.heightAnchor.constraint(equalToConstant: 64*proportion),
+            shoes.topAnchor.constraint(equalTo: rafaImage.topAnchor, constant: 550*proportion)
         ])
     }
     
