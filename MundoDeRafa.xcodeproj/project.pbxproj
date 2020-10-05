@@ -146,6 +146,7 @@
 		AE41E0962518E6A6008F52F5 /* HomeDefaultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDefaultViewController.swift; sourceTree = "<group>"; };
 		AE41E09B2518E914008F52F5 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		AE588CE1251B935900A2BF74 /* MusicHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicHelper.swift; sourceTree = "<group>"; };
+		AE6C70E425261E2D00025D19 /* Mundo de Rafa.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mundo de Rafa.entitlements"; sourceTree = "<group>"; };
 		AE730E6E25139FD90038F783 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		AE982D902514DB9000021DA2 /* HomeDefaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDefaultView.swift; sourceTree = "<group>"; };
 		AE982D982514DFB200021DA2 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -333,6 +334,7 @@
 		AE4193352512423600CB0DC8 /* MundoDeRafa */ = {
 			isa = PBXGroup;
 			children = (
+				AE6C70E425261E2D00025D19 /* Mundo de Rafa.entitlements */,
 				3854631B2522312900E28565 /* File Manager */,
 				AE588CE0251B934C00A2BF74 /* Helpers */,
 				AE730E6D25139E8D0038F783 /* Extensions */,
@@ -364,10 +366,7 @@
 				AE4193582512423A00CB0DC8 /* MundoDeRafaUITests.swift */,
 				AE2D8B11251B725900C93963 /* OnboardingUITests.swift */,
 				AE41935A2512423A00CB0DC8 /* Info.plist */,
-
-				77C2E440251CC5D100016D6E /* NextStoryViewUITests.swift */,
 				EFDC8F6E2524CA4900056988 /* GeneralTests.swift */,
-
 			);
 			path = MundoDeRafaUITests;
 			sourceTree = "<group>";
@@ -904,6 +903,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "MundoDeRafa/Mundo de Rafa.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AVQMR29BJU;
 				INFOPLIST_FILE = MundoDeRafa/Config/Info.plist;
@@ -923,6 +923,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "MundoDeRafa/Mundo de Rafa.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AVQMR29BJU;
 				INFOPLIST_FILE = MundoDeRafa/Config/Info.plist;

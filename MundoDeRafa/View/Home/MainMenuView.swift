@@ -13,7 +13,7 @@ class MainMenuView: HomeDefaultView {
     let audioButtonsStack: UIStackView = {
         let stack = UIStackView()
         stack.spacing = 16
-        stack.distribution = .fill
+        stack.distribution = .fillProportionally
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
