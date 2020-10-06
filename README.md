@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to MundoDeRafa 🌏👋</h1>
+<h1 align="center">Welcome to Mundo de Rafa 🌏👋</h1>
 
 > A gamified app focused on fine motor coordination for children.
 
