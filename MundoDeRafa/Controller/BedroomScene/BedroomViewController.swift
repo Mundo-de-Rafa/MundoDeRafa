@@ -31,7 +31,7 @@ class BedroomViewController: SceneDefaultViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        showInstructionsLabel(with: "Ajude o Rafa a se vestir! Arraste as peças de roupa para as partes do corpo corretas!", for: .now() + 6)
+        showInstructionsLabel(with: "Ajude o Rafa a se vestir! Segure e arraste as peças de roupa para as partes do corpo corretas!", for: .now() + 6)
     }
     
     private func unhide(element: String) {
