@@ -66,6 +66,18 @@ class SceneCollectionViewCell: UICollectionViewCell {
         return image
     }()
     
+    lazy var lockLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.backgroundWhite
+        label.text = "Em breve"
+        label.font = UIFont.balsamiqB
+        label.textAlignment = .center
+        label.numberOfLines = 1
+        label.font = label.font.withSize(40)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     func setViewLayout() {
         
         if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
@@ -78,7 +90,7 @@ class SceneCollectionViewCell: UICollectionViewCell {
         }
         
     }
-    
+
     func configBackground() {
         
         contentView.addSubview(backgroundImage)
@@ -162,11 +174,20 @@ class SceneCollectionViewCell: UICollectionViewCell {
         
         sharedConstraints.append(contentsOf: [
             lockImage.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            lockImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            lockImage.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.48),
-            lockImage.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.27)
+            lockImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -20),
+            lockImage.heightAnchor.constraint(equalToConstant: 151),
+            lockImage.widthAnchor.constraint(equalToConstant: 128)
         ])
         
+    }
+    
+    func configLockLabel() {
+        self.contentView.addSubview(lockLabel)
+        
+        sharedConstraints.append(contentsOf: [
+            lockLabel.centerXAnchor.constraint(equalTo: lockImage.centerXAnchor),
+            lockLabel.topAnchor.constraint(equalTo: lockImage.bottomAnchor,constant: 8)
+        ])
     }
     
     func configure(title: String, backgroundImage: UIImage, isComplete: Bool, isLocked: Bool) {
@@ -177,6 +198,7 @@ class SceneCollectionViewCell: UICollectionViewCell {
             self.title.text = title
             self.isBlockedView.isHidden = true
             self.lockImage.isHidden = true
+            self.lockLabel.isHidden = true
             
         } else {
             
@@ -197,6 +219,7 @@ class SceneCollectionViewCell: UICollectionViewCell {
         configTitle()
         configIsBlockedView()
         configLockImage()
+        configLockLabel()
         
         NSLayoutConstraint.activate(sharedConstraints)
         setViewLayout()
