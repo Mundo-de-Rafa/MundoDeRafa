@@ -1,6 +1,7 @@
 <h1 align="center">Welcome to Mundo de Rafa 🌏👋</h1>
 
 > A gamified app focused on fine motor coordination for children.
+
 🇧🇷Mundo de Rafa é um app que se propõe a ajudar crianças no desenvolvimento da coordenação motora fina por meio de atividades educativas que envolvem gestos.
 Nas últimas semanas venho trabalhando nesse projeto com mais um grupo de colegas do Apple Developer Academy (Beatriz Carlos, Felipe Santana, Jhennyfer Oliveira) e os resultados foram incríveis! Aprendi demais com essa turma.
 
